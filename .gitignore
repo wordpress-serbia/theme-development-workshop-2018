@@ -1,0 +1,28 @@
+##
+# PROJECT ROOT
+#
+# Ignore everything except 'wp-content'
+# directory and must have files.
+##
+/*
+!wp-content/
+!.gitignore
+!README.md
+!LICENSE.txt
+
+##
+# 'WP-CONTENT' DIR
+#
+# Ignore everything in the 'wp-content'
+# directory, except the 'themes' directory.
+##
+wp-content/*
+!wp-content/themes/
+
+##
+# 'THEMES' DIR
+#
+# Ignore everything in the 'themes'
+# directory, except specified themes.
+##
+wp-content/themes/*
