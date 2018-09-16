@@ -1,0 +1,23 @@
+/*
+Theme Name: Twenty Seventeen Child
+Theme URI: https://github.com/wordpress-serbia/theme-development-workshop-2018
+Author: Theme Development Workshop
+Author URI: https://github.com/wordpress-serbia/
+Description: Twentyseventeen Child Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentyseventeen-child
+Template: twentyseventeen
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body.has-header-image .site-title,
+body.has-header-video .site-title,
+body.has-header-image .site-title a,
+body.has-header-video .site-title a {
+	color: green;
+}

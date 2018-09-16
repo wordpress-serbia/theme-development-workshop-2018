@@ -26,3 +26,4 @@ wp-content/*
 # directory, except specified themes.
 ##
 wp-content/themes/*
+!wp-content/themes/twentyseventeen-child/
