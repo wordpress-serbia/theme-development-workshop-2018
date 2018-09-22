@@ -15,6 +15,8 @@ Sadržaj:
 - [R-01](#r-01)
   - [Child tema za Twentyseventeen temu](#child-tema-za-twentyseventeen-temu)
   - [Načini modifikacije roditeljske teme kroz child temu](#načini-modifikacije-roditeljske-teme-kroz-child-temu)
+- [R-02 - Samostalna tema - "Radionica"](#r-02)
+  - [Minimum za instaliranje bez grešaka](#samostalna-tema---radionica)
 
 # R-01
 
@@ -62,3 +64,14 @@ Izvor: [New Functions, Hooks, and Behaviour for Theme Developers in WordPress 4.
 - modifikacija roditeljske funkcije (sa `function_exists` proverom )
 - kopiranje templejta iz roditeljske teme na istu putanju
 - modifikacija custom filtera definisanog u roditeljskoj temi
+
+# R-02
+
+## Samostalna tema - "Radionica"
+
+Minimum za instaliranje bez grešaka:
+
+- `style.css` sa komentarom,
+- `index.php` sa [get_header()](https://developer.wordpress.org/reference/functions/get_header/) i [get_footer()](https://developer.wordpress.org/reference/functions/get_footer/),
+- `header.php` - `DOCTYPE`, `<head>`, otvarajući `<html>` i `<body>`; [wp_head()](https://developer.wordpress.org/reference/functions/wp_head/); [body_class()](https://developer.wordpress.org/reference/functions/body_class/),
+- `footer.php` - [wp_footer()](https://developer.wordpress.org/reference/functions/wp_footer/); zatvarajući `<body>` i `<html>`.
