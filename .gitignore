@@ -27,3 +27,4 @@ wp-content/*
 ##
 wp-content/themes/*
 !wp-content/themes/twentyseventeen-child/
+!wp-content/themes/radionica/
