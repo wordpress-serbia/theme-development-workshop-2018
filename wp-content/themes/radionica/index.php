@@ -7,7 +7,19 @@
  *
  * @package WordPress
  */
-get_header();
+get_header(); ?>
 
+<main>
+	<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) : the_post();
 
-get_footer();
+				the_title( '<h1>', '</h1>' );
+				the_content();
+
+			endwhile; // have_posts()
+		endif; // have_posts()
+	?>
+</main>
+
+<?php get_footer();
