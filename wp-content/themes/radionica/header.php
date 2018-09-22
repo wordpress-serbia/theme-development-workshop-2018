@@ -27,3 +27,5 @@
 			<?php bloginfo( 'description' ); ?>
 		</p>
 	</header>
+
+	<main>

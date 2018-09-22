@@ -18,6 +18,7 @@ Sadržaj:
 - [R-02 - Samostalna tema - "Radionica"](#r-02)
   - [Minimum za instaliranje bez grešaka](#samostalna-tema---radionica)
   - [Minimum za prikaz stranice](#minimum-za-prikaz-stranice)
+  - [Podrazumevani šabloni](#podrazumevani-šabloni)
 
 # R-01
 
@@ -83,3 +84,11 @@ Minimum za instaliranje bez grešaka:
 - `header.php` - identitet sajta - [bloginfo()](https://developer.wordpress.org/reference/functions/bloginfo/), [home_url()](https://developer.wordpress.org/reference/functions/home_url/), [esc_url()](https://developer.wordpress.org/reference/functions/esc_url/)
 - `footer.php` - copyrights - [get_bloginfo()](https://developer.wordpress.org/reference/functions/get_bloginfo/), [esc_html__()](https://developer.wordpress.org/reference/functions/esc_html__/)
 - `index.php` - osnovna petlja [The Loop](https://developer.wordpress.org/themes/basics/the-loop/), [the_title()](https://developer.wordpress.org/reference/functions/the_title/), [the_content()](https://developer.wordpress.org/reference/functions/the_content/)
+
+## Podrazumevani šabloni
+
+- `page.php` - sve stranice
+- `single.php` - svi članci
+- `index.php` - postaje šablon za arhive; [get_permalink()](https://developer.wordpress.org/reference/functions/get_permalink/), [the_title_attribute()](https://developer.wordpress.org/reference/functions/the_title_attribute/)
+
+Više o šablonima na [wphierarchy.com](https://wphierarchy.com/).

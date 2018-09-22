@@ -1,6 +1,8 @@
 <?php
 /**
- * Main Template File
+ * Single
+ *
+ * Template for displaying all posts.
  *
  * @link https://developer.wordpress.org/themes/template-files-section/post-template-files/
  * @link https://wphierarchy.com/
@@ -12,12 +14,8 @@ get_header();
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
 
-			the_title(
-				'<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="' . the_title_attribute( array( 'echo' => false ) ) . '">',
-				'</a></h2>'
-			);
-
-			the_excerpt();
+			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_content();
 
 		endwhile; // have_posts()
 	endif; // have_posts()
