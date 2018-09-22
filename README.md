@@ -19,6 +19,7 @@ Sadržaj:
   - [Minimum za instaliranje bez grešaka](#samostalna-tema---radionica)
   - [Minimum za prikaz stranice](#minimum-za-prikaz-stranice)
   - [Podrazumevani šabloni](#podrazumevani-šabloni)
+  - [Delovi šablona i kondicionali](#delovi-šablona-i-kondicionali)
 
 # R-01
 
@@ -92,3 +93,11 @@ Minimum za instaliranje bez grešaka:
 - `index.php` - postaje šablon za arhive; [get_permalink()](https://developer.wordpress.org/reference/functions/get_permalink/), [the_title_attribute()](https://developer.wordpress.org/reference/functions/the_title_attribute/)
 
 Više o šablonima na [wphierarchy.com](https://wphierarchy.com/).
+
+## Delovi šablona i kondicionali
+
+- Isti ili dovoljno sličan kod koji se pojavljuje u više šablona, izdvojiti u poseban deo šablona [get_template_part()](https://developer.wordpress.org/reference/functions/get_template_part/)
+- Pomoću kondicionala odrediti koji kod će se prikazivati u kom šablonu - [is_archive()](https://developer.wordpress.org/reference/functions/is_archive/), [is_home()](https://developer.wordpress.org/reference/functions/is_home/), [is_single()](https://developer.wordpress.org/reference/functions/is_single/)
+- [the_category()](https://developer.wordpress.org/reference/functions/the_category/), [the_tags()](https://developer.wordpress.org/reference/functions/the_tags/)
+
+Lista kondicionala: [Conditional Tags Index](https://developer.wordpress.org/themes/basics/conditional-tags/#conditional-tags-index)

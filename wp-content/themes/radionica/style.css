@@ -11,3 +11,13 @@ Text Domain: radionica
 Tags:
 
 */
+
+/* Site identity */
+.site-title {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.site-title a {
+	color: inherit;
+}
