@@ -101,3 +101,10 @@ Više o šablonima na [wphierarchy.com](https://wphierarchy.com/).
 - [the_category()](https://developer.wordpress.org/reference/functions/the_category/), [the_tags()](https://developer.wordpress.org/reference/functions/the_tags/)
 
 Lista kondicionala: [Conditional Tags Index](https://developer.wordpress.org/themes/basics/conditional-tags/#conditional-tags-index)
+
+## Osnovni markup unosa i glavni wrapper
+
+- [the_ID()](https://developer.wordpress.org/reference/functions/the_ID/)
+- [post_class()](https://developer.wordpress.org/reference/functions/post_class/)
+
+Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staze: [Harry Roberts - cssguidelin.es](https://cssguidelin.es/)
