@@ -6,23 +6,44 @@
  *
  * @package WordPress
  */
-if ( is_archive() || is_home() ) :
+?>
+<article id="entry-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+	<?php if ( is_archive() || is_home() ) : ?>
 
-	the_title(
-		'<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="' . the_title_attribute( array( 'echo' => false ) ) . '">',
-		'</a></h2>'
-	);
-	the_excerpt();
-	the_category( ', ' );
+			<header class="entry-header">
+				<?php
+					the_title(
+						'<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="' . the_title_attribute( array( 'echo' => false ) ) . '">',
+						'</a></h2>'
+					);
+				?>
+			</header>
 
-else :
+			<div class="entry-excerpt">
+				<?php the_excerpt(); ?>
+			</div>
 
-	the_title( '<h1 class="entry-title">', '</h1>' );
-	the_content();
+			<footer class="entry-footer">
+				<div class="entry-categories"><?php the_category( ', ' ); ?></div>
+			</footer>
 
-	if ( is_single() ) :
-		the_category( ', ' );
-		the_tags( '', ', ' );
-	endif;
+		<?php else : ?>
 
-endif;
+			<header class="entry-header">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</header>
+
+			<div class="entry-content">
+				<?php the_content(); ?>
+			</div>
+
+			<?php if ( is_single() ) : ?>
+				<footer class="entry-footer">
+					<div class="entry-categories"><?php the_category( ', ' ); ?></div>
+					<?php the_tags( '<div class="entry-tags">', ', ', '</div>' ); ?>
+				</footer>
+			<?php endif; // is_single()
+
+		endif; // is_archive() || is_home()
+	?>
+</article>

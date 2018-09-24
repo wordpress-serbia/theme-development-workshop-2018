@@ -11,6 +11,20 @@ Text Domain: radionica
 Tags:
 
 */
+/**
+ * TOC
+ *
+ * Layout
+ * Site identity
+ */
+
+/* Layout */
+.wrapper {
+	width: 80%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* Site identity */
 .site-title {
