@@ -15,6 +15,11 @@ Sadržaj:
 - [R-01](#r-01)
   - [Child tema za Twentyseventeen temu](#child-tema-za-twentyseventeen-temu)
   - [Načini modifikacije roditeljske teme kroz child temu](#načini-modifikacije-roditeljske-teme-kroz-child-temu)
+- [R-02 - Samostalna tema - "Radionica"](#r-02)
+  - [Minimum za instaliranje bez grešaka](#samostalna-tema---radionica)
+  - [Minimum za prikaz stranice](#minimum-za-prikaz-stranice)
+  - [Podrazumevani šabloni](#podrazumevani-šabloni)
+  - [Delovi šablona i kondicionali](#delovi-šablona-i-kondicionali)
 
 # R-01
 
@@ -62,3 +67,44 @@ Izvor: [New Functions, Hooks, and Behaviour for Theme Developers in WordPress 4.
 - modifikacija roditeljske funkcije (sa `function_exists` proverom )
 - kopiranje templejta iz roditeljske teme na istu putanju
 - modifikacija custom filtera definisanog u roditeljskoj temi
+
+# R-02
+
+## Samostalna tema - "Radionica"
+
+Minimum za instaliranje bez grešaka:
+
+- `style.css` sa komentarom,
+- `index.php` sa [get_header()](https://developer.wordpress.org/reference/functions/get_header/) i [get_footer()](https://developer.wordpress.org/reference/functions/get_footer/),
+- `header.php` - `DOCTYPE`, `<head>`, otvarajući `<html>` i `<body>`; [wp_head()](https://developer.wordpress.org/reference/functions/wp_head/); [body_class()](https://developer.wordpress.org/reference/functions/body_class/),
+- `footer.php` - [wp_footer()](https://developer.wordpress.org/reference/functions/wp_footer/); zatvarajući `<body>` i `<html>`.
+
+## Minimum za prikaz stranice
+
+- `function.php` - učitavanje `style.css`
+- `header.php` - identitet sajta - [bloginfo()](https://developer.wordpress.org/reference/functions/bloginfo/), [home_url()](https://developer.wordpress.org/reference/functions/home_url/), [esc_url()](https://developer.wordpress.org/reference/functions/esc_url/)
+- `footer.php` - copyrights - [get_bloginfo()](https://developer.wordpress.org/reference/functions/get_bloginfo/), [esc_html__()](https://developer.wordpress.org/reference/functions/esc_html__/)
+- `index.php` - osnovna petlja [The Loop](https://developer.wordpress.org/themes/basics/the-loop/), [the_title()](https://developer.wordpress.org/reference/functions/the_title/), [the_content()](https://developer.wordpress.org/reference/functions/the_content/)
+
+## Podrazumevani šabloni
+
+- `page.php` - sve stranice
+- `single.php` - svi članci
+- `index.php` - postaje šablon za arhive; [get_permalink()](https://developer.wordpress.org/reference/functions/get_permalink/), [the_title_attribute()](https://developer.wordpress.org/reference/functions/the_title_attribute/)
+
+Više o šablonima na [wphierarchy.com](https://wphierarchy.com/).
+
+## Delovi šablona i kondicionali
+
+- Isti ili dovoljno sličan kod koji se pojavljuje u više šablona, izdvojiti u poseban deo šablona [get_template_part()](https://developer.wordpress.org/reference/functions/get_template_part/)
+- Pomoću kondicionala odrediti koji kod će se prikazivati u kom šablonu - [is_archive()](https://developer.wordpress.org/reference/functions/is_archive/), [is_home()](https://developer.wordpress.org/reference/functions/is_home/), [is_single()](https://developer.wordpress.org/reference/functions/is_single/)
+- [the_category()](https://developer.wordpress.org/reference/functions/the_category/), [the_tags()](https://developer.wordpress.org/reference/functions/the_tags/)
+
+Lista kondicionala: [Conditional Tags Index](https://developer.wordpress.org/themes/basics/conditional-tags/#conditional-tags-index)
+
+## Osnovni markup unosa i glavni wrapper
+
+- [the_ID()](https://developer.wordpress.org/reference/functions/the_ID/)
+- [post_class()](https://developer.wordpress.org/reference/functions/post_class/)
+
+Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staze: [Harry Roberts - cssguidelin.es](https://cssguidelin.es/)
