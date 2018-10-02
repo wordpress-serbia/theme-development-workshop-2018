@@ -35,3 +35,13 @@ Tags:
 .site-title a {
 	color: inherit;
 }
+
+.custom-logo-link {
+	display: block;
+	max-width: 400px;
+}
+
+.custom-logo-link img {
+	width: 100%;
+	height: auto;
+}
