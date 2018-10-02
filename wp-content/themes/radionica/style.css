@@ -1,0 +1,37 @@
+/*
+Theme Name: Radionica
+Theme URI: https://github.com/wordpress-serbia/theme-development-workshop-2018
+Author: Theme Development Workshop
+Author URI: https://github.com/wordpress-serbia/
+Description: Theme Development Workshop
+Version: 1.0.0
+License: GNU General Public License v3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: radionica
+Tags:
+
+*/
+/**
+ * TOC
+ *
+ * Layout
+ * Site identity
+ */
+
+/* Layout */
+.wrapper {
+	width: 80%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Site identity */
+.site-title {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.site-title a {
+	color: inherit;
+}
