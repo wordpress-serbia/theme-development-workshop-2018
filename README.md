@@ -20,6 +20,8 @@ Sadržaj:
   - [Minimum za prikaz stranice](#minimum-za-prikaz-stranice)
   - [Podrazumevani šabloni](#podrazumevani-šabloni)
   - [Delovi šablona i kondicionali](#delovi-šablona-i-kondicionali)
+- [R-03 - add_theme_support()](#r-03)
+  - [Custom Logo](#custom-logo)
 
 # R-01
 
@@ -108,3 +110,11 @@ Lista kondicionala: [Conditional Tags Index](https://developer.wordpress.org/the
 - [post_class()](https://developer.wordpress.org/reference/functions/post_class/)
 
 Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staze: [Harry Roberts - cssguidelin.es](https://cssguidelin.es/)
+
+# R-03
+
+## Custom Logo
+
+- [Custom Logo](https://developer.wordpress.org/themes/functionality/custom-logo/)
+- [has_custom_logo()](https://developer.wordpress.org/reference/functions/has_custom_logo/)
+- [the_custom_logo()](https://developer.wordpress.org/reference/functions/the_custom_logo/)
