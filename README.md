@@ -24,6 +24,7 @@ Sadržaj:
   - [Custom Logo](#custom-logo)
   - [Automatic Feed Links](#automatic-feed-links)
   - [Title Tag](#title-tag)
+  - [Custom Background](#custom-background)
 
 # R-01
 
@@ -133,3 +134,7 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 - [wp_get_document_title()](https://developer.wordpress.org/reference/functions/wp_get_document_title/)
 - filter [document_title_parts](https://developer.wordpress.org/reference/hooks/document_title_parts/)
 - filter [document_title_separator](https://developer.wordpress.org/reference/hooks/document_title_separator/)
+
+## Custom Background
+
+- [Custom Background](https://developer.wordpress.org/reference/functions/add_theme_support/#custom-background)
