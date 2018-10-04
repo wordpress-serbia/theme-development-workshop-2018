@@ -22,6 +22,8 @@ Sadržaj:
   - [Delovi šablona i kondicionali](#delovi-šablona-i-kondicionali)
 - [R-03 - add_theme_support()](#r-03)
   - [Custom Logo](#custom-logo)
+  - [Automatic Feed Links](#automatic-feed-links)
+  - [Title Tag](#title-tag)
 
 # R-01
 
@@ -113,9 +115,21 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 # R-03
 
+[add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)
+
 ## Custom Logo
 
 - [Custom Logo](https://developer.wordpress.org/themes/functionality/custom-logo/)
 - [has_custom_logo()](https://developer.wordpress.org/reference/functions/has_custom_logo/)
 - [the_custom_logo()](https://developer.wordpress.org/reference/functions/the_custom_logo/)
 
+## Automatic Feed Links
+
+- [Feed Links](https://developer.wordpress.org/reference/functions/add_theme_support/#feed-links)
+
+## Title Tag
+
+- [Title Tag](https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag)
+- [wp_get_document_title()](https://developer.wordpress.org/reference/functions/wp_get_document_title/)
+- filter [document_title_parts](https://developer.wordpress.org/reference/hooks/document_title_parts/)
+- filter [document_title_separator](https://developer.wordpress.org/reference/hooks/document_title_separator/)
