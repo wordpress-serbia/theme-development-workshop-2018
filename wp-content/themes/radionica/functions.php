@@ -32,8 +32,23 @@ function radionica_setup() {
 	 * Title Tag
 	 */
 	add_theme_support( 'title-tag' );
+
+	/**
+	 * Custom Background
+	 */
+	add_theme_support( 'custom-background', array(
+		'default-image'      => get_template_directory_uri() . '/images/WordPress-logotype-wmark.png',
+		'default-preset'     => 'custom', // 'default', 'fill', 'fit', 'repeat', 'custom'
+		'default-position-x' => 'center', // 'left', 'center', 'right'
+		'default-position-y' => 'top',    // 'top', 'center', 'bottom'
+		'default-size'       => 'auto',   // 'auto', 'contain', 'cover'
+		'default-repeat'     => 'repeat', // 'repeat-x', 'repeat-y', 'repeat', 'no-repeat'
+		'default-attachment' => 'scroll', // 'scroll', 'fixed'
+		'default-color'      => '#ff0000',
+	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
+
 /**
  * Load scripts and styles.
  *
