@@ -24,6 +24,7 @@ function radionica_setup() {
 	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
+
 /**
  * Load scripts and styles.
  *

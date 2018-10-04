@@ -118,3 +118,4 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 - [Custom Logo](https://developer.wordpress.org/themes/functionality/custom-logo/)
 - [has_custom_logo()](https://developer.wordpress.org/reference/functions/has_custom_logo/)
 - [the_custom_logo()](https://developer.wordpress.org/reference/functions/the_custom_logo/)
+
