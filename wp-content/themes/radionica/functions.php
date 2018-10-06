@@ -83,6 +83,16 @@ function radionica_setup() {
 		'width'  => 1200,
 		'height' => 400
 	) );
+
+	/**
+	 * Register Navigation Menus
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
+	 * @link https://developer.wordpress.org/themes/functionality/navigation-menus/
+	 */
+	register_nav_menus( array(
+		'header' => esc_html__( 'Header Menu', 'radionica' )
+	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 

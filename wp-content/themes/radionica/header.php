@@ -40,6 +40,22 @@
 				<?php endif; // has_custom_logo()
 
 				/**
+				 * Menu
+				 *
+				 * @link https://developer.wordpress.org/reference/functions/wp_nav_menu/
+				 */
+				wp_nav_menu( array(
+					'theme_location' => 'header',
+					'menu_class'     => 'radionica-menu',
+					'container'      => 'nav',
+					'after'          => '<span>icon</span>',
+					'link_before'    => '&rarr; ',
+					'depth'          => 1,
+					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'item_spacing'   => 'discard'
+				) );
+
+				/**
 				 * Header image
 				 *
 				 * This is code we used on workshop
