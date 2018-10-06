@@ -25,6 +25,9 @@ Sadržaj:
   - [Automatic Feed Links](#automatic-feed-links)
   - [Title Tag](#title-tag)
   - [Custom Background](#custom-background)
+  - [Post Thumbnails](#post-thumbnails)
+  - [Custom Header](#custom-header)
+  - [Navigation Menus](#navigation-menus)
 
 # R-01
 
@@ -120,21 +123,47 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 ## Custom Logo
 
+- [add_theme_support( 'custom-logo' )](https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo)
 - [Custom Logo](https://developer.wordpress.org/themes/functionality/custom-logo/)
 - [has_custom_logo()](https://developer.wordpress.org/reference/functions/has_custom_logo/)
 - [the_custom_logo()](https://developer.wordpress.org/reference/functions/the_custom_logo/)
+- [get_custom_logo()](https://developer.wordpress.org/reference/functions/get_custom_logo/)
 
 ## Automatic Feed Links
 
-- [Feed Links](https://developer.wordpress.org/reference/functions/add_theme_support/#feed-links)
+- [add_theme_support( 'automatic-feed-links' )](https://developer.wordpress.org/reference/functions/add_theme_support/#feed-links)
 
 ## Title Tag
 
-- [Title Tag](https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag)
+- [add_theme_support( 'title-tag' )](https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag)
 - [wp_get_document_title()](https://developer.wordpress.org/reference/functions/wp_get_document_title/)
 - filter [document_title_parts](https://developer.wordpress.org/reference/hooks/document_title_parts/)
 - filter [document_title_separator](https://developer.wordpress.org/reference/hooks/document_title_separator/)
 
 ## Custom Background
 
-- [Custom Background](https://developer.wordpress.org/reference/functions/add_theme_support/#custom-background)
+- [add_theme_support( 'custom-background' )](https://developer.wordpress.org/reference/functions/add_theme_support/#custom-background)
+
+## Post Thumbnails
+
+- [add_theme_support( 'post-thumbnails' )](https://developer.wordpress.org/reference/functions/add_theme_support/#post-thumbnails)
+- [Featured Images & Post Thumbnails](https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/)
+- [add_image_size()](https://developer.wordpress.org/reference/functions/add_image_size/)
+- [has_post_thumbnail()](https://developer.wordpress.org/reference/functions/has_post_thumbnail/)
+- [the_post_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/)
+- dodatak [Force Regenerate Thumbnails](https://wordpress.org/plugins/force-regenerate-thumbnails/)
+
+## Custom Header
+
+- [add_theme_support( 'custom-header' )](https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header)
+- [Custom Headers](https://developer.wordpress.org/themes/functionality/custom-headers/)
+- [get_header_image()](https://developer.wordpress.org/reference/functions/get_header_image/)
+- [get_custom_header()](https://developer.wordpress.org/reference/functions/get_custom_header/)
+- [header_image()](https://developer.wordpress.org/reference/functions/header_image/)
+- [the_custom_header_markup()](https://developer.wordpress.org/reference/functions/the_custom_header_markup/)
+
+## Navigation Menus
+
+- [Navigation Menus](https://developer.wordpress.org/themes/functionality/navigation-menus/)
+- [register_nav_menus()](https://developer.wordpress.org/reference/functions/register_nav_menus/)
+- [wp_nav_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/)
