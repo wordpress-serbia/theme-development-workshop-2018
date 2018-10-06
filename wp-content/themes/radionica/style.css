@@ -14,9 +14,34 @@ Tags:
 /**
  * TOC
  *
+ * Base
  * Layout
  * Site identity
+ * Navigation
+ * Header
+ * Entry
  */
+
+/* Base */
+html {
+	font-size: 1rem;
+    line-height: 1.875;
+    background-color: #fff;
+    color: #000;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+footer p {
+	margin: 0;
+}
 
 /* Layout */
 .wrapper {
@@ -24,6 +49,12 @@ Tags:
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: #fff;
+	padding: 2rem 0;
+}
+
+.wrapper > * {
+	padding: 0 2rem;
 }
 
 /* Site identity */
@@ -34,4 +65,46 @@ Tags:
 
 .site-title a {
 	color: inherit;
+}
+
+.custom-logo-link {
+	display: block;
+	max-width: 400px;
+}
+
+.custom-logo-link img {
+	width: 100%;
+	height: auto;
+}
+
+/* Navigation */
+nav ul {
+	padding: 0;
+}
+
+nav ul li {
+	list-style: none;
+	display: inline-block;
+	margin-left: .5rem;
+	margin-right: .5rem;
+}
+
+nav ul li:first-child {
+	margin-left: 0;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+/* Header */
+.wp-custom-header img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Entry */
+.entry-thumbnail img {
+	max-width: 100%;
+	height: auto;
 }
