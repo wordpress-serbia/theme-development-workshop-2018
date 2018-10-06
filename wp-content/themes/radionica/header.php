@@ -38,6 +38,34 @@
 						<?php bloginfo( 'description' ); ?>
 					</p>
 				<?php endif; // has_custom_logo()
+
+				/**
+				 * Header image
+				 *
+				 * This is code we used on workshop
+				 * but this is easily achieved with
+				 * the_custom_header_markup()
+				 */
+				if ( get_header_image() ) :
+					// Get custom header object.
+					$custom_header = get_custom_header();
+					// Get uploaded image ID.
+					$header_id = $custom_header->attachment_id; ?>
+
+					<div class="wp-custom-header">
+						<img src="<?php header_image(); ?>" alt="<?php echo esc_attr( get_the_title( $header_id ) ); ?>" >
+					</div>
+
+				<?php endif; // get_header_image()
+
+				/**
+				 * Much easier and faster with the_custom_header_markup().
+				 * @link https://developer.wordpress.org/reference/functions/the_custom_header_markup/
+				 *
+				 * Also, it uses srcset for responsive images.
+				 * @link https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/
+				 */
+				// the_custom_header_markup();
 			?>
 		</div><!-- wrapper -->
 	</header>
