@@ -17,6 +17,7 @@ Tags:
  * Base
  * Layout
  * Site identity
+ * Entry
  */
 
 /* Base */
@@ -70,6 +71,12 @@ footer p {
 }
 
 .custom-logo-link img {
+	width: 100%;
+	height: auto;
+}
+
+/* Entry */
+.single .entry-thumbnail img {
 	width: 100%;
 	height: auto;
 }
