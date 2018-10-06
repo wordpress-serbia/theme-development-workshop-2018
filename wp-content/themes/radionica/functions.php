@@ -72,6 +72,17 @@ function radionica_setup() {
 	 */
 	add_image_size( 'featured-single', 1200, 400, true );
 	add_image_size( 'featured-archive', 400, 200, array( 'center', 'center' ) );
+
+	/**
+	 * Custom Header
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header
+	 * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+	 */
+	add_theme_support( 'custom-header', array(
+		'width'  => 1200,
+		'height' => 400
+	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 

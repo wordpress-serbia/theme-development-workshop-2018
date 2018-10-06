@@ -17,6 +17,7 @@ Tags:
  * Base
  * Layout
  * Site identity
+ * Header
  * Entry
  */
 
@@ -75,8 +76,14 @@ footer p {
 	height: auto;
 }
 
+/* Header */
+.wp-custom-header img {
+	max-width: 100%;
+	height: auto;
+}
+
 /* Entry */
-.single .entry-thumbnail img {
-	width: 100%;
+.entry-thumbnail img {
+	max-width: 100%;
 	height: auto;
 }
