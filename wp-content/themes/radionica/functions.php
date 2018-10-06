@@ -109,6 +109,39 @@ function radionica_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'radionica_enqueue_scripts' );
 
 /**
+ * Filters the custom logo output.
+ *
+ * @param string $html Custom logo HTML output.
+ * @return string      Returns filtered custom logo HTML output.
+ */
+function radionica_get_custom_logo( $html ) {
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	/**
+	 * This one was added just to avoid
+	 * 'undefined' notice. For real project
+	 * please check all the conditionals in
+	 * function.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/get_custom_logo/
+	 */
+	$custom_logo_attr = array(
+		'class'    => 'custom-logo',
+		'itemprop' => 'logo',
+	);
+	/*
+	 * If the alt attribute is not empty, there's no need to explicitly pass
+	 * it because wp_get_attachment_image() already adds the alt attribute.
+	 */
+	$html = sprintf( '<a href="%1$s" class="custom-logo-link radionica" rel="home" itemprop="url">%2$s</a>',
+		esc_url( home_url( '/' ) ),
+		wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
+	);
+
+	return $html;
+}
+add_filter( 'get_custom_logo', 'radionica_get_custom_logo' );
+
+/**
  * Modify document title
  *
  * Change the document title appearance. This function is
