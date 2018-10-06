@@ -17,6 +17,9 @@ Tags:
  * Base
  * Layout
  * Site identity
+ * Navigation
+ * Header
+ * Entry
  */
 
 /* Base */
@@ -71,5 +74,37 @@ footer p {
 
 .custom-logo-link img {
 	width: 100%;
+	height: auto;
+}
+
+/* Navigation */
+nav ul {
+	padding: 0;
+}
+
+nav ul li {
+	list-style: none;
+	display: inline-block;
+	margin-left: .5rem;
+	margin-right: .5rem;
+}
+
+nav ul li:first-child {
+	margin-left: 0;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+/* Header */
+.wp-custom-header img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Entry */
+.entry-thumbnail img {
+	max-width: 100%;
 	height: auto;
 }

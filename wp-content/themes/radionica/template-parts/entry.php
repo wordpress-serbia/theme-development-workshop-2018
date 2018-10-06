@@ -19,6 +19,12 @@
 				?>
 			</header>
 
+			<?php if ( has_post_thumbnail() ) : ?>
+				<div class="entry-thumbnail">
+					<?php the_post_thumbnail( 'featured-archive' ); ?>
+				</div>
+			<?php endif; // has_post_thumbnail() ?>
+
 			<div class="entry-excerpt">
 				<?php the_excerpt(); ?>
 			</div>
@@ -28,6 +34,12 @@
 			</footer>
 
 		<?php else : ?>
+
+			<?php if ( has_post_thumbnail() ) : ?>
+				<div class="entry-thumbnail">
+					<?php the_post_thumbnail( 'featured-single' ); ?>
+				</div>
+			<?php endif; // has_post_thumbnail() ?>
 
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

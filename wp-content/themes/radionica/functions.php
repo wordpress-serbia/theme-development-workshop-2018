@@ -11,10 +11,15 @@
  * Note that this function is hooked into the 'after_setup_theme' hook, which
  * runs before the 'init' hook. The 'init' hook is too late for some features, such
  * as indicating support for post thumbnails.
+ *
+ * @link https://developer.wordpress.org/reference/functions/add_theme_support/
  */
 function radionica_setup() {
 	/**
 	 * Custom Logo
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
+	 * @link https://developer.wordpress.org/themes/functionality/custom-logo/
 	 */
 	add_theme_support( 'custom-logo', array(
 		'height'      => 100,
@@ -25,16 +30,22 @@ function radionica_setup() {
 
 	/**
 	 * Automatic Feed Links
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#feed-links
 	 */
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
 	 * Title Tag
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
 	 */
 	add_theme_support( 'title-tag' );
 
 	/**
 	 * Custom Background
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-background
 	 */
 	add_theme_support( 'custom-background', array(
 		'default-image'      => get_template_directory_uri() . '/images/WordPress-logotype-wmark.png',
@@ -45,6 +56,42 @@ function radionica_setup() {
 		'default-repeat'     => 'repeat', // 'repeat-x', 'repeat-y', 'repeat', 'no-repeat'
 		'default-attachment' => 'scroll', // 'scroll', 'fixed'
 		'default-color'      => '#ff0000',
+	) );
+
+	/**
+	 * Post Thumbnails
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-thumbnails
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
+	/**
+	 * Add cusrom image sizes
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_image_size/
+	 */
+	add_image_size( 'featured-single', 1200, 400, true );
+	add_image_size( 'featured-archive', 400, 200, array( 'center', 'center' ) );
+
+	/**
+	 * Custom Header
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header
+	 * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+	 */
+	add_theme_support( 'custom-header', array(
+		'width'  => 1200,
+		'height' => 400
+	) );
+
+	/**
+	 * Register Navigation Menus
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
+	 * @link https://developer.wordpress.org/themes/functionality/navigation-menus/
+	 */
+	register_nav_menus( array(
+		'header' => esc_html__( 'Header Menu', 'radionica' )
 	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
@@ -60,6 +107,39 @@ function radionica_enqueue_scripts() {
 	wp_enqueue_style( 'radionica-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'radionica_enqueue_scripts' );
+
+/**
+ * Filters the custom logo output.
+ *
+ * @param string $html Custom logo HTML output.
+ * @return string      Returns filtered custom logo HTML output.
+ */
+function radionica_get_custom_logo( $html ) {
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	/**
+	 * This one was added just to avoid
+	 * 'undefined' notice. For real project
+	 * please check all the conditionals in
+	 * function.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/get_custom_logo/
+	 */
+	$custom_logo_attr = array(
+		'class'    => 'custom-logo',
+		'itemprop' => 'logo',
+	);
+	/*
+	 * If the alt attribute is not empty, there's no need to explicitly pass
+	 * it because wp_get_attachment_image() already adds the alt attribute.
+	 */
+	$html = sprintf( '<a href="%1$s" class="custom-logo-link radionica" rel="home" itemprop="url">%2$s</a>',
+		esc_url( home_url( '/' ) ),
+		wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
+	);
+
+	return $html;
+}
+add_filter( 'get_custom_logo', 'radionica_get_custom_logo' );
 
 /**
  * Modify document title
