@@ -97,6 +97,15 @@ nav ul li:last-child {
 	margin-right: 0;
 }
 
+.single .sub-menu {
+	display: none;
+}
+
+.single .sub-menu.open {
+	display: block;
+	background: red;
+}
+
 /* Header */
 .wp-custom-header img {
 	max-width: 100%;

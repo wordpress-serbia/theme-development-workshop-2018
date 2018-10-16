@@ -190,3 +190,8 @@ function radionica_document_title_separator( $sep ) {
 	return $sep;
 }
 add_filter( 'document_title_separator', 'radionica_document_title_separator' );
+
+/**
+ * Navigation Walker
+ */
+require_once get_parent_theme_file_path( '/inc/class.RadionicaNavwalker.php' );

@@ -50,9 +50,10 @@
 					'container'      => 'nav',
 					'after'          => '<span>icon</span>',
 					'link_before'    => '&rarr; ',
-					'depth'          => 1,
+					// 'depth'          => 1,
 					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					'item_spacing'   => 'discard'
+					'item_spacing'   => 'discard',
+					'walker'         => new Radionica_Walker_Nav_Menu(),
 				) );
 
 				/**
