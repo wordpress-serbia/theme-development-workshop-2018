@@ -28,6 +28,11 @@ Sadržaj:
   - [Post Thumbnails](#post-thumbnails)
   - [Custom Header](#custom-header)
   - [Navigation Menus](#navigation-menus)
+- [R-04 - Walker_Nav_Menu](#r-04)
+  - [Walker_Nav_Menu::start_lvl](#walker_nav_menustart_lvl)
+  - [Walker_Nav_Menu::end_lvl](#walker_nav_menuend_lvl)
+  - [Walker_Nav_Menu::start_el](#walker_nav_menustart_el)
+  - [Walker_Nav_Menu::end_el](#walker_nav_menuend_el)
 
 # R-01
 
@@ -167,3 +172,28 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 - [Navigation Menus](https://developer.wordpress.org/themes/functionality/navigation-menus/)
 - [register_nav_menus()](https://developer.wordpress.org/reference/functions/register_nav_menus/)
 - [wp_nav_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/)
+
+# R-04
+
+- [Walker_Nav_Menu](https://developer.wordpress.org/reference/classes/walker_nav_menu/)
+
+## Walker_Nav_Menu::start_lvl
+
+- odnosi se na submenu, vraća `<ul>`
+- [Walker_Nav_Menu::start_lvl()](https://developer.wordpress.org/reference/classes/walker_nav_menu/start_lvl/)
+- [Objašnjenje za $item_spacing](https://make.wordpress.org/core/2016/11/07/whitespace-changes-in-navigation-for-4-7/)
+
+## Walker_Nav_Menu::end_lvl
+
+- odnosi se na submenu, vraća `</ul>`
+- [Walker_Nav_Menu::end_lvl()](https://developer.wordpress.org/reference/classes/walker_nav_menu/end_lvl/)
+
+## Walker_Nav_Menu::start_el
+
+- odnosi se na svaku stavku izbornika, vraća `<li>` i `<a></a>`
+- [Walker_Nav_Menu::start_el()](https://developer.wordpress.org/reference/classes/walker_nav_menu/start_el/)
+
+## Walker_Nav_Menu::end_el
+
+- odnosi se na svaku stavku izbornika, vraća `</li>`
+- [Walker_Nav_Menu::end_el()](https://developer.wordpress.org/reference/classes/walker_nav_menu/end_el/)
