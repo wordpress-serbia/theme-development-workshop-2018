@@ -106,6 +106,18 @@ nav ul li:last-child {
 	background: red;
 }
 
+.list-item-green {
+	background-color: green;
+}
+
+.list-item-blue {
+	background-color: blue;
+}
+
+.list-item-red {
+	background-color: red;
+}
+
 /* Header */
 .wp-custom-header img {
 	max-width: 100%;
