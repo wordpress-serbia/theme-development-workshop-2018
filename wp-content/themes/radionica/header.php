@@ -44,16 +44,25 @@
 				 *
 				 * @link https://developer.wordpress.org/reference/functions/wp_nav_menu/
 				 */
+				// wp_nav_menu( array(
+				// 	'theme_location' => 'header',
+				// 	'menu_class'     => 'radionica-menu',
+				// 	'container'      => 'nav',
+				// 	'after'          => '<span>icon</span>',
+				// 	'link_before'    => '&rarr; ',
+				// 	// 'depth'          => 1,
+				// 	'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				// 	'item_spacing'   => 'discard',
+				// 	'walker'         => new Radionica_Walker_Nav_Menu(),
+				// ) );
+				/**
+				 * Custom menu
+				 */
 				wp_nav_menu( array(
-					'theme_location' => 'header',
-					'menu_class'     => 'radionica-menu',
-					'container'      => 'nav',
-					'after'          => '<span>icon</span>',
-					'link_before'    => '&rarr; ',
-					// 'depth'          => 1,
-					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					'item_spacing'   => 'discard',
-					'walker'         => new Radionica_Walker_Nav_Menu(),
+					'theme_location'  => 'header',
+					'container'       => 'nav',
+					'container_class' => 'custom-navigation',
+					'walker'          => new Custom_Walker_Nav_Menu(),
 				) );
 			?>
 
