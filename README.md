@@ -248,3 +248,5 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
   </ul>
 </nav>
 ```
+
+- [apply_filters( 'the_excerpt', $excerpt )](https://developer.wordpress.org/reference/functions/the_excerpt/)
