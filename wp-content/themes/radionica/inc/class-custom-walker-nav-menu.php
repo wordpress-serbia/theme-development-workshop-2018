@@ -145,6 +145,10 @@ if ( ! class_exists( 'Custom_Walker_Nav_Menu' ) ) :
 					$item_output .= '<span>' . $description . '</span>';
 				endif;
 				$item_output .= '</div>';
+				// Entry summary.
+				$item_output .= '<div class="entry-summary">';
+				$item_output .= apply_filters( 'the_excerpt', get_the_excerpt( $post_id ) );
+				$item_output .= '</div>';
 
 			else :
 				$item_output .= '<a'. $attributes .'>';
