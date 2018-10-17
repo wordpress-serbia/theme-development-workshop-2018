@@ -135,6 +135,7 @@ if ( ! class_exists( 'Custom_Walker_Nav_Menu' ) ) :
 			if ( $depth == 1 && $item->object == 'post' ) :
 				$post_id     = $item->object_id;
 				$description = $item->description;
+				$excerpt     = get_the_excerpt( $post_id );
 
 				// Entry title.
 				$item_output .= '<div class="entry-title">';
@@ -142,18 +143,23 @@ if ( ! class_exists( 'Custom_Walker_Nav_Menu' ) ) :
 				$item_output .= $args->link_before . $title . $args->link_after;
 				$item_output .= '</a>';
 				if ( $description ) :
-					$item_output .= '<span>' . $description . '</span>';
-				endif;
-				$item_output .= '</div>';
-				// Entry summary.
-				$item_output .= '<div class="entry-summary">';
-				$item_output .= apply_filters( 'the_excerpt', get_the_excerpt( $post_id ) );
-				$item_output .= '</div>';
-				// Entry image.
-				$item_output .= '<div class="entry-image">';
-				$item_output .= get_the_post_thumbnail( $post_id, 'medium' );
+					$item_output .= '<span>' . esc_html( $description ) . '</span>';
+				endif; // $description
 				$item_output .= '</div>';
 
+				// Entry summary.
+				if ( $excerpt ) :
+					$item_output .= '<div class="entry-summary">';
+					$item_output .= apply_filters( 'the_excerpt', $excerpt );
+					$item_output .= '</div>';
+				endif; // $excerpt
+
+				// Entry image.
+				if ( has_post_thumbnail() ) :
+					$item_output .= '<div class="entry-image">';
+					$item_output .= get_the_post_thumbnail( $post_id, 'medium' );
+					$item_output .= '</div>';
+				endif; // has_post_thumbnail()
 			else :
 				$item_output .= '<a'. $attributes .'>';
 				$item_output .= $args->link_before . $title . $args->link_after;
