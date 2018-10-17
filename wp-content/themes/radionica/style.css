@@ -97,6 +97,138 @@ nav ul li:last-child {
 	margin-right: 0;
 }
 
+.single .sub-menu {
+	display: none;
+}
+
+.single .sub-menu.open {
+	display: block;
+	background: red;
+}
+
+.list-item-green {
+	background-color: green;
+}
+
+.list-item-blue {
+	background-color: blue;
+}
+
+.list-item-red {
+	background-color: red;
+}
+
+/* Custom navigation */
+.custom-navigation {
+	position: relative;
+	background-color: #e6e6e6;
+	margin: 2rem;
+}
+
+.custom-navigation p {
+	margin: 0;
+}
+.custom-navigation a {
+	color: red;
+}
+
+.custom-navigation a,
+.custom-navigation span {
+	display: block;
+}
+
+.custom-navigation > ul {
+	margin: 0;
+	padding: 0;
+}
+
+.custom-navigation > ul > li > a {
+	line-height: 3.6;
+}
+
+.custom-navigation > ul > li > ul {
+	display: none;
+	position: absolute;
+	width: 100%;
+	min-height: 200px;
+	background-color: #e6e6e6;
+	left: 0;
+	padding-bottom: 2rem;
+	border-top: 1px solid #d6d6d6;
+	z-index: 2;
+}
+
+.custom-navigation > ul > li:hover > ul {
+	display: block;
+}
+
+.custom-navigation > ul > li > ul > li {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 4.5rem;
+	padding: 0;
+	margin: 0;
+}
+
+.custom-navigation .entry-title {
+	width: 20%;
+	padding: 1rem 0 1rem 2rem;
+}
+
+.custom-navigation > ul > li > ul > li a,
+.custom-navigation > ul > li > ul > li span {
+	line-height: 1.3;
+}
+
+.custom-navigation .entry-summary {
+	width: 35%;
+	height: calc( 100% - 2rem );
+	position: absolute;
+	top: 0; /* title padding */
+	left: calc(20% + 2rem); /* title width with padding */
+	z-index: -1;
+	padding: 1rem;
+	background-color: #e6e6e6; /* same as ul because of z-index change on hover */
+}
+
+.custom-navigation .entry-image {
+	text-align: center;
+	width: 40%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #e6e6e6; /* same as ul because of z-index change on hover */
+}
+
+.custom-navigation .entry-image img {
+	max-width: 90%;
+	max-height: 200px;
+	text-align:center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.custom-navigation > ul > li > ul > li:hover .entry-title {
+	background-color: #262626;
+	color: #fff;
+}
+
+.custom-navigation li:first-child .entry-summary,
+.custom-navigation li:first-child .entry-image {
+	z-index: 1;
+}
+
+.custom-navigation > ul > li > ul > li:hover .entry-summary,
+.custom-navigation > ul > li > ul > li:hover .entry-image {
+	background-color: #262626;
+	color: #fff;
+	z-index: 2;
+}
+
 /* Header */
 .wp-custom-header img {
 	max-width: 100%;

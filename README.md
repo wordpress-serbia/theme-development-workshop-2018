@@ -28,6 +28,12 @@ Sadržaj:
   - [Post Thumbnails](#post-thumbnails)
   - [Custom Header](#custom-header)
   - [Navigation Menus](#navigation-menus)
+- [R-04 - Walker_Nav_Menu](#r-04)
+  - [Walker_Nav_Menu::start_lvl](#walker_nav_menustart_lvl)
+  - [Walker_Nav_Menu::end_lvl](#walker_nav_menuend_lvl)
+  - [Walker_Nav_Menu::start_el](#walker_nav_menustart_el)
+  - [Walker_Nav_Menu::end_el](#walker_nav_menuend_el)
+  - [Markup prilagođenog izbornika](#markup-prilagođenog-izbornika)
 
 # R-01
 
@@ -167,3 +173,80 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 - [Navigation Menus](https://developer.wordpress.org/themes/functionality/navigation-menus/)
 - [register_nav_menus()](https://developer.wordpress.org/reference/functions/register_nav_menus/)
 - [wp_nav_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/)
+
+# R-04
+
+- [Walker_Nav_Menu](https://developer.wordpress.org/reference/classes/walker_nav_menu/)
+
+## Walker_Nav_Menu::start_lvl
+
+- odnosi se na submenu, vraća `<ul>`
+- [Walker_Nav_Menu::start_lvl()](https://developer.wordpress.org/reference/classes/walker_nav_menu/start_lvl/)
+- [Objašnjenje za $item_spacing](https://make.wordpress.org/core/2016/11/07/whitespace-changes-in-navigation-for-4-7/)
+
+## Walker_Nav_Menu::end_lvl
+
+- odnosi se na submenu, vraća `</ul>`
+- [Walker_Nav_Menu::end_lvl()](https://developer.wordpress.org/reference/classes/walker_nav_menu/end_lvl/)
+
+## Walker_Nav_Menu::start_el
+
+- odnosi se na svaku stavku izbornika, vraća `<li>` i `<a></a>`
+- [Walker_Nav_Menu::start_el()](https://developer.wordpress.org/reference/classes/walker_nav_menu/start_el/)
+
+## Walker_Nav_Menu::end_el
+
+- odnosi se na svaku stavku izbornika, vraća `</li>`
+- [Walker_Nav_Menu::end_el()](https://developer.wordpress.org/reference/classes/walker_nav_menu/end_el/)
+
+## Markup prilagođenog izbornika
+
+```
+<nav class="custom-navigation">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Category</a>
+      <ul>
+        <li>
+          <div class="entry-title">
+            <a href="#">Post title</a>
+            <span>This is description</span>
+          </div>
+          <div class="entry-summary">
+            <p>The Accessibility Team works to make WordPress accessible to as many people as possible. This means making sure people are not just able to read web pages but also to maintain websites. You are a part of this mission. You benefit from this mission. So in the spirit of one of the largest open-source communities in the world, let’s work on universal accessibility.</p>
+          </div>
+          <div class="entry-image">
+            <img src="https://images.unsplash.com/photo-1495774539583-885e02cca8c2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b4876c41d5e7585486007cab84b34512">
+          </div>
+        </li>
+        <li>
+          <div class="entry-title">
+            <a href="#">Post title</a>
+            <span>This is description</span>
+          </div>
+          <div class="entry-summary">
+            <p>In this Make WordPress Accessibility Handbook you will learn what the best practices are for web accessibility, the many great accessibility tools, the testing we do to improve WordPress, themes, and plugins, and how to get involved in WordPress accessibility.</p>
+          </div>
+          <div class="entry-image">
+            <img src="https://s.w.org/style/images/about/WordPress-logotype-alternative.png">
+          </div>
+        </li>
+        <li>
+          <div class="entry-title">
+            <a href="#">Post title</a>
+            <span>This is description</span>
+          </div>
+          <div class="entry-summary">
+            <p>Below are the web essentials you’ll need to make your site accessible. Other handbook pages explain why these standards are critical to your site. This page tells you how to quickly implement the standards, with WordPress-specific code examples, guidelines, and best-practices.</p>
+          </div>
+          <div class="entry-image">
+            <img src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png">
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+```
+
+- [apply_filters( 'the_excerpt', $excerpt )](https://developer.wordpress.org/reference/functions/the_excerpt/)
