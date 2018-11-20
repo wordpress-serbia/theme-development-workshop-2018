@@ -136,6 +136,8 @@ if ( ! class_exists( 'Custom_Walker_Nav_Menu' ) ) :
 				$post_id     = $item->object_id;
 				$description = $item->description;
 				$excerpt     = get_the_excerpt( $post_id );
+				$post = get_post( $post_id );
+				$content = wp_trim_words( $post->post_content, 15 );
 
 				// Entry title.
 				$item_output .= '<div class="entry-title">';
@@ -148,11 +150,13 @@ if ( ! class_exists( 'Custom_Walker_Nav_Menu' ) ) :
 				$item_output .= '</div>';
 
 				// Entry summary.
-				if ( $excerpt ) :
-					$item_output .= '<div class="entry-summary">';
-					$item_output .= apply_filters( 'the_excerpt', $excerpt );
-					$item_output .= '</div>';
-				endif; // $excerpt
+				$item_output .= '<div class="entry-summary">';
+				if ( has_excerpt( $post_id ) ) :
+					$item_output .= apply_filters( 'the_excerpt', get_the_excerpt( $post_id ) );
+				else :
+					$item_output .= apply_filters( 'the_content', $content );
+				endif;
+				$item_output .= '</div>';
 
 				// Entry image.
 				if ( has_post_thumbnail() ) :
