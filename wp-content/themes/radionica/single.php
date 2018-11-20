@@ -14,7 +14,7 @@ get_header();
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
 
-			get_template_part( '/template-parts/entry' );
+			get_template_part( '/template-parts/entry', get_post_type() );
 
 		endwhile; // have_posts()
 	endif; // have_posts()
