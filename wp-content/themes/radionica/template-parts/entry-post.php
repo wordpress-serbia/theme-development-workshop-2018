@@ -50,6 +50,20 @@
 	</div>
 
 	<footer class="entry-footer">
+		<div class="entry-author">
+			<h2><?php esc_html_e( 'Author', 'radionica' ); ?></h2>
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), 90 ); ?>
+			<span class="author vcard">
+				<a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+					<?php echo get_the_author_meta( 'display_name' ); ?>
+				</a>
+			</span>
+			<?php if ( get_the_author_meta( 'description' ) ) : ?>
+				<p class="description">
+					<?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?>
+				</p>
+			<?php endif; ?>
+		</div>
 	</footer>
 
 </article>
