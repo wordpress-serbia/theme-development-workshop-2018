@@ -136,8 +136,8 @@ if ( ! class_exists( 'Custom_Walker_Nav_Menu' ) ) :
 				$post_id     = $item->object_id;
 				$description = $item->description;
 				$excerpt     = get_the_excerpt( $post_id );
-				$post = get_post( $post_id );
-				$content = wp_trim_words( $post->post_content, 15 );
+				$post        = get_post( $post_id );
+				$content     = wp_trim_words( $post->post_content, 15 );
 
 				// Entry title.
 				$item_output .= '<div class="entry-title">';
