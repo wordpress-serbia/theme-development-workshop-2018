@@ -20,6 +20,7 @@ Tags:
  * Navigation
  * Header
  * Entry
+ * Accessibility
  */
 
 /* Base */
@@ -241,12 +242,7 @@ nav ul li:last-child {
 	height: auto;
 }
 
-/*--------------------------------------------------------------
-2.0 Accessibility
---------------------------------------------------------------*/
-
-/* Text meant only for screen readers. */
-
+/* Accessibility */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
