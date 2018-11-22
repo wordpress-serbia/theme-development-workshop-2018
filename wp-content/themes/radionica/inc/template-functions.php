@@ -184,3 +184,87 @@ function radionica_document_title_separator( $sep ) {
 	return $sep;
 }
 add_filter( 'document_title_separator', 'radionica_document_title_separator' );
+
+/**
+ * Body classes
+ *
+ * Custom classes for <body> tag. This function
+ * is attached to 'body_class' filter hook. For
+ * overriding in child themes, simply remove
+ * the filter hook.
+ *
+ * @param array Existing class values.
+ * @return array Filtered class values.
+ */
+function radionica_body_class( $classes ) {
+
+	if ( is_active_sidebar( 'sidebar-main' ) && ( is_archive() || is_home() || is_search() ) ) :
+		$classes[] = 'has-sidebar';
+	endif;
+
+	if ( is_active_sidebar( 'sidebar-singular' ) && is_page_template( 'template-sidebar.php' ) ) :
+		$classes[] = 'has-sidebar';
+	endif;
+
+	return $classes;
+}
+add_filter( 'body_class', 'radionica_body_class' );
+
+/**
+ * Filters the archive title. This function is
+ * attached to 'get_the_archive_title' filter hook.
+ *
+ * @since 4.1.0
+ *
+ * @param string $title Archive title to be displayed.
+ */
+function radionica_get_the_archive_title( $title ) {
+	if ( is_author() ) :
+		/* translators: Author archive title. 1: Author name */
+		$title = sprintf( __( '%s', 'radionica' ), '<span class="vcard">' . get_the_author() . '</span>' );
+	endif;
+
+	if ( is_search() ) :
+		if ( get_search_query() ) :
+			$title = sprintf( esc_html__( 'Search results for: %s', 'radionica' ),
+				get_search_query()
+			);
+		else :
+			$title = esc_html__( 'Search results', 'radionica' );
+		endif;
+
+	endif;
+
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'radionica_get_the_archive_title' );
+
+/**
+ * Filters the archive description. This function is attached to
+ * 'get_the_archive_description' filter hook.
+ *
+ * @since 4.1.0
+ *
+ * @param string $description Archive description to be displayed.
+ */
+function radionica_get_the_archive_description( $description ) {
+	if ( is_year() ) :
+		$description = sprintf( esc_html__( 'Archive for %s year.', 'radionica' ),
+			get_the_date( _x( 'Y', 'yearly archives date format' ) )
+		);
+	elseif ( is_month() ) :
+		$description = sprintf( esc_html__( 'Archive for %1$s of %2$s year.', 'radionica' ),
+			get_the_date( _x( 'F', 'monthly archives date format' ) ),
+			get_the_date( _x( 'Y', 'yearly archives date format' ) )
+		);
+	elseif ( is_day() ) :
+		$description = sprintf( esc_html__( 'Posts published on %1$s of %2$s, in %3$s year.', 'radionica' ),
+			get_the_date( _x( 'jS', 'daily archives date format' ) ),
+			get_the_date( _x( 'F', 'monthly archives date format' ) ),
+			get_the_date( _x( 'Y', 'yearly archives date format' ) )
+		);
+	endif;
+
+	return $description;
+}
+add_filter( 'get_the_archive_description', 'radionica_get_the_archive_description' );
