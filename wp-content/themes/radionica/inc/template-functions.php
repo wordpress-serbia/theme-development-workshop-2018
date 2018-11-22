@@ -82,6 +82,12 @@ add_filter( 'comment_form_fields', 'radionica_comment_form_fields' );
 function radionica_comment_form_fields( $fields ) {
 	if ( get_post_type() == 'post' ) :
 		unset( $fields['url'] );
+		$comment_field = $fields['comment'];
+		$cookies       = $fields['cookies'];
+		unset( $fields['comment'] );
+		unset( $fields['cookies'] );
+		$fields['comment'] = $comment_field;
+		$fields['cookies'] = $cookies;
 	endif;
 	return $fields;
 }
