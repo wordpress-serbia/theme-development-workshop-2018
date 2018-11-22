@@ -4,8 +4,8 @@
  *
  * @package WordPress
  */
-if ( ! function_exists( 'radionica_html5_comment' ) ) :
 
+if ( ! function_exists( 'radionica_html5_comment' ) ) :
 	/**
 	 * Outputs a comment in the HTML5 format.
 	 *
@@ -18,8 +18,7 @@ if ( ! function_exists( 'radionica_html5_comment' ) ) :
 	 * @param array      $args    An array of arguments.
 	 */
 	function radionica_html5_comment( $comment, $depth, $args ) {
-				$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
-?>
+		$tag = ( 'div' === $args['style'] ) ? 'div' : 'li'; ?>
 		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->has_children ? 'parent' : '', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 				<footer class="comment-meta">
@@ -57,14 +56,12 @@ if ( ! function_exists( 'radionica_html5_comment' ) ) :
 				<?php
 				comment_reply_link( array(
 					'add_below' => 'div-comment',
-					'depth'     => 2,
+					'depth'     => $depth,
 					'max_depth' => $args['max_depth'],
 					'before'    => '<div class="reply">',
 					'after'     => '</div>'
 				) );
 				?>
-			</article><!-- .comment-body -->
-<?php
-
+			</article><!-- .comment-body --> <?php
 	}
-endif;
+endif; // ! function_exists( 'radionica_html5_comment' )

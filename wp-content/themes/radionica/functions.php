@@ -205,4 +205,8 @@ add_filter( 'document_title_separator', 'radionica_document_title_separator' );
  */
 require_once get_parent_theme_file_path( '/inc/class.RadionicaNavwalker.php' );
 require_once get_parent_theme_file_path( '/inc/class-custom-walker-nav-menu.php' );
+
+/**
+ * Template functions
+ */
 require_once get_parent_theme_file_path( '/inc/template-functions.php' );

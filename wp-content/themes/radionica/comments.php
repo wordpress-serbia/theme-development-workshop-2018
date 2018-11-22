@@ -5,6 +5,7 @@
  * Template for displaying comments list and form on single posts.
  *
  * @link https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/
+ * @link https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comments/
  *
  * @package WordPress
  */
