@@ -31,29 +31,31 @@ if ( have_comments() ) : ?>
 
 <?php endif; // have_comments()
 
+comment_form();
+
 /**
  * Comment form arguments
  */
-$req      = get_option( 'require_name_email' );
-$commenter = wp_get_current_commenter();
-$html_req = ( $req ? " required='required'" : '' );
+// $req      = get_option( 'require_name_email' );
+// $commenter = wp_get_current_commenter();
+// $html_req = ( $req ? " required='required'" : '' );
 
-$args['fields'] = array(
-	'author'  => '<p class="comment-form-author"><label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-				 '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $html_req . ' /></p>',
-	'email'   => '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-				 '<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $html_req . ' /></p>',
-);
+// $args['fields'] = array(
+// 	'author'  => '<p class="comment-form-author"><label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+// 				 '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $html_req . ' /></p>',
+// 	'email'   => '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+// 				 '<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $html_req . ' /></p>',
+// );
 
-if ( has_action( 'set_comment_cookies', 'wp_set_comment_cookies' ) && get_option( 'show_comments_cookies_opt_in' ) ) {
-	$consent = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
-	$args['fields']['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
-						 '<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.' ) . '</label></p>';
+// if ( has_action( 'set_comment_cookies', 'wp_set_comment_cookies' ) && get_option( 'show_comments_cookies_opt_in' ) ) {
+// 	$consent = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+// 	$args['fields']['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+// 						 '<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.' ) . '</label></p>';
 
-	// Ensure that the passed fields include cookies consent.
-	if ( isset( $args['fields'] ) && ! isset( $args['fields']['cookies'] ) ) {
-		$args['fields']['cookies'] = $args['fields']['cookies'];
-	}
-}
+// 	// Ensure that the passed fields include cookies consent.
+// 	if ( isset( $args['fields'] ) && ! isset( $args['fields']['cookies'] ) ) {
+// 		$args['fields']['cookies'] = $args['fields']['cookies'];
+// 	}
+// }
 
-comment_form( $args );
+// comment_form( $args );

@@ -65,3 +65,23 @@ if ( ! function_exists( 'radionica_html5_comment' ) ) :
 			</article><!-- .comment-body --> <?php
 	}
 endif; // ! function_exists( 'radionica_html5_comment' )
+
+add_filter( 'comment_form_fields', 'radionica_comment_form_fields' );
+/**
+ * Reverse Comment Form fields order and set cookies
+ * consent field after the comment field.
+ *
+ * This function is attached to 'comment_form_fields' filter hook.
+ *
+ * For overriding in child themes remove the filter hook:
+ * remove_filter( 'comment_form_fields', 'radionica_comment_form_fields' );
+ *
+ * @param  array $fields The comment fields.
+ * @return array Returns filtered comment form fields
+ */
+function radionica_comment_form_fields( $fields ) {
+	if ( get_post_type() == 'post' ) :
+		unset( $fields['url'] );
+	endif;
+	return $fields;
+}
