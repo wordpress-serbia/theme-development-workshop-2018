@@ -47,4 +47,8 @@ get_header();
 
 	the_post_navigation( $navigation_args );
 
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
+	endif;
+
 get_footer();
