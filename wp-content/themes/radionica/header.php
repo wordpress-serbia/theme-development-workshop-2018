@@ -58,12 +58,16 @@
 				/**
 				 * Custom menu
 				 */
-				wp_nav_menu( array(
-					'theme_location'  => 'header',
-					'container'       => 'nav',
-					'container_class' => 'custom-navigation',
-					'walker'          => new Custom_Walker_Nav_Menu(),
-				) );
+				if ( has_nav_menu( 'header' ) ) :
+					wp_nav_menu( array(
+						'theme_location'  => 'header',
+						'container'       => 'nav',
+						'container_class' => 'custom-navigation',
+						'walker'          => new Custom_Walker_Nav_Menu(),
+					) );
+				else :
+					wp_nav_menu();
+				endif; // has_nav_menu( 'header' )
 			?>
 
 <nav class="custom-navigation">
