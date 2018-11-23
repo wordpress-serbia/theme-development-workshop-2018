@@ -37,18 +37,4 @@ get_header();
 		comments_template();
 	endif;
 
-	$navigation_args = array(
-		'prev_text'          => esc_html__( '&larr; %title', 'radionica' ),
-		'next_text'          => esc_html__( '%title &rarr;', 'radionica' ),
-		'in_same_term'       => true,
-		'taxonomy'           => 'category',
-		'screen_reader_text' => esc_html__( 'Post navigation', 'radionica' ),
-	);
-
-	the_post_navigation( $navigation_args );
-
-	if ( comments_open() || get_comments_number() ) :
-		comments_template();
-	endif;
-
 get_footer();
