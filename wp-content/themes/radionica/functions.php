@@ -139,6 +139,24 @@ function radionica_setup() {
 		'audio',
 		'chat'
 	) );
+
+	/**
+	 * Post Formats
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-formats
+	 * @link https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'gallery',
+		'link',
+		'image',
+		'quote',
+		'status',
+		'video',
+		'audio',
+		'chat'
+	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
