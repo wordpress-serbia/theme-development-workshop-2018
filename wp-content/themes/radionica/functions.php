@@ -93,6 +93,34 @@ function radionica_setup() {
 	register_nav_menus( array(
 		'header' => esc_html__( 'Header Menu', 'radionica' )
 	) );
+
+	/**
+	 * HTML5 support
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
+	 */
+	add_theme_support( 'html5', array(
+		// 'comment-list',
+		'comment-form'
+	) );
+
+	/**
+	 * Post Formats
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-formats
+	 * @link https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'gallery',
+		'link',
+		'image',
+		'quote',
+		'status',
+		'video',
+		'audio',
+		'chat'
+	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
@@ -109,90 +137,12 @@ function radionica_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'radionica_enqueue_scripts' );
 
 /**
- * Filters the custom logo output.
- *
- * @param string $html Custom logo HTML output.
- * @return string      Returns filtered custom logo HTML output.
- */
-function radionica_get_custom_logo( $html ) {
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	/**
-	 * This one was added just to avoid
-	 * 'undefined' notice. For real project
-	 * please check all the conditionals in
-	 * function.
-	 *
-	 * @link https://developer.wordpress.org/reference/functions/get_custom_logo/
-	 */
-	$custom_logo_attr = array(
-		'class'    => 'custom-logo',
-		'itemprop' => 'logo',
-	);
-	/*
-	 * If the alt attribute is not empty, there's no need to explicitly pass
-	 * it because wp_get_attachment_image() already adds the alt attribute.
-	 */
-	$html = sprintf( '<a href="%1$s" class="custom-logo-link radionica" rel="home" itemprop="url">%2$s</a>',
-		esc_url( home_url( '/' ) ),
-		wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
-	);
-
-	return $html;
-}
-add_filter( 'get_custom_logo', 'radionica_get_custom_logo' );
-
-/**
- * Modify document title
- *
- * Change the document title appearance. This function is
- * attached to 'document_title_parts' filter hook.
- *
- * @param array $title {
- *     The document title parts. In that order.
- *
- *     @type string $title   Title of the viewed page.
- *     @type string $page    Optional. Page number if paginated.
- *     @type string $tagline Optional. Site description when on home page.
- *     @type string $site    Optional. Site title when not on home page.
- * }
- * @return array        Returns filtered document title parts
- */
-function radionica_document_title_parts( $title ) {
-	if ( is_front_page() ) :
-		$title['tagline'] = $title['title'];
-		$title['title']   = esc_html__( 'This is the home', 'radionica' );
-	elseif ( is_single() ) :
-		$title['title'] = '#' . get_the_ID() . ' ' . get_the_title( get_the_ID() );
-		$title['site']  = get_bloginfo( 'description', 'display' ) . ' / ' . $title['site'];
-	endif;
-
-	return $title;
-}
-add_filter( 'document_title_parts', 'radionica_document_title_parts' );
-
-/**
- * Document title separator
- *
- * Change the separator which will appear between
- * each document title part. This function is attached
- * to 'document_title_separator' filter hook.
- *
- * @param  string $sep Separator for document title, default '-'
- * @return string      Returns filtered separator
- */
-function radionica_document_title_separator( $sep ) {
-	if ( is_front_page() ) :
-		$sep = '//';
-	elseif ( is_single() ) :
-		$sep = '/';
-	endif;
-
-	return $sep;
-}
-add_filter( 'document_title_separator', 'radionica_document_title_separator' );
-
-/**
  * Navigation Walker
  */
 require_once get_parent_theme_file_path( '/inc/class.RadionicaNavwalker.php' );
 require_once get_parent_theme_file_path( '/inc/class-custom-walker-nav-menu.php' );
+
+/**
+ * Template functions
+ */
+require_once get_parent_theme_file_path( '/inc/template-functions.php' );
