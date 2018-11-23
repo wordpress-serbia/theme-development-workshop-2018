@@ -15,7 +15,7 @@ get_header();
 		while ( have_posts() ) : the_post();
 
 			if ( has_post_format() ) :
-				get_template_part( '/template-parts/entry', get_post_format() );
+				get_template_part( '/template-parts/format', get_post_format() );
 			else :
 				get_template_part( '/template-parts/entry', get_post_type() );
 			endif; // has_post_format()
