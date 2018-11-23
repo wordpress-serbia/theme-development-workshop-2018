@@ -34,6 +34,13 @@ Sadržaj:
   - [Walker_Nav_Menu::start_el](#walker_nav_menustart_el)
   - [Walker_Nav_Menu::end_el](#walker_nav_menuend_el)
   - [Markup prilagođenog izbornika](#markup-prilagođenog-izbornika)
+- [R-05 - Šablon pojedinačnog članka](#r-05)
+  - [Meta i autor](#meta-i-autor)
+  - [Paginacija i navigacija](#paginacija-i-navigacija)
+  - [Accessibility i klasa za čitače ekrana](#accessibility-i-klasa-za-čitače-ekrana)
+  - [Komentari](#komentari)
+  - [Formati članka](#formati-članka)
+  - [Prilagođeni šablon članka](#prilagođeni-šablon-članka)
 
 # R-01
 
@@ -250,3 +257,44 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 ```
 
 - [apply_filters( 'the_excerpt', $excerpt )](https://developer.wordpress.org/reference/functions/the_excerpt/)
+
+# R-05
+
+[Šablon pojedinačnog članka](https://developer.wordpress.org/themes/template-files-section/post-template-files/#single-php)
+
+## Meta i autor
+
+- Kategorije i tagovi - [get_the_category_list()](https://developer.wordpress.org/reference/functions/get_the_category_list/), [the_tags()](https://developer.wordpress.org/reference/functions/the_tags/)
+- Datum - [formatiranje](http://php.net/manual/en/function.date.php) i [konstante](http://php.net/manual/en/class.datetime.php)
+- Autor - [get_avatar()](https://developer.wordpress.org/reference/functions/get_avatar/), [get_the_author_meta()](https://developer.wordpress.org/reference/functions/get_the_author_meta/), [get_author_posts_url()](https://developer.wordpress.org/reference/functions/get_author_posts_url/)
+
+## Paginacija i navigacija
+
+- [wp_link_pages()](https://developer.wordpress.org/reference/functions/wp_link_pages/)
+
+## Accessibility i klasa za čitače ekrana
+
+- [screen-reader-text](https://make.wordpress.org/accessibility/handbook/markup/the-css-class-screen-reader-text/)
+
+## Komentari
+
+- [add_theme_support( 'html5' )](https://developer.wordpress.org/reference/functions/add_theme_support/#html5)
+- [comments.php](https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comments/)
+- [comments_template()](https://developer.wordpress.org/reference/functions/comments_template/)
+- [wp_list_comments()](https://developer.wordpress.org/reference/functions/wp_list_comments/)
+- [comment_form()](https://developer.wordpress.org/reference/functions/comment_form/)
+- [comment_form_fields](https://developer.wordpress.org/reference/hooks/comment_form_fields/)
+- [the_comments_navigation()](https://developer.wordpress.org/reference/functions/the_comments_navigation/)
+
+## Formati članka
+
+- [add_theme_support( 'post-formats' )](https://developer.wordpress.org/reference/functions/add_theme_support/#post-formats)
+- [Formati članka](https://developer.wordpress.org/themes/functionality/post-formats/)
+- [get_post_format()](https://developer.wordpress.org/reference/functions/get_post_format/)
+- [has_post_format()](https://developer.wordpress.org/reference/functions/has_post_format/)
+- [get_post_format_string()](https://developer.wordpress.org/reference/functions/get_post_format_string/)
+
+## Prilagođeni šablon članka
+
+- [Prilagođeni šablon članka](https://developer.wordpress.org/themes/template-files-section/page-template-files/#creating-page-templates-for-specific-post-types)
+- [@since 4.7](https://make.wordpress.org/core/2016/11/03/post-type-templates-in-4-7/)
