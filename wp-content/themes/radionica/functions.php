@@ -93,6 +93,15 @@ function radionica_setup() {
 	register_nav_menus( array(
 		'header' => esc_html__( 'Header Menu', 'radionica' )
 	) );
+	/**
+	 * HTML5 support
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
+	 */
+	add_theme_support( 'html5', array(
+		// 'comment-list',
+		'comment-form'
+	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
@@ -196,3 +205,8 @@ add_filter( 'document_title_separator', 'radionica_document_title_separator' );
  */
 require_once get_parent_theme_file_path( '/inc/class.RadionicaNavwalker.php' );
 require_once get_parent_theme_file_path( '/inc/class-custom-walker-nav-menu.php' );
+
+/**
+ * Template functions
+ */
+require_once get_parent_theme_file_path( '/inc/template-functions.php' );
