@@ -54,13 +54,17 @@ if ( ! function_exists( 'radionica_html5_comment' ) ) :
 				</div><!-- .comment-content -->
 
 				<?php
-				comment_reply_link( array(
-					'add_below' => 'div-comment',
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-					'before'    => '<div class="reply">',
-					'after'     => '</div>'
-				) );
+					/**
+					 * @todo  params should be changed to correct order in 5.1.
+					 * https://core.trac.wordpress.org/ticket/45498
+					 */
+					comment_reply_link( array_merge( $depth, array(
+						'add_below' => 'div-comment',
+						'depth'     => $args,
+						'max_depth' => $depth['max_depth'],
+						'before'    => '<div class="reply">',
+						'after'     => '</div>'
+					) ) );
 				?>
 			</article><!-- .comment-body --> <?php
 	}
