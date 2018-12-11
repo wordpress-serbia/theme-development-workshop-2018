@@ -80,14 +80,20 @@ endif; // ! function_exists( 'radionica_html5_comment' )
  */
 function radionica_comment_form_fields( $fields ) {
 	if ( get_post_type() == 'post' ) :
+		// Remove Website field.
 		unset( $fields['url'] );
+		// Unset Comment field so that Name and Email move to top.
 		$comment_field = $fields['comment'];
-		$cookies       = $fields['cookies'];
 		unset( $fields['comment'] );
-		unset( $fields['cookies'] );
 		$fields['comment'] = $comment_field;
-		$fields['cookies'] = $cookies;
-	endif;
+		// If cookies are enabled in Dashboard, do the same as with Comment field above.
+		if ( isset( $fields['cookies'] ) ) :
+			$cookies = $fields['cookies'];
+			unset( $fields['cookies'] );
+			$fields['cookies'] = $cookies;
+		endif; // isset( $fields['cookies'] )
+	endif; // get_post_type() == 'post'
+
 	return $fields;
 }
 add_filter( 'comment_form_fields', 'radionica_comment_form_fields' );

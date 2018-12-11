@@ -101,7 +101,7 @@ function radionica_setup() {
 	 */
 	add_theme_support( 'html5', array(
 		// 'comment-list',
-		'comment-form'
+		// 'comment-form'
 	) );
 
 	/**
@@ -133,6 +133,10 @@ add_action( 'after_setup_theme', 'radionica_setup' );
 function radionica_enqueue_scripts() {
 	// Main stylesheet.
 	wp_enqueue_style( 'radionica-style', get_stylesheet_uri() );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'radionica_enqueue_scripts' );
 
