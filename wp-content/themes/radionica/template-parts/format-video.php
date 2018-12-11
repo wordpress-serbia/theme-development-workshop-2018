@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry Post
+ * Entry Video Post Format
  *
  * Template part for rendering singular entry.
  *
@@ -8,7 +8,6 @@
  */
 ?>
 <article id="entry-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
-
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail( 'featured-single' ); ?>

@@ -1,8 +1,8 @@
 <?php
 /**
- * Entry Post
+ * Post Format
  *
- * Template part for rendering singular entry.
+ * Template part for rendering singular entry in any post format other than standard.
  *
  * @package WordPress
  */
@@ -16,7 +16,10 @@
 	<?php endif; // has_post_thumbnail() ?>
 
 	<header class="entry-header">
+		<?php echo get_post_format_string( get_post_format() ); ?>
+
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
 		<div class="entry-categories">
 			<?php
 				// Translators: 1. string Categories, 2. categories assigned to post
@@ -24,11 +27,6 @@
 					esc_html__( 'Categories:', 'radionica' ),
 					get_the_category_list( ', ' )
 				);
-			?>
-
-			<?php
-				// esc_html_e( 'Categories: ', 'radionica' );
-				// the_category( ', ' );
 			?>
 		</div>
 

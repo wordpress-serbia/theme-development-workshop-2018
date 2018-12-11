@@ -39,6 +39,8 @@ Sadržaj:
   - [Paginacija i navigacija](#paginacija-i-navigacija)
   - [Accessibility i klasa za čitače ekrana](#accessibility-i-klasa-za-čitače-ekrana)
   - [Komentari](#komentari)
+  - [Formati članka](#formati-članka)
+  - [Prilagođeni šablon članka](#prilagođeni-šablon-članka)
 
 # R-01
 
@@ -280,3 +282,19 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 - [comments.php](https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comments/)
 - [comments_template()](https://developer.wordpress.org/reference/functions/comments_template/)
 - [wp_list_comments()](https://developer.wordpress.org/reference/functions/wp_list_comments/)
+- [comment_form()](https://developer.wordpress.org/reference/functions/comment_form/)
+- [comment_form_fields](https://developer.wordpress.org/reference/hooks/comment_form_fields/)
+- [the_comments_navigation()](https://developer.wordpress.org/reference/functions/the_comments_navigation/)
+
+## Formati članka
+
+- [add_theme_support( 'post-formats' )](https://developer.wordpress.org/reference/functions/add_theme_support/#post-formats)
+- [Formati članka](https://developer.wordpress.org/themes/functionality/post-formats/)
+- [get_post_format()](https://developer.wordpress.org/reference/functions/get_post_format/)
+- [has_post_format()](https://developer.wordpress.org/reference/functions/has_post_format/)
+- [get_post_format_string()](https://developer.wordpress.org/reference/functions/get_post_format_string/)
+
+## Prilagođeni šablon članka
+
+- [Prilagođeni šablon članka](https://developer.wordpress.org/themes/template-files-section/page-template-files/#creating-page-templates-for-specific-post-types)
+- [@since 4.7](https://make.wordpress.org/core/2016/11/03/post-type-templates-in-4-7/)
