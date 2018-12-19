@@ -21,6 +21,12 @@
 	<header>
 		<div class="wrapper">
 			<?php
+				if ( is_active_sidebar( 'sidebar-header' ) ) : ?>
+					<aside class="widget-area widget-area-header" role="complementary">
+						<?php dynamic_sidebar( 'sidebar-header' ); ?>
+					</aside>
+				<?php endif;
+
 				if ( has_custom_logo() ) :
 					the_custom_logo();
 				else :
