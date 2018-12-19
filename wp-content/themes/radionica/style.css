@@ -58,6 +58,18 @@ footer p {
 	padding: 0 2rem;
 }
 
+@media (min-width:1024px) {
+
+	.has-sidebar main .wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.has-sidebar .widget-area {
+		flex: 1 70%;
+	}
+}
+
 /* Site identity */
 .site-title {
 	font-size: 2rem;

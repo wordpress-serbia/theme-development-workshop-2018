@@ -184,3 +184,24 @@ function radionica_document_title_separator( $sep ) {
 	return $sep;
 }
 add_filter( 'document_title_separator', 'radionica_document_title_separator' );
+
+/**
+ * Body classes
+ *
+ * Custom classes for <body> tag. This function
+ * is attached to 'body_class' filter hook. For
+ * overriding in child themes, simply remove
+ * the filter hook.
+ *
+ * @param array Existing class values.
+ * @return array Filtered class values.
+ */
+function radionica_body_class( $classes ) {
+
+	if ( is_active_sidebar( 'sidebar-main' ) && ( is_archive() || is_home() ) ) :
+		$classes[] = 'has-sidebar';
+	endif;
+
+	return $classes;
+}
+add_filter( 'body_class', 'radionica_body_class' );
