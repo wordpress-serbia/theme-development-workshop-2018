@@ -149,8 +149,18 @@ function radionica_widgets_init() {
 	// Main sidebar
 	register_sidebar( array(
 		'name'          => esc_html__( 'Main Sidebar', 'radionica' ),
-		'description'   => esc_html__( 'Visible on all posts and pages with sidebar.', 'radionica' ),
+		'description'   => esc_html__( 'Visible on all archives.', 'radionica' ),
 		'id'            => 'sidebar-main',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	// Singular sidebar
+	register_sidebar( array(
+		'name'          => esc_html__( 'Singular Sidebar', 'radionica' ),
+		'description'   => esc_html__( 'Visible on Sidebar template for posts and pages.', 'radionica' ),
+		'id'            => 'sidebar-singular',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
