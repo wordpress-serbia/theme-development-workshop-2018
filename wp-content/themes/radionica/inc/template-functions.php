@@ -206,6 +206,10 @@ function radionica_body_class( $classes ) {
 		$classes[] = 'has-sidebar';
 	endif;
 
+	if ( is_active_sidebar( 'sidebar-singular' ) && is_page_template( 'template-sidebar.php' ) ) :
+		$classes[] = 'has-sidebar';
+	endif;
+
 	return $classes;
 }
 add_filter( 'body_class', 'radionica_body_class' );
