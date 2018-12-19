@@ -9,13 +9,15 @@
  */
 get_header();
 
-	if ( have_posts() ) :
-		while ( have_posts() ) : the_post();
+	if ( have_posts() ) : ?>
+		<div class="content-area">
+			<?php while ( have_posts() ) : the_post();
 
-			get_template_part( '/template-parts/entry' );
+				get_template_part( '/template-parts/entry' );
 
-		endwhile; // have_posts()
-	endif; // have_posts()
+			endwhile; // have_posts() ?>
+		</div>
+	<?php endif; // have_posts()
 
 get_sidebar();
 
