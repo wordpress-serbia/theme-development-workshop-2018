@@ -20,6 +20,7 @@ Tags:
  * Navigation
  * Header
  * Entry
+ * Archives
  * Widget areas / Sidebars
  * Accessibility
  */
@@ -77,6 +78,16 @@ footer p {
 
 	.has-sidebar .widget-area {
 		width: 25%;
+	}
+
+	.author .archive-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+	}
+
+	.author .archive-header .avatar {
+		margin-right: 2rem;
 	}
 }
 
@@ -262,6 +273,21 @@ nav ul li:last-child {
 .entry-thumbnail img {
 	max-width: 100%;
 	height: auto;
+}
+
+/* Archives */
+.author .archive-header ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.author .archive-header li {
+	display: inline-block;
+}
+
+.author .archive-header li a {
+	display: block;
 }
 
 /* Widget areas / Sidebars */

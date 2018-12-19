@@ -198,7 +198,7 @@ add_filter( 'document_title_separator', 'radionica_document_title_separator' );
  */
 function radionica_body_class( $classes ) {
 
-	if ( is_active_sidebar( 'sidebar-main' ) && ( is_archive() || is_home() ) ) :
+	if ( is_active_sidebar( 'sidebar-main' ) && ( is_archive() || is_home() || is_search() ) ) :
 		$classes[] = 'has-sidebar';
 	endif;
 
