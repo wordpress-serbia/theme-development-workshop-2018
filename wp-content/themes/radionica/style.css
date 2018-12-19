@@ -63,11 +63,20 @@ footer p {
 
 	.has-sidebar main .wrapper {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 	}
 
+	.has-sidebar .archive-header {
+		width: 100%;
+	}
+
+	.has-sidebar .content-area {
+		width: 60%;
+	}
+
 	.has-sidebar .widget-area {
-		flex: 1 70%;
+		width: 25%;
 	}
 }
 

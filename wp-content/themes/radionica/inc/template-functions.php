@@ -209,3 +209,33 @@ function radionica_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'radionica_body_class' );
+
+/**
+ * Filters the archive description. This function is attached to
+ * 'get_the_archive_description' filter hook.
+ *
+ * @since 4.1.0
+ *
+ * @param string $description Archive description to be displayed.
+ */
+function radionica_get_the_archive_description( $description ) {
+	if ( is_year() ) :
+		$description = sprintf( esc_html__( 'Archive for %s year.', 'radionica' ),
+			get_the_date( _x( 'Y', 'yearly archives date format' ) )
+		);
+	elseif ( is_month() ) :
+		$description = sprintf( esc_html__( 'Archive for %1$s of %2$s year.', 'radionica' ),
+			get_the_date( _x( 'F', 'monthly archives date format' ) ),
+			get_the_date( _x( 'Y', 'yearly archives date format' ) )
+		);
+	elseif ( is_day() ) :
+		$description = sprintf( esc_html__( 'Posts published on %1$s of %2$s, in %3$s year.', 'radionica' ),
+			get_the_date( _x( 'jS', 'daily archives date format' ) ),
+			get_the_date( _x( 'F', 'monthly archives date format' ) ),
+			get_the_date( _x( 'Y', 'yearly archives date format' ) )
+		);
+	endif;
+
+	return $description;
+}
+add_filter( 'get_the_archive_description', 'radionica_get_the_archive_description' );
