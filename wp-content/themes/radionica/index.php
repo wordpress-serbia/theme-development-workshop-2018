@@ -12,9 +12,11 @@ get_header();
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
 
-      get_template_part( '/template-parts/entry' );
+			get_template_part( '/template-parts/entry' );
 
 		endwhile; // have_posts()
 	endif; // have_posts()
+
+get_sidebar();
 
 get_footer();
