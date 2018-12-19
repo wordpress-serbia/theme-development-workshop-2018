@@ -141,6 +141,25 @@ function radionica_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'radionica_enqueue_scripts' );
 
 /**
+ * Register sidebars and widgets
+ *
+ * This function is attached to 'widgets_init' action hook.
+ */
+function radionica_widgets_init() {
+	// Main sidebar
+	register_sidebar( array(
+		'name'          => esc_html__( 'Main Sidebar', 'radionica' ),
+		'description'   => esc_html__( 'Visible on all posts and pages with sidebar.', 'radionica' ),
+		'id'            => 'sidebar-main',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'radionica_widgets_init' );
+
+/**
  * Navigation Walker
  */
 require_once get_parent_theme_file_path( '/inc/class.RadionicaNavwalker.php' );
