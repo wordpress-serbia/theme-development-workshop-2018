@@ -166,6 +166,16 @@ function radionica_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+	// Header sidebar
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header Sidebar', 'radionica' ),
+		'description'   => esc_html__( 'Visible in header.', 'radionica' ),
+		'id'            => 'sidebar-header',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="screen-reader-text">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'radionica_widgets_init' );
 

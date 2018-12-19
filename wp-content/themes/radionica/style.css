@@ -20,6 +20,7 @@ Tags:
  * Navigation
  * Header
  * Entry
+ * Widget areas / Sidebars
  * Accessibility
  */
 
@@ -252,6 +253,21 @@ nav ul li:last-child {
 .entry-thumbnail img {
 	max-width: 100%;
 	height: auto;
+}
+
+/* Widget areas / Sidebars */
+.widget-area-header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.widget-area-header li {
+	display: inline-block;
+}
+
+.widget-area-header li a {
+	display: block;
 }
 
 /* Accessibility */
