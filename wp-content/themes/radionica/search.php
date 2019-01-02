@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive Template File
+ * Search Results Template File
  *
  * @link https://developer.wordpress.org/themes/template-files-section/post-template-files/
  * @link https://wphierarchy.com/
@@ -26,7 +26,11 @@ get_header(); ?>
 
 			endwhile; // have_posts() ?>
 		</div>
-	<?php endif; // have_posts()
+	<?php else :
+
+		esc_html_e( 'No results match your criteria.', 'radionica' );
+
+	endif; // have_posts()
 
 get_sidebar();
 
