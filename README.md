@@ -41,6 +41,7 @@ Sadržaj:
   - [Komentari](#komentari)
   - [Formati članka](#formati-članka)
   - [Prilagođeni šablon članka](#prilagođeni-šablon-članka)
+- [R-07 - Vidžeti i arhive](#r-07)
 
 # R-01
 
@@ -298,3 +299,28 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 - [Prilagođeni šablon članka](https://developer.wordpress.org/themes/template-files-section/page-template-files/#creating-page-templates-for-specific-post-types)
 - [@since 4.7](https://make.wordpress.org/core/2016/11/03/post-type-templates-in-4-7/)
+
+# R-07
+
+## Vidžeti i bočna traka
+
+- [Bočna traka](https://developer.wordpress.org/themes/functionality/sidebars/)
+- [register_sidebar()](https://developer.wordpress.org/reference/functions/register_sidebar/)
+- filter [widgets_init](https://developer.wordpress.org/reference/hooks/widgets_init/)
+- [get_sidebar()](https://developer.wordpress.org/reference/functions/get_sidebar/)
+- *sidebar.php* - [dynamic_sidebar()](https://developer.wordpress.org/reference/functions/dynamic_sidebar/), [is_active_sidebar()](https://developer.wordpress.org/reference/functions/is_active_sidebar/)
+- Ukoliko je aktivna bočna traka može se dodati klasa na `<body>`, putem filtera [body_class](https://developer.wordpress.org/reference/hooks/body_class/), kako bi se CSS-om lakše definisao layout.
+
+## Arhive
+
+- [wphierarchy.com](https://wphierarchy.com/)
+- [Hijerarhija šablona](https://developer.wordpress.org/themes/basics/template-hierarchy/)
+- *archives.php* - Odnosi se na sve arhive i preuzima od *index.php* ulogu šablona za arhive.
+- Prikaz naziva arhive [the_archive_title()](https://developer.wordpress.org/reference/functions/the_archive_title/) i filter pomoću koga se može izmeniti [get_the_archive_title](https://developer.wordpress.org/reference/hooks/get_the_archive_title/)
+- Prikaz opisa arhive [the_archive_description()](https://developer.wordpress.org/reference/functions/the_archive_description/) i filter pomoću koga se može izmeniti [get_the_archive_description](https://developer.wordpress.org/reference/hooks/get_the_archive_description/)
+- *date.php* - Odnosi se na sve arhive datuma: godina, mesec i dan; preuzima od *archives.php* ulogu šablona za arhive datuma. Dodatna klasifikacija se može dobiti upotrebom *year.php*, *month.php* i *day.php* šablona.
+- *author.php* - Odnosi se na arhive autora i preuzima od *archives.php* ulogu šablona za arhive autora. Moguća upotreba avatara, biografije, prilagođenog izbornika za veze ka društvenim mrežama i sl. [is_nav_menu()](https://developer.wordpress.org/reference/functions/is_nav_menu/)
+- *search.php* - Arhiva rezultata pretrage.
+- *searchform.php* - Posebni deo šablona koji sadrži formular za pretagu.
+- [get_search_form()](https://developer.wordpress.org/reference/functions/get_search_form/)
+- [get_search_query()](https://developer.wordpress.org/reference/functions/get_search_query/)

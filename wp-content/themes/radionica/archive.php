@@ -1,15 +1,24 @@
 <?php
 /**
- * Main Template File
+ * Archive Template File
  *
  * @link https://developer.wordpress.org/themes/template-files-section/post-template-files/
  * @link https://wphierarchy.com/
  *
  * @package WordPress
  */
-get_header();
+get_header(); ?>
 
-	if ( have_posts() ) : ?>
+ 	<header class="archive-header">
+ 		<?php
+ 			the_archive_title( '<h1 class="archive-title">', '</h1>' );
+ 			the_archive_description( '<p>', '</p>' );
+
+ 			echo get_search_form();
+ 		?>
+ 	</header>
+
+	<?php if ( have_posts() ) : ?>
 		<div class="content-area">
 			<?php while ( have_posts() ) : the_post();
 

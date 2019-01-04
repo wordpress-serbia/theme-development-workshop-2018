@@ -20,6 +20,8 @@ Tags:
  * Navigation
  * Header
  * Entry
+ * Archives
+ * Widget areas / Sidebars
  * Accessibility
  */
 
@@ -51,11 +53,42 @@ footer p {
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #fff;
-	padding: 2rem 0;
+	padding: 2rem 0 0;
 }
 
 .wrapper > * {
 	padding: 0 2rem;
+}
+
+@media (min-width:1024px) {
+
+	.has-sidebar main .wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.has-sidebar .archive-header {
+		width: 100%;
+	}
+
+	.has-sidebar .content-area {
+		width: 60%;
+	}
+
+	.has-sidebar .widget-area {
+		width: 25%;
+	}
+
+	.author .archive-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+	}
+
+	.author .archive-header .avatar {
+		margin-right: 2rem;
+	}
 }
 
 /* Site identity */
@@ -240,6 +273,36 @@ nav ul li:last-child {
 .entry-thumbnail img {
 	max-width: 100%;
 	height: auto;
+}
+
+/* Archives */
+.author .archive-header ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.author .archive-header li {
+	display: inline-block;
+}
+
+.author .archive-header li a {
+	display: block;
+}
+
+/* Widget areas / Sidebars */
+.widget-area-header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.widget-area-header li {
+	display: inline-block;
+}
+
+.widget-area-header li a {
+	display: block;
 }
 
 /* Accessibility */

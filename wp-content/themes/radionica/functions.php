@@ -121,6 +121,24 @@ function radionica_setup() {
 		'audio',
 		'chat'
 	) );
+
+	/**
+	 * Post Formats
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-formats
+	 * @link https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'gallery',
+		'link',
+		'image',
+		'quote',
+		'status',
+		'video',
+		'audio',
+		'chat'
+	) );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
@@ -139,6 +157,45 @@ function radionica_enqueue_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'radionica_enqueue_scripts' );
+
+/**
+ * Register sidebars and widgets
+ *
+ * This function is attached to 'widgets_init' action hook.
+ */
+function radionica_widgets_init() {
+	// Main sidebar
+	register_sidebar( array(
+		'name'          => esc_html__( 'Main Sidebar', 'radionica' ),
+		'description'   => esc_html__( 'Visible on all archives.', 'radionica' ),
+		'id'            => 'sidebar-main',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	// Singular sidebar
+	register_sidebar( array(
+		'name'          => esc_html__( 'Singular Sidebar', 'radionica' ),
+		'description'   => esc_html__( 'Visible on Sidebar template for posts and pages.', 'radionica' ),
+		'id'            => 'sidebar-singular',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	// Header sidebar
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header Sidebar', 'radionica' ),
+		'description'   => esc_html__( 'Visible in header.', 'radionica' ),
+		'id'            => 'sidebar-header',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="screen-reader-text">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'radionica_widgets_init' );
 
 /**
  * Navigation Walker
