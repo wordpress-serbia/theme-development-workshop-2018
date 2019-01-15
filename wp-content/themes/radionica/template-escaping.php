@@ -48,7 +48,15 @@ get_header();
 	 */
 	echo '<h3>esc_html()</h3>';
 	echo esc_html( $string );
-	echo htmlspecialchars( $string );
+	// echo htmlspecialchars( $string );
+
+	/**
+	 * esc_textarea()
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/esc_textarea/
+	 */
+	echo '<h3>esc_textarea()</h3>';
+	echo esc_textarea( $string );
 
 	/**
 	 * esc_textarea()
