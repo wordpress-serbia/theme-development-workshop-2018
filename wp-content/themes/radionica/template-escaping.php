@@ -114,6 +114,7 @@ get_header();
 	echo esc_attr( $attr );
 	echo '<div id="' . esc_attr( $attr ) . '">somediv</div>';
 
+	echo '<h2>URLs</h2>';
 	/**
 	 * esc_url()
 	 *
@@ -136,5 +137,39 @@ get_header();
 	 */
 	echo '<h3>antispambot()</h3>';
 	echo antispambot( $email );
+
+	/**
+	 * Javascript
+	 */
+	echo '<h2>Javascript</h2>';
+
+	echo '<h3>Raw</h3>';
+	$js = 'alert( window.location.href ); return false;';
+	echo $js;
+
+	/**
+	 * esc_js()
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/esc_js/
+	 */
+	echo '<h3>esc_js()</h3>';
+	echo esc_js( $js );
+	echo '<a href="javascript:;" onclick="', esc_js( $js ), '"">click me</a>';
+
+	/**
+	 * wp_json_encode()
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/wp_json_encode/
+	 */
+	echo '<h3>wp_json_encode()</h3>';
+	echo wp_json_encode( $js );
+	echo '<a href="javascript:;" onclick=', wp_json_encode( $js ), '>click me</a>';
+
+	/**
+	 * wp_json_encode() and esc_attr()
+	 */
+	echo '<h3>wp_json_encode() and esc_attr()</h3>';
+	echo wp_json_encode( esc_attr( $js ) );
+	echo '<a href="javascript:;" onclick=', wp_json_encode( esc_attr( $js ) ), '>click me</a>';
 
 get_footer();
