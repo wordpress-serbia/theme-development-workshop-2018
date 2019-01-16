@@ -114,4 +114,19 @@ get_header();
 	echo esc_attr( $attr );
 	echo '<div id="' . esc_attr( $attr ) . '">somediv</div>';
 
+	/**
+	 * esc_url()
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/esc_url/
+	 */
+	echo '<h3>esc_url()</h3>';
+	$url = 'example.com/some page';
+	echo esc_url( $url );
+
+	$url = 'https://sr.wordpress.org/news/';
+	echo esc_url( $url, array( 'https' ) );
+
+	$email = 'email@example.com';
+	echo esc_url( $email );
+
 get_footer();
