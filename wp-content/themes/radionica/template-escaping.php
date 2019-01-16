@@ -94,4 +94,24 @@ get_header();
 	echo '<h3>the_excerpt filter</h3>';
 	echo apply_filters( 'the_excerpt', $string );
 
+	/**
+	 * Attributes
+	 */
+	echo '<h2>Attributes</h2>';
+
+	$attr = '<div class="someclass">somediv<br>another &quot;row&quot;</div>';
+
+	echo '<h3>Raw</h3>';
+	echo $attr;
+	// echo '<div id="' . $attr . '">somediv</div>';
+
+	/**
+	 * esc_attr()
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/esc_attr/
+	 */
+	echo '<h3>esc_attr()</h3>';
+	echo esc_attr( $attr );
+	echo '<div id="' . esc_attr( $attr ) . '">somediv</div>';
+
 get_footer();
