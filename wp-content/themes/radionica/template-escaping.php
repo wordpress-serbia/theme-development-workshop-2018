@@ -129,4 +129,12 @@ get_header();
 	$email = 'email@example.com';
 	echo esc_url( $email );
 
+	/**
+	 * antispambot()
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/antispambot/
+	 */
+	echo '<h3>antispambot()</h3>';
+	echo antispambot( $email );
+
 get_footer();
