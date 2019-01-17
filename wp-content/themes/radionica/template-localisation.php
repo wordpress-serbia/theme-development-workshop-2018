@@ -15,4 +15,32 @@ get_header();
 		endwhile; // have_posts()
 	endif; // have_posts()
 
+	echo '<h2>' . esc_html__( 'Basic strings', 'radionica' ) . '</h2>';
+
+	/**
+	 * __() & _e()
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/__/
+	 * @link https://developer.wordpress.org/reference/functions/_e/
+	 * @link https://developer.wordpress.org/reference/functions/esc_html__/
+	 * @link https://developer.wordpress.org/reference/functions/esc_html_e/
+	 * @link https://developer.wordpress.org/reference/functions/esc_attr__/
+	 * @link https://developer.wordpress.org/reference/functions/esc_attr_e/
+	 */
+	echo '<h3>__() and _e()</h3>';
+
+	echo __( 'Basic string', 'radionica' );
+	// Above is the same as:
+	_e( 'Basic string', 'radionica' );
+
+	echo '<h4>Escaped for HTML</h4>';
+	echo esc_html__( 'Basic string', 'radionica' );
+	// Above is the same as:
+	esc_html_e( 'Basic string', 'radionica' );
+
+	echo '<h4>Escaped for attribute</h4>';
+	echo esc_attr__( 'Basic string', 'radionica' );
+	// Above is the same as:
+	esc_attr_e( 'Basic string', 'radionica' );
+
 get_footer();
