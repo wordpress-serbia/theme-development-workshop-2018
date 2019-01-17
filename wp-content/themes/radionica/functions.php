@@ -155,7 +155,26 @@ function radionica_enqueue_scripts() {
 		// For the sake of working with some js settings.
 		wp_enqueue_style( 'roundslider', 'https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css' );
 		wp_enqueue_script( 'roundslider', 'https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js', array( 'jquery' ), '1.3.2', true );
-		wp_enqueue_script( 'radionica', get_theme_file_uri( '/js/radionica.js' ), array(), time(), true );
+		wp_enqueue_script( 'radionica-js', get_theme_file_uri( '/js/radionica.js' ), array(), time(), true );
+
+		/**
+		 * Register a global variable to be used in js files.
+		 *
+		 * @link https://developer.wordpress.org/reference/functions/wp_localize_script/
+		 */
+		wp_localize_script( 'radionica-js', 'radionica', array(
+			'showTooltip'  => true,
+			'tooltipValue' => 70,
+			'circleShape'  => 'half-top'
+		));
+
+		wp_localize_script( 'radionica-js', 'radionica2', array(
+			'roundslider' => array(
+				'showTooltip'  => true,
+				'tooltipValue' => 70,
+				'circleShape'  => 'half-top'
+			)
+		));
 	endif;
 
 	// Main stylesheet.
