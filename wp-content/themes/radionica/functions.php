@@ -149,6 +149,15 @@ add_action( 'after_setup_theme', 'radionica_setup' );
  * 'wp_enqueue_scripts' action hook.
  */
 function radionica_enqueue_scripts() {
+
+	if ( is_page_template( 'template-escaping.php' ) ) :
+		// https://roundsliderui.com/
+		// For the sake of working with some js settings.
+		wp_enqueue_style( 'roundslider', 'https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css' );
+		wp_enqueue_script( 'roundslider', 'https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js', array( 'jquery' ), '1.3.2', true );
+		wp_enqueue_script( 'radionica', get_theme_file_uri( '/js/radionica.js' ), array(), time(), true );
+	endif;
+
 	// Main stylesheet.
 	wp_enqueue_style( 'radionica-style', get_stylesheet_uri() );
 
