@@ -24,8 +24,6 @@ get_header();
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/__/
 	 * @link https://developer.wordpress.org/reference/functions/_e/
-	 * @link https://developer.wordpress.org/reference/functions/esc_attr__/
-	 * @link https://developer.wordpress.org/reference/functions/esc_attr_e/
 	 */
 	echo '<h3>__() and _e()</h3>';
 	echo __( 'Basic string', 'radionica' );
@@ -55,7 +53,6 @@ get_header();
 	// Above is the same as:
 	esc_html_e( 'Basic <strong>string</strong>', 'radionica' );
 
-
 	echo '<h4>Examples</h4>';
 	echo '<p>' . esc_html__( 'We are acquainted with the wormhole phenomenon, but this... Is a remarkable piece of bio-electronic engineering by which I see much of the EM spectrum ranging from heat and infrared through radio waves, et cetera, and forgive me if I have said and listened to this a thousand times.', 'radionica' ) . '</p>';
 	// or
@@ -71,6 +68,7 @@ get_header();
 	 * @link https://developer.wordpress.org/reference/functions/esc_attr_e/
 	 */
 	echo '<h3>esc_attr__() and esc_attr_e()</h3>';
+
 	echo esc_attr__( 'Basic string', 'radionica' );
 	// Above is the same as:
 	esc_attr_e( 'Basic string', 'radionica' );
@@ -126,7 +124,7 @@ get_header();
 	/**
 	 * _n() & _nx()
 	 *
-	 * Context.
+	 * Singular and plural.
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/_n/
 	 * @link https://developer.wordpress.org/reference/functions/_nx/
@@ -136,6 +134,7 @@ get_header();
 	$number = 1;
 	echo _n( 'Only one', 'More than one', $number, 'radionica' );
 
+	// See also: https://en.wikipedia.org/wiki/Yoda_conditions
 	if ( 1 === $number ) :
 		echo 'Only one';
 	elseif ( 1 < $number ) :
@@ -148,6 +147,8 @@ get_header();
 	 * number_format_i18n()
 	 *
 	 * Number format.
+	 *
+	 * @global WP_Locale $wp_locale
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/number_format_i18n/
 	 */
@@ -190,7 +191,6 @@ get_header();
 		get_the_title()
 	);
 
-
 	/**
 	 * date_i18n()
 	 *
@@ -223,7 +223,8 @@ get_header();
 
 	echo '</div>';
 
-
 	if ( comments_open() || get_comments_number() ) :
 		comments_template();
 	endif;
+
+get_footer();
