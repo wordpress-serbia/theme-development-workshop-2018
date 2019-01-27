@@ -16,6 +16,13 @@
  */
 function radionica_setup() {
 	/**
+	 * Enable localisation of the theme.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
+	 */
+	load_theme_textdomain( 'radionica' );
+
+	/**
 	 * Custom Logo
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
@@ -162,16 +169,17 @@ function radionica_enqueue_scripts() {
 		 *
 		 * @link https://developer.wordpress.org/reference/functions/wp_localize_script/
 		 */
+		// Returns all values as strings.
 		wp_localize_script( 'radionica-js', 'radionica', array(
 			'showTooltip'  => true,
 			'tooltipValue' => 70,
 			'circleShape'  => 'half-top'
 		));
-
+		// Keep the type of the value.
 		wp_localize_script( 'radionica-js', 'radionica2', array(
 			'roundslider' => array(
 				'showTooltip'  => true,
-				'tooltipValue' => 70,
+				'tooltipValue' => 20,
 				'circleShape'  => 'half-top'
 			)
 		));
@@ -235,3 +243,4 @@ require_once get_parent_theme_file_path( '/inc/class-custom-walker-nav-menu.php'
  * Template functions
  */
 require_once get_parent_theme_file_path( '/inc/template-functions.php' );
+

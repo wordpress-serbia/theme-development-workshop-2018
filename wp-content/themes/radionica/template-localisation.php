@@ -43,4 +43,10 @@ get_header();
 	// Above is the same as:
 	esc_attr_e( 'Basic string', 'radionica' );
 
+	// post object
+	_x( 'Post', 'noun, appears in dashboard', 'radionica' );
+	// to post comment
+	echo _x( 'Post', 'verb, to submit comment', 'radionica' );
+	_ex( 'Post', 'verb, to submit comment', 'radionica' );
+
 get_footer();

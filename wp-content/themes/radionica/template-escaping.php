@@ -21,7 +21,7 @@ get_header();
 		<head>
 			<link rel="profile" href="http://gmpg.org/xfn/11">
 		</head>
-		[gallery link="file" size="medium" ids="113,59"]
+		[gallery ids="7,6"]
 		<div class="custom-string-class">
 			<p>This is the custom string paragraph with a <a href="https://sr.wordpress.org/news/" rel="bookmark">link</a>, a <span>span</span>, <strong>bold</strong> and <em>italic</em> text, wrapped in <code>&lt;div&gt;</code>.</p>
 			<ul>
@@ -48,7 +48,7 @@ get_header();
 	 */
 	echo '<h3>esc_html()</h3>';
 	echo esc_html( $string );
-	// echo htmlspecialchars( $string );
+	echo htmlspecialchars( $string );
 
 	/**
 	 * esc_textarea()
@@ -98,7 +98,6 @@ get_header();
 	 * Attributes
 	 */
 	echo '<h2>Attributes</h2>';
-
 	$attr = '<div class="someclass">somediv<br>another &quot;row&quot;</div>';
 
 	echo '<h3>Raw</h3>';
@@ -127,8 +126,20 @@ get_header();
 	$url = 'https://sr.wordpress.org/news/';
 	echo esc_url( $url, array( 'https' ) );
 
-	$email = 'email@example.com';
-	echo esc_url( $email );
+	$email = 'mailto:email@example.com';
+	echo esc_url( $email, array( 'mailto' ) );
+
+	echo '<a href="', esc_url( $email ), '">email</a>';
+
+	/**
+	 * Examples with image and link
+	 */
+	$src   = get_the_post_thumbnail_url( get_the_ID(), 'medium' );
+	$image = '<img src="' . esc_url( $src ) . '" alt="' . esc_attr__( 'Featured image for the post', 'radionica' ) . '">';
+	$download_link = '<a href="' . esc_url( $src ) . '" title="' . esc_attr__( 'Download image', 'radionica' ) . '" download target="_blank" rel="noopener">' . esc_html__( 'Download image', 'radionica' ) . '</a>';
+
+	echo $image;
+	echo $download_link;
 
 	/**
 	 * antispambot()
@@ -136,13 +147,13 @@ get_header();
 	 * @link https://developer.wordpress.org/reference/functions/antispambot/
 	 */
 	echo '<h3>antispambot()</h3>';
+	$email = 'email@example.com';
 	echo antispambot( $email );
 
 	/**
 	 * Javascript
 	 */
 	echo '<h2>Javascript</h2>';
-
 	echo '<h3>Raw</h3>';
 	$js = 'alert( window.location.href ); return false;';
 	echo $js;
@@ -154,7 +165,7 @@ get_header();
 	 */
 	echo '<h3>esc_js()</h3>';
 	echo esc_js( $js );
-	echo '<a href="javascript:;" onclick="', esc_js( $js ), '"">click me</a>';
+	echo '<a role="button" onclick="', esc_js( $js ), '"">click me</a>';
 
 	/**
 	 * wp_json_encode()
