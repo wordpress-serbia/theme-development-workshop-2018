@@ -44,8 +44,15 @@ Sadržaj:
 - [R-07 - Vidžeti i arhive](#r-07)
   - [Vidžeti i bočna traka](#vidžeti-i-bočna-traka)
   - [Arhive](#arhive)
+- [R-08 - Escaping](#r-08)
+  - [HTML](#html)
+  - [Atributi](#atributi)
+  - [URL](#url)
+  - [Javascript](#javascript)
 
 # R-01
+
+[Članak](https://sr.wordpress.org/2018/09/18/)
 
 ## Child tema za Twentyseventeen temu
 
@@ -94,6 +101,8 @@ Izvor: [New Functions, Hooks, and Behaviour for Theme Developers in WordPress 4.
 
 # R-02
 
+[Članak](https://sr.wordpress.org/2018/10/01/)
+
 ## Samostalna tema - "Radionica"
 
 Minimum za instaliranje bez grešaka:
@@ -134,6 +143,8 @@ Lista kondicionala: [Conditional Tags Index](https://developer.wordpress.org/the
 Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staze: [Harry Roberts - cssguidelin.es](https://cssguidelin.es/)
 
 # R-03
+
+[Članak](https://sr.wordpress.org/2018/10/07/)
 
 [add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)
 
@@ -185,6 +196,8 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 - [wp_nav_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/)
 
 # R-04
+
+[Članak](https://sr.wordpress.org/2018/10/23/)
 
 - [Walker_Nav_Menu](https://developer.wordpress.org/reference/classes/walker_nav_menu/)
 
@@ -263,6 +276,9 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 # R-05
 
+[Članak](https://sr.wordpress.org/2018/11/27/)
+[Članak](https://sr.wordpress.org/2018/12/11/)
+
 [Šablon pojedinačnog članka](https://developer.wordpress.org/themes/template-files-section/post-template-files/#single-php)
 
 ## Meta i autor
@@ -304,6 +320,8 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 # R-07
 
+[Članak](https://sr.wordpress.org/2019/01/04/)
+
 ## Vidžeti i bočna traka
 
 - [Bočna traka](https://developer.wordpress.org/themes/functionality/sidebars/)
@@ -326,3 +344,26 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 - **searchform.php** - Posebni deo šablona koji sadrži formular za pretagu.
 - [get_search_form()](https://developer.wordpress.org/reference/functions/get_search_form/)
 - [get_search_query()](https://developer.wordpress.org/reference/functions/get_search_query/)
+
+# R-08
+
+## HTML
+
+- [esc_html()](https://developer.wordpress.org/reference/functions/esc_html/), [esc_textarea()](https://developer.wordpress.org/reference/functions/esc_textarea/) - ne "izvrši" HTML već ga konvertuje u "običan" tekst i proverava važeće i nevažeće UTF8 karaktere. Pogledati [htmlspecialchars()](http://php.net/manual/en/function.htmlspecialchars.php)
+- [wp_kses_post()](https://developer.wordpress.org/reference/functions/wp_kses_post/), [wp_kses()](https://developer.wordpress.org/reference/functions/wp_kses/) - stripuje nedozvoljene HTML tagove ali ostavi njihov sadržaj, ne izvršava kratke kodove (shortcodes).
+- Filteri [the_content](https://developer.wordpress.org/reference/functions/the_content/) i [the_excerpt](https://developer.wordpress.org/reference/functions/the_excerpt/) - filtriraju sadržaj i pripremaju ga za `content`, odnosno `excerpt`. Filter za excerpt vraća sadržaj jednako filtriran kao sa `wp_kses_post()`, dok filter za `content` podržava i kratke kodove.
+
+## Atributi
+
+- [esc_attr()](https://developer.wordpress.org/reference/functions/esc_attr/) - potpuno isto kao i `esc_html()` - ne "izvrši" HTML već ga konvertuje u "običan" tekst i proverava važeće i nevažeće UTF8 karaktere.
+
+## URL
+
+- [esc_url()](https://developer.wordpress.org/reference/functions/esc_url/) - ukoliko nije definisan protokol dodaje `http://` na početak bilo kog stringa. Ukoliko je definisan protokol, vratiće samo validan URL sa datim protokolom. Pogledati [wp_allowed_protocols()](https://developer.wordpress.org/reference/functions/wp_allowed_protocols/).
+- [antispambot()](https://developer.wordpress.org/reference/functions/antispambot/) - konvertuje email adresu u HTML entitete.
+
+## Javascript
+
+- [esc_js()](https://developer.wordpress.org/reference/functions/esc_js/) - Preporučuje se izbegavanje inline Javascript-a ali ako je baš neophodno, preporučuje se upotreba [wp_json_encode()](https://developer.wordpress.org/reference/functions/wp_json_encode/) u kombinaciji sa [esc_attr()](https://developer.wordpress.org/reference/functions/esc_attr/) umesto `esc_js()`.
+- [wp_localize_script()](https://developer.wordpress.org/reference/functions/wp_localize_script/) - inicijalna upotreba je lokalizacija teksta u Javascript datotekama, međutim mnogo češće se upotrebljava za prosleđivanje različitih vrednosti iz PHP-a u Javascript.
+
