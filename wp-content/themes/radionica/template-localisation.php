@@ -256,6 +256,8 @@ get_header();
 	 *
 	 * Number format.
 	 *
+	 * @global WP_Locale $wp_locale
+	 *
 	 * @link https://developer.wordpress.org/reference/functions/number_format_i18n/
 	 */
 	echo '<h3>number_format_i18n()</h3>';
@@ -297,6 +299,40 @@ get_header();
 		),
 		number_format_i18n( $comments_number ),
 		get_the_title()
+	);
+
+	/**
+	 * date_i18n()
+	 *
+	 * Date and time format.
+	 *
+	 * @global WP_Locale $wp_locale
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/date_i18n/
+	 */
+	echo '<h3>date_i18n()</h3>';
+
+	echo date_i18n( get_option( 'date_format' ), current_time( 'timestamp' ) );
+	echo date_i18n( get_option( 'time_format' ), current_time( 'timestamp' ) );
+
+	echo '<h4>Examples</h4>';
+
+	$published_date = get_the_date( DATE_W3C );
+	$date = date_i18n( get_option( 'date_format' ), strtotime( $published_date ) );
+	$time = date_i18n( get_option( 'time_format' ), strtotime( $published_date ) );
+
+	echo 'Published on: ' . $date . ' at ' . $time;
+
+	// or
+	printf(
+		// Translators: 1. Published date, 2. Published time
+		esc_html_x(
+			'Published on: %1$s at %2$s',
+			'Page publish date',
+			'radionica'
+		),
+		date_i18n( get_option( 'date_format' ), strtotime( get_the_date( DATE_W3C ) ) ),
+		date_i18n( get_option( 'time_format' ), strtotime( get_the_date( DATE_W3C ) ) )
 	);
 
 get_footer();
