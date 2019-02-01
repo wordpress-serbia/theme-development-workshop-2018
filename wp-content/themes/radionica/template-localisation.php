@@ -227,4 +227,27 @@ get_header();
 		comments_template();
 	endif;
 
+	/**
+	 * _n() & _nx()
+	 *
+	 * Context.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/_n/
+	 * @link https://developer.wordpress.org/reference/functions/_nx/
+	 */
+	echo '<h3>_n() and _nx()</h3>';
+
+	// string $single, string $plural, int $number, string $domain
+	$number = 4;
+	echo _n( 'Only one', 'More than one', $number, 'radionica' );
+
+	if ( 1 === $number ) :
+		echo 'Only one';
+	elseif ( 1 < $number ) :
+		echo 'More than one';
+	endif;
+
+	// string $single, string $plural, int $number, string $context, string $domain
+	echo _nx( 'Only one', 'More than one', $number, 'How many items', 'radionica' );
+
 get_footer();
