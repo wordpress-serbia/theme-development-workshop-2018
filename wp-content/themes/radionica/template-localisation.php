@@ -230,7 +230,7 @@ get_header();
 	/**
 	 * _n() & _nx()
 	 *
-	 * Context.
+	 * Singular and plural.
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/_n/
 	 * @link https://developer.wordpress.org/reference/functions/_nx/
@@ -241,6 +241,7 @@ get_header();
 	$number = 4;
 	echo _n( 'Only one', 'More than one', $number, 'radionica' );
 
+	// See also: https://en.wikipedia.org/wiki/Yoda_conditions
 	if ( 1 === $number ) :
 		echo 'Only one';
 	elseif ( 1 < $number ) :
@@ -249,5 +250,53 @@ get_header();
 
 	// string $single, string $plural, int $number, string $context, string $domain
 	echo _nx( 'Only one', 'More than one', $number, 'How many items', 'radionica' );
+
+	/**
+	 * number_format_i18n()
+	 *
+	 * Number format.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/number_format_i18n/
+	 */
+	echo '<h3>number_format_i18n()</h3>';
+
+	$another_number = 1024.58;
+
+	printf(
+		_n(
+			'%s item',
+			'%s items',
+			$another_number,
+			'radionica'
+		),
+		number_format_i18n( $another_number, 2 )
+	);
+
+	echo sprintf(
+		_nx(
+			'%s item',
+			'%s items',
+			$another_number,
+			'Number of items',
+			'radionica'
+		),
+		number_format_i18n( $another_number, 2 )
+	);
+
+	echo '<h4>Examples</h4>';
+
+	$comments_number = get_comments_number();
+	printf(
+		/* translators: 1: number of comments, 2: post title */
+		_nx(
+			'%1$s Reply to &ldquo;%2$s&rdquo;',
+			'%1$s Replies to &ldquo;%2$s&rdquo;',
+			$comments_number,
+			'comments title',
+			'radionica'
+		),
+		number_format_i18n( $comments_number ),
+		get_the_title()
+	);
 
 get_footer();
