@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Radionica\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-02 12:13+0000\n"
+"POT-Creation-Date: 2019-02-10 16:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -141,11 +141,11 @@ msgstr ""
 msgid "Featured image for the post"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:111
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:235
 msgid "Header Sidebar"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgstr ""
 msgid "Localisation"
 msgstr ""
 
-#: functions.php:205
+#: functions.php:215
 msgid "Main Sidebar"
 msgstr ""
 
@@ -262,7 +262,7 @@ msgstr ""
 msgid "Single Custom Template"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:225
 msgid "Singular Sidebar"
 msgstr ""
 
@@ -318,15 +318,15 @@ msgctxt "verb: make reservation, booking"
 msgid "Book"
 msgstr ""
 
-#: functions.php:226
+#: functions.php:236
 msgid "Visible in header."
 msgstr ""
 
-#: functions.php:206
+#: functions.php:216
 msgid "Visible on all archives."
 msgstr ""
 
-#: functions.php:216
+#: functions.php:226
 msgid "Visible on Sidebar template for posts and pages."
 msgstr ""
 
