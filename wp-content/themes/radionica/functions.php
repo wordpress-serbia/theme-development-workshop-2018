@@ -15,12 +15,22 @@
  * @link https://developer.wordpress.org/reference/functions/add_theme_support/
  */
 function radionica_setup() {
+
 	/**
 	 * Enable localisation of the theme.
 	 *
+	 * File .mo must be called only by locale and to be placed in theme root. If it's
+	 * placed in another folder this folder must be specified in
+	 * 'load_theme_textdomain'
+	 *
+	 * <code>
+	 * load_theme_textdomain( 'radionica', get_theme_file_path( '/languages' ) );
+	 * </code>
+	 *
 	 * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
 	 */
-	load_theme_textdomain( 'radionica' );
+	// load_theme_textdomain( 'radionica' );
+	load_theme_textdomain( 'radionica', get_theme_file_path( '/languages' ) );
 
 	/**
 	 * Custom Logo
