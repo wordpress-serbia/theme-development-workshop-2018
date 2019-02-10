@@ -1,0 +1,345 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Radionica\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-10 16:23+0000\n"
+"PO-Revision-Date: 2019-02-10 16:25+0000\n"
+"Last-Translator: Milana Cap <milanazzap@gmail.com>\n"
+"Language-Team: Serbian\n"
+"Language: sr_RS\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.0; wp-5.0.3"
+
+#. 1. string Categories, 2. categories assigned to post
+#: template-parts/entry-post.php:23 template-parts/format.php:26
+#: template-parts/format-video.php:22
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#. 1. string Published on, 2. day archive link, 3. published date in DATE_W3C format, 4. published date in dahsboard defined format
+#: template-parts/entry-post.php:39 template-parts/format.php:37
+#: template-parts/format-video.php:38
+#, php-format
+msgid ""
+"%1$s <a href=\"%2$s\"><time class=\"entry-date published updated\" "
+"datetime=\"%3$s\">%4$s</time></a>"
+msgstr ""
+
+#. Author archive title. 1: Author name
+#: inc/template-functions.php:228
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: template-localisation.php:159
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: template-sidebar.php:32 single.php:28
+msgid "%title &rarr;"
+msgstr ""
+
+#: footer.php:17
+#, php-format
+msgid "&copy; %s"
+msgstr ""
+
+#: template-sidebar.php:31 single.php:27
+msgid "&larr; %title"
+msgstr ""
+
+#: comments.php:58
+msgid "&larr; Previous"
+msgstr ""
+
+#. 1. published date in DATE_W3C format, 2. published date in F jS format
+#: date.php:28
+#, php-format
+msgid ""
+"<time class=\"entry-date published updated\" datetime=\"%1$s\">%2$s</time>"
+msgstr ""
+
+#: inc/template-functions.php:260
+#, php-format
+msgid "Archive for %1$s of %2$s year."
+msgstr ""
+
+#: inc/template-functions.php:256
+#, php-format
+msgid "Archive for %s year."
+msgstr ""
+
+#: template-parts/entry-post.php:61 template-parts/format.php:59
+#: template-parts/format-video.php:60
+msgid "Author"
+msgstr ""
+
+#. Above is the same as:
+#: template-localisation.php:33 template-localisation.php:56
+msgid "Basic <strong>string</strong>"
+msgstr ""
+
+#. Above is the same as:
+#: template-localisation.php:31 template-localisation.php:54
+#: template-localisation.php:74 template-localisation.php:76
+msgid "Basic string"
+msgstr ""
+
+#: template-localisation.php:20
+msgid "Basic strings"
+msgstr ""
+
+#: template-localisation.php:122
+msgid "Book your holiday now!"
+msgstr ""
+
+#: template-parts/entry-post.php:24 template-parts/format.php:27
+#: template-parts/format-video.php:23
+msgid "Categories:"
+msgstr ""
+
+#: comments.php:65
+msgid "Comments are closed."
+msgstr ""
+
+#. 1: number of comments, 2: post title
+#: template-localisation.php:182
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to %2$s"
+msgid_plural "%1$s Replies to %2$s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. 1: number of comments, 2: post title
+#: comments.php:33
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: template-escaping.php:139
+msgid "Download image"
+msgstr ""
+
+#. Name of the template
+msgid "Escaping"
+msgstr ""
+
+#: template-escaping.php:138
+msgid "Featured image for the post"
+msgstr ""
+
+#: functions.php:111
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:235
+msgid "Header Sidebar"
+msgstr ""
+
+#: template-localisation.php:146
+msgctxt "How many items"
+msgid "Only one"
+msgid_plural "More than one"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. Author URI of the theme
+msgid "https://github.com/wordpress-serbia/"
+msgstr ""
+
+#. URI of the theme
+msgid "https://github.com/wordpress-serbia/theme-development-workshop-2018"
+msgstr ""
+
+#: searchform.php:15
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#. Name of the template
+msgid "Localisation"
+msgstr ""
+
+#: functions.php:215
+msgid "Main Sidebar"
+msgstr ""
+
+#: comments.php:59
+msgid "Next &rarr;"
+msgstr ""
+
+#: search.php:31
+msgid "No results match your criteria."
+msgstr ""
+
+#. post object
+#: template-localisation.php:100
+msgctxt "noun, appears in dashboard"
+msgid "Post"
+msgstr ""
+
+#: template-localisation.php:117
+msgctxt "noun: book post type"
+msgid "Book: "
+msgstr "Књига:"
+
+#: template-localisation.php:168
+#, php-format
+msgctxt "Number of items"
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: template-localisation.php:137
+msgid "Only one"
+msgid_plural "More than one"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. 1. Published date, 2. Published time
+#: template-localisation.php:215
+#, php-format
+msgctxt "Page publish date"
+msgid "Published on: %1$s at %2$s"
+msgstr ""
+
+#: template-parts/entry-post.php:53 template-parts/format.php:51
+#: template-parts/format-video.php:52
+msgid "Pages:"
+msgstr ""
+
+#: searchform.php:17
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: template-sidebar.php:35 single.php:31
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-functions.php:265
+#, php-format
+msgid "Posts published on %1$s of %2$s, in %3$s year."
+msgstr ""
+
+#: template-parts/entry-post.php:40 template-parts/format.php:38
+#: template-parts/format-video.php:39
+msgid "Published on"
+msgstr ""
+
+#. Name of the theme
+msgid "Radionica"
+msgstr ""
+
+#: inc/template-functions.php:237
+msgid "Search results"
+msgstr ""
+
+#: inc/template-functions.php:233
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#. Name of the template
+msgid "Sidebar Template"
+msgstr ""
+
+#. Name of the template
+msgid "Single Custom Template"
+msgstr ""
+
+#: functions.php:225
+msgid "Singular Sidebar"
+msgstr ""
+
+#: searchform.php:18
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: template-parts/entry-post.php:35 template-parts/format.php:33
+#: template-parts/format-video.php:34
+msgid "Tags: "
+msgstr ""
+
+#. Description of the theme
+#. Author of the theme
+msgid "Theme Development Workshop"
+msgstr ""
+
+#: comments.php:60
+msgid "This is bottom comment navigation"
+msgstr ""
+
+#: inc/template-functions.php:157
+msgid "This is the home"
+msgstr ""
+
+#: template-localisation.php:80 template-localisation.php:87
+msgid "This is the link"
+msgstr ""
+
+#: template-localisation.php:79 template-localisation.php:86
+msgid "This is title attribute for the link."
+msgstr ""
+
+#. Single
+#: template-localisation.php:40 template-localisation.php:44
+msgid "This text contains \"double\" quote."
+msgstr ""
+
+#. Double
+#: template-localisation.php:41 template-localisation.php:43
+msgid "This text contains 'single' quote."
+msgstr ""
+
+#. Above is the same as:
+#: template-localisation.php:102 template-localisation.php:104
+msgctxt "verb, to submit comment"
+msgid "Post"
+msgstr ""
+
+#: template-localisation.php:123
+msgctxt "verb: make reservation, booking"
+msgid "Book"
+msgstr "Резервиши"
+
+#: functions.php:236
+msgid "Visible in header."
+msgstr ""
+
+#: functions.php:216
+msgid "Visible on all archives."
+msgstr ""
+
+#: functions.php:226
+msgid "Visible on Sidebar template for posts and pages."
+msgstr ""
+
+#: template-localisation.php:60 template-localisation.php:63
+msgid ""
+"We are acquainted with the wormhole phenomenon, but this... Is a remarkable "
+"piece of bio-electronic engineering by which I see much of the EM spectrum "
+"ranging from heat and infrared through radio waves, et cetera, and forgive "
+"me if I have said and listened to this a thousand times."
+msgstr ""

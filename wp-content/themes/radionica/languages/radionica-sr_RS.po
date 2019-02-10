@@ -1,0 +1,329 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Radionica 1.0.0\n"
+"POT-Creation-Date: 2019-02-01 18:38+0100\n"
+"PO-Revision-Date: 2019-02-01 18:56+0100\n"
+"Language-Team: Milana Cap\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Last-Translator: \n"
+"Language: sr\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comments.php:34 template-localisation.php:201
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: comments.php:58
+msgid "&larr; Previous"
+msgstr ""
+
+#: comments.php:59
+msgid "Next &rarr;"
+msgstr ""
+
+#: comments.php:60
+msgid "This is bottom comment navigation"
+msgstr ""
+
+#: comments.php:65
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:72
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: date.php:28
+#, php-format
+msgid ""
+"<time class=\"entry-date published updated\" datetime=\"%1$s\">%2$s</time>"
+msgstr ""
+
+#: footer.php:17
+#, php-format
+msgid "&copy; %s"
+msgstr ""
+
+#: functions.php:101
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:205
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:206
+msgid "Visible on all archives."
+msgstr ""
+
+#: functions.php:215
+msgid "Singular Sidebar"
+msgstr ""
+
+#: functions.php:216
+msgid "Visible on Sidebar template for posts and pages."
+msgstr ""
+
+#: functions.php:225
+msgid "Header Sidebar"
+msgstr ""
+
+#: functions.php:226
+msgid "Visible in header."
+msgstr ""
+
+#: inc/template-functions.php:29
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: inc/template-functions.php:40
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-functions.php:44
+msgid "Edit"
+msgstr ""
+
+#: inc/template-functions.php:48
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-functions.php:157
+msgid "This is the home"
+msgstr ""
+
+#: inc/template-functions.php:228
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: inc/template-functions.php:233
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: inc/template-functions.php:237
+msgid "Search results"
+msgstr ""
+
+#: inc/template-functions.php:256
+#, php-format
+msgid "Archive for %s year."
+msgstr ""
+
+#: inc/template-functions.php:257 inc/template-functions.php:262
+#: inc/template-functions.php:268
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-functions.php:260
+#, php-format
+msgid "Archive for %1$s of %2$s year."
+msgstr ""
+
+#: inc/template-functions.php:261 inc/template-functions.php:267
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: inc/template-functions.php:265
+#, php-format
+msgid "Posts published on %1$s of %2$s, in %3$s year."
+msgstr ""
+
+#: inc/template-functions.php:266
+msgctxt "daily archives date format"
+msgid "jS"
+msgstr ""
+
+#: search.php:31
+msgid "No results match your criteria."
+msgstr ""
+
+#: searchform.php:15
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:17
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:18
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: single.php:27 template-sidebar.php:31
+msgid "&larr; %title"
+msgstr ""
+
+#: single.php:28 template-sidebar.php:32
+msgid "%title &rarr;"
+msgstr ""
+
+#: single.php:31 template-sidebar.php:35
+msgid "Post navigation"
+msgstr ""
+
+#: template-escaping.php:138
+msgid "Featured image for the post"
+msgstr ""
+
+#: template-escaping.php:139
+msgid "Download image"
+msgstr ""
+
+#: template-localisation.php:18
+msgid "Basic strings"
+msgstr ""
+
+#: template-localisation.php:30 template-localisation.php:32
+#: template-localisation.php:56 template-localisation.php:58
+#: template-localisation.php:77 template-localisation.php:79
+msgid "Basic string"
+msgstr ""
+
+#: template-localisation.php:40 template-localisation.php:45
+msgid "This text contains \"double\" quote."
+msgstr ""
+
+#: template-localisation.php:41 template-localisation.php:44
+msgid "This text contains 'single' quote."
+msgstr ""
+
+#: template-localisation.php:62 template-localisation.php:65
+msgid ""
+"We are acquainted with the wormhole phenomenon, but this... Is a remarkable "
+"piece of bio-electronic engineering by which I see much of the EM spectrum "
+"ranging from heat and infrared through radio waves, et cetera, and forgive "
+"me if I have said and listened to this a thousand times."
+msgstr ""
+
+#: template-localisation.php:83 template-localisation.php:90
+msgid "This is title attribute for the link."
+msgstr ""
+
+#: template-localisation.php:84 template-localisation.php:91
+msgid "This is the link"
+msgstr ""
+
+#: template-localisation.php:105
+msgctxt "noun, appears in dashboard"
+msgid "Post"
+msgstr ""
+
+#: template-localisation.php:108 template-localisation.php:110
+msgctxt "verb, to submit comment"
+msgid "Post"
+msgstr ""
+
+#: template-localisation.php:126
+msgctxt "noun: book post type"
+msgid "Book: "
+msgstr ""
+
+#: template-localisation.php:132
+msgid "Book your holiday now!"
+msgstr ""
+
+#: template-localisation.php:133
+msgctxt "verb: make reservation, booking"
+msgid "Book"
+msgstr ""
+
+#: template-localisation.php:149
+msgid "Only one"
+msgid_plural "More than one"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: template-localisation.php:159
+msgctxt "How many items"
+msgid "Only one"
+msgid_plural "More than one"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: template-localisation.php:176
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] "%s ставка"
+msgstr[1] "%s ставке"
+msgstr[2] "%s ставки"
+
+#: template-localisation.php:186
+#, php-format
+msgctxt "Number of items"
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: template-localisation.php:237
+#, php-format
+msgctxt "Page publish date"
+msgid "Published on: %1$s at %2$s"
+msgstr ""
+
+#: template-parts/entry-post.php:23 template-parts/format-video.php:22
+#: template-parts/format.php:26
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: template-parts/entry-post.php:24 template-parts/format-video.php:23
+#: template-parts/format.php:27
+msgid "Categories:"
+msgstr ""
+
+#: template-parts/entry-post.php:35 template-parts/format-video.php:34
+#: template-parts/format.php:33
+msgid "Tags: "
+msgstr ""
+
+#: template-parts/entry-post.php:39 template-parts/format-video.php:38
+#: template-parts/format.php:37
+#, php-format
+msgid ""
+"%1$s <a href=\"%2$s\"><time class=\"entry-date published updated\" datetime="
+"\"%3$s\">%4$s</time></a>"
+msgstr ""
+
+#: template-parts/entry-post.php:40 template-parts/format-video.php:39
+#: template-parts/format.php:38
+msgid "Published on"
+msgstr ""
+
+#: template-parts/entry-post.php:53 template-parts/format-video.php:52
+#: template-parts/format.php:51
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/entry-post.php:61 template-parts/format-video.php:60
+#: template-parts/format.php:59
+msgid "Author"
+msgstr ""

@@ -15,6 +15,30 @@
  * @link https://developer.wordpress.org/reference/functions/add_theme_support/
  */
 function radionica_setup() {
+
+	/**
+	 * Enable localisation of the theme.
+	 *
+	 * File .mo must be called only by locale and to be placed in theme root. If it's
+	 * placed in another folder this folder must be specified in
+	 * 'load_theme_textdomain'
+	 *
+	 * <code>
+	 * load_theme_textdomain( 'radionica', get_theme_file_path( '/languages' ) );
+	 * </code>
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
+	 */
+	// load_theme_textdomain( 'radionica' );
+	load_theme_textdomain( 'radionica', get_theme_file_path( '/languages' ) );
+
+	/**
+	 * Enable localisation of the theme.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
+	 */
+	load_theme_textdomain( 'radionica' );
+
 	/**
 	 * Enable localisation of the theme.
 	 *
@@ -109,6 +133,24 @@ function radionica_setup() {
 	add_theme_support( 'html5', array(
 		// 'comment-list',
 		// 'comment-form'
+	) );
+
+	/**
+	 * Post Formats
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-formats
+	 * @link https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'gallery',
+		'link',
+		'image',
+		'quote',
+		'status',
+		'video',
+		'audio',
+		'chat'
 	) );
 
 	/**
@@ -243,4 +285,3 @@ require_once get_parent_theme_file_path( '/inc/class-custom-walker-nav-menu.php'
  * Template functions
  */
 require_once get_parent_theme_file_path( '/inc/template-functions.php' );
-

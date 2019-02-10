@@ -366,4 +366,3 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 - [esc_js()](https://developer.wordpress.org/reference/functions/esc_js/) - Preporučuje se izbegavanje inline Javascript-a ali ako je baš neophodno, preporučuje se upotreba [wp_json_encode()](https://developer.wordpress.org/reference/functions/wp_json_encode/) u kombinaciji sa [esc_attr()](https://developer.wordpress.org/reference/functions/esc_attr/) umesto `esc_js()`.
 - [wp_localize_script()](https://developer.wordpress.org/reference/functions/wp_localize_script/) - inicijalna upotreba je lokalizacija teksta u Javascript datotekama, međutim mnogo češće se upotrebljava za prosleđivanje različitih vrednosti iz PHP-a u Javascript.
-
