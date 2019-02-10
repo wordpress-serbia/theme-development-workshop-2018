@@ -40,6 +40,13 @@ function radionica_setup() {
 	load_theme_textdomain( 'radionica' );
 
 	/**
+	 * Enable localisation of the theme.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
+	 */
+	load_theme_textdomain( 'radionica' );
+
+	/**
 	 * Custom Logo
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo

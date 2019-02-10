@@ -17,7 +17,7 @@ get_header();
 
 	echo '<div>';
 
-	echo '<h2>' . esc_html__( 'Basic strings', 'radionica' ) . '</h2>';
+echo '<h2>' . esc_html__( 'Basic strings', 'radionica' ) . '</h2>';
 
 	/**
 	 * __() & _e()
@@ -94,10 +94,12 @@ get_header();
 	 * @link https://developer.wordpress.org/reference/functions/_ex/
 	 */
 	echo '<h3>_x() and _ex()</h3>';
+
 	// post object
 	_x( 'Post', 'noun, appears in dashboard', 'radionica' );
 	// to post comment
 	echo _x( 'Post', 'verb, to submit comment', 'radionica' );
+
 	// Above is the same as:
 	_ex( 'Post', 'verb, to submit comment', 'radionica' );
 	/**
