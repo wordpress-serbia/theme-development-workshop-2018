@@ -240,4 +240,4 @@ require_once get_parent_theme_file_path( '/inc/template-functions.php' );
 /**
  * Enqueue scripts and styles for block editor
  */
-require_once get_parent_theme_file_path( '/blocks/enqueue-scrips-styles.php' );
+require_once get_parent_theme_file_path( '/blocks/enqueue-scripts-styles.php' );
