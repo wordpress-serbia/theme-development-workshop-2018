@@ -1,0 +1,10 @@
+/**
+ * Blocks stylesheet
+ *
+ * Used inside editor and on the frontend.
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	color: red; /* need extra .wp-block-heading for the editor styles, works on frontend */
+	font-family: sans-serif; /* works on both, editor and frontend */
+}
