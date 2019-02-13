@@ -220,6 +220,16 @@ function radionica_setup() {
 		)
 	) );
 
+	/**
+	 * Disable custom font sizes for blocks.
+	 *
+	 * Force usage of default font sizes or the
+	 * custom ones defined with 'editor-font-sizes'.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-font-sizes
+	 */
+	add_theme_support( 'disable-custom-font-sizes' );
+
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
