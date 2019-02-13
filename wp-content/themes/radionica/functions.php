@@ -153,6 +153,73 @@ function radionica_setup() {
 	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#default-block-styles
 	 */
 	add_theme_support( 'wp-block-styles' );
+
+	/**
+	 * Theme support for blocks font size.
+	 *
+	 * Predefined size slugs are:
+	 *     'small',
+	 *     'regular',
+	 *     'medium',
+	 *     'large',
+	 *     'huge',
+	 *     'larger'
+	 *
+	 * Each generates the classname by following pattern:
+	 * <code>
+	 * .has-{SIZE}-font-size
+	 * </code>
+	 *
+	 * There use to be 'normal' as well but this class doesn't exists any more.
+	 * These are default styles:
+	 *
+	 * <code>
+	 * .has-small-font-size {
+	 *     font-size: 13px
+	 * }
+	 *
+	 * .has-normal-font-size,.has-regular-font-size {
+	 *     font-size: 16px
+	 * }
+	 *
+	 * .has-medium-font-size {
+	 *     font-size: 20px
+	 * }
+	 *
+	 * .has-large-font-size {
+	 *     font-size: 36px
+	 * }
+	 *
+	 * .has-huge-font-size,.has-larger-font-size {
+	 *     font-size: 42px
+	 * }
+	 * </code>
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-font-sizes
+	 */
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name' => esc_html__( 'Small', 'radionica' ),
+			'size' => 10,
+			'slug' => 'small'
+		),
+		array(
+			'name' => esc_html__( 'Regular', 'radionica' ),
+			'size' => 18,
+			'slug' => 'regular'
+		),
+		array(
+			'name' => esc_html__( 'Large', 'radionica' ),
+			'size' => 48,
+			'slug' => 'large'
+		),
+		array(
+			'name' => esc_html__( 'Huge', 'radionica' ),
+			'size' => 72,
+			'slug' => 'huge'
+		)
+	) );
+
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
