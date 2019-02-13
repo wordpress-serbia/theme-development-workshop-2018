@@ -146,6 +146,13 @@ function radionica_setup() {
 	 */
 	add_theme_support( 'align-wide' );
 
+	/**
+	 * Theme support for default block styles.
+	 * The frontend blocks will be styled the same as editor blocks.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#default-block-styles
+	 */
+	add_theme_support( 'wp-block-styles' );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
