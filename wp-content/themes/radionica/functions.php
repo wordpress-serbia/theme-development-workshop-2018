@@ -139,6 +139,13 @@ function radionica_setup() {
 		'chat'
 	) );
 
+	/**
+	 * Theme support for wide and full width blocks.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#wide-alignment
+	 */
+	add_theme_support( 'align-wide' );
+
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 

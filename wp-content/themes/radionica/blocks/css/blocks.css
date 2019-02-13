@@ -8,3 +8,28 @@ h1, h2, h3, h4, h5, h6 {
 	color: red; /* need extra .wp-block-heading for the editor styles, works on frontend */
 	font-family: sans-serif; /* works on both, editor and frontend */
 }
+/**
+ * Align wide and full
+ */
+/* Inside editor */
+.wp-block[data-align="wide"] {
+	width: 80%;
+}
+
+/* Frontend */
+.entry-content .alignwide {
+    margin-left  : calc( -80vw / 2 + 100% / 2 );
+    margin-right : calc( -80vw / 2 + 100% / 2 );
+    max-width    : 100vw;
+}
+
+.entry-content .alignfull {
+    margin-left  : calc( -100vw / 2 + 100% / 2 );
+    margin-right : calc( -100vw / 2 + 100% / 2 );
+    max-width    : 100vw;
+}
+
+blockquote {
+	background-color: red;
+	margin: 0;
+}

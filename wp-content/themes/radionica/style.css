@@ -23,6 +23,7 @@ Tags:
  * Archives
  * Widget areas / Sidebars
  * Accessibility
+ * Core defaults
  */
 
 /* Base */
@@ -40,6 +41,10 @@ html {
 body {
 	padding: 0;
 	margin: 0;
+}
+
+main {
+	overflow: hidden;
 }
 
 footer p {
@@ -335,4 +340,28 @@ nav ul li:last-child {
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Core defaults */
+.alignnone,
+div.alignnone {
+	margin: 1rem 1.5rem 1.5rem 0;
+}
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin: 1rem auto 1rem auto;
+}
+
+.alignright,
+div.alignright {
+	float:right;
+	margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.alignleft,
+div.alignleft {
+	float: left;
+	margin: 1rem 1.5rem 1.5rem 0;
 }
