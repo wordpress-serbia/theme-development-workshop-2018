@@ -34,3 +34,26 @@ blockquote {
 	background-color: red;
 	margin: 0;
 }
+
+/**
+ * Font sizes
+ *
+ * It will be automatically applied in editor but not on frontend.
+ * We need styling for the frontend.
+ */
+/* Editor and frontend */
+.has-small-font-size {
+	font-size: 10px;
+}
+
+.has-regular-font-size {
+	font-size: 18px;
+}
+
+.has-large-font-size {
+	font-size: 48px;
+}
+
+.has-huge-font-size {
+	font-size: 72px;
+}
