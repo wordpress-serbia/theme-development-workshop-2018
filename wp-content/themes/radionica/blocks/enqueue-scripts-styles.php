@@ -21,3 +21,20 @@ function radionica_enqueue_block_assets() {
 	);
 }
 add_action( 'enqueue_block_assets', 'radionica_enqueue_block_assets' );
+
+/**
+ * Enqueue scripts and styles only for editor.
+ */
+function radionica_enqueue_block_editor_assets() {
+
+	wp_enqueue_style(
+		'radionica-editor-css',
+		get_theme_file_uri( '/blocks/css/editor.css' )
+	);
+
+	wp_enqueue_script(
+		'radionica-editor-js',
+		get_theme_file_uri( '/blocks/js/editor.js' )
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'radionica_enqueue_block_editor_assets' );

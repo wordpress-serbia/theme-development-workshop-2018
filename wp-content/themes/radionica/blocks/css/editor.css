@@ -1,0 +1,10 @@
+/**
+ * Editor stylesheet
+ *
+ * Used inside editor.
+ */
+
+.edit-post-layout a {
+	color: green;
+	font-style: italic;
+}
