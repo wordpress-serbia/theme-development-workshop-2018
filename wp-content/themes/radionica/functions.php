@@ -230,6 +230,13 @@ function radionica_setup() {
 	 */
 	add_theme_support( 'disable-custom-font-sizes' );
 
+	/**
+	 * Theme support for embed blocks aspect ratio.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
+	 */
+	add_theme_support( 'responsive-embeds' );
+
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
