@@ -237,6 +237,12 @@ function radionica_setup() {
 	 */
 	add_theme_support( 'responsive-embeds' );
 
+	/**
+	 * Disable custom colors (background and font) for blocks.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes
+	 */
+	add_theme_support( 'disable-custom-colors' );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
