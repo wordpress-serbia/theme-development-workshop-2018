@@ -56,3 +56,41 @@ blockquote {
 .has-huge-font-size {
 	font-size: 72px;
 }
+
+/**
+ * Color palettes
+ *
+ * It will be automatically applied in editor but not on frontend.
+ * We need styling for the frontend.
+ */
+.has-whitish-color {
+	color: #f2f2f2;
+}
+
+.has-redish-color {
+	color: #db5353;
+}
+
+.has-grayish-color {
+	color: #b7aeae;
+}
+
+.has-blckish-color {
+	color: #252525;
+}
+
+.has-whitish-background-color {
+	background-color: #f2f2f2;
+}
+
+.has-redish-background-color {
+	background-color: #db5353;
+}
+
+.has-grayish-background-color {
+	background-color: #b7aeae;
+}
+
+.has-blckish-background-color {
+	background-color: #252525;
+}

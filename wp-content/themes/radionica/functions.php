@@ -243,6 +243,56 @@ function radionica_setup() {
 	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes
 	 */
 	add_theme_support( 'disable-custom-colors' );
+
+	/**
+	 * Theme support for blocks color palettes.
+	 *
+	 * Predefined color slugs are:
+	 *     'pale-pink'             => '#f78da7',
+	 *     'vivid-red'             => '#cf2e2e',
+	 *     'luminous-vivid-orange' => '#ff6900',
+	 *     'luminous-vivid-amber'  => '#fcb900',
+	 *     'light-green-cyan'      => '#7bdcb5',
+	 *     'vivid-green-cyan'      => '#00d084',
+	 *     'pale-cyan-blue'        => '#8ed1fc',
+	 *     'vivid-cyan-blue'       => '#0693e3',
+	 *     'very-light-gray'       => '#eee',
+	 *     'cyan-bluish-gray'      => '#abb8c3',
+	 *     'very-dark-gray'        => '#313131'
+	 *
+	 * Each generates the classname by following pattern:
+	 * <code>
+	 * .has-{COLOR-SLUG}-color
+	 * .has-{COLOR-SLUG}-background-color
+	 * </code>
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-color-palettes
+	 */
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'Whitish', 'radionica' ),
+			'slug'  => 'whitish',
+			'color' => '#f2f2f2',
+		),
+		array(
+			'name'  => esc_html__( 'Redish', 'radionica' ),
+			'slug'  => 'redish',
+			'color' => '#db5353',
+		),
+		array(
+			'name'  => esc_html__( 'Grayish', 'radionica' ),
+			'slug'  => 'grayish',
+			'color' => '#b7aeae',
+		),
+		array(
+			'name'  => esc_html__( 'Blackish', 'radionica' ),
+			'slug'  => 'blckish',
+			'color' => '#252525',
+		),
+	) );
+
+	// To simply disable color palette add 'empty' support
+	// add_theme_support( 'editor-color-palette' );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
