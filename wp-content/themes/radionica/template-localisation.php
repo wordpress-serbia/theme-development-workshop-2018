@@ -17,7 +17,7 @@ get_header();
 
 	echo '<div>';
 
-echo '<h2>' . esc_html__( 'Basic strings', 'radionica' ) . '</h2>';
+	echo '<h2>' . esc_html__( 'Basic strings', 'radionica' ) . '</h2>';
 
 	/**
 	 * __() & _e()
