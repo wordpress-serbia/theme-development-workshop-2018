@@ -4,6 +4,32 @@
  * Used inside editor.
  */
 
+/*
+// Change blocks width inside editor
+.wp-block {
+	width: 90%;
+	max-width: 90%;
+ }
+*/
+
+/**
+ * Align wide and full
+ */
+/* Inside editor */
+.wp-block[data-align="wide"] {
+	width: 80%;
+}
+
+.wp-block-heading h1,
+.wp-block-heading h2,
+.wp-block-heading h3,
+.wp-block-heading h4,
+.wp-block-heading h5,
+.wp-block-heading h6 {
+	color: red; /* need extra .wp-block-heading for the editor styles, works on frontend */
+	font-family: sans-serif; /* works on both, editor and frontend */
+}
+
 .edit-post-layout a {
 	color: green;
 	font-style: italic;

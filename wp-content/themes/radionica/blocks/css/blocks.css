@@ -4,32 +4,6 @@
  * Used inside editor and on the frontend.
  */
 
-/*
-// Change blocks width inside editor
-.wp-block {
-	width: 90%;
-	max-width: 90%;
- }
-*/
-
-.wp-block-heading h1,
-.wp-block-heading h2,
-.wp-block-heading h3,
-.wp-block-heading h4,
-.wp-block-heading h5,
-.wp-block-heading h6 {
-	color: red; /* need extra .wp-block-heading for the editor styles, works on frontend */
-	font-family: sans-serif; /* works on both, editor and frontend */
-}
-
-/**
- * Align wide and full
- */
-/* Inside editor */
-.wp-block[data-align="wide"] {
-	width: 80%;
-}
-
 blockquote {
 	background-color: red;
 	margin: 0;
