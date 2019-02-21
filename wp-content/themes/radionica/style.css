@@ -23,6 +23,8 @@ Tags:
  * Archives
  * Widget areas / Sidebars
  * Accessibility
+ * Core defaults
+ * Blocks
  */
 
 /* Base */
@@ -40,6 +42,10 @@ html {
 body {
 	padding: 0;
 	margin: 0;
+}
+
+main {
+	overflow: hidden;
 }
 
 footer p {
@@ -335,4 +341,117 @@ nav ul li:last-child {
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Core defaults */
+.alignnone,
+div.alignnone {
+	margin: 1rem 1.5rem 1.5rem 0;
+}
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin: 1rem auto 1rem auto;
+}
+
+.alignright,
+div.alignright {
+	float:right;
+	margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.alignleft,
+div.alignleft {
+	float: left;
+	margin: 1rem 1.5rem 1.5rem 0;
+}
+
+/**
+ * Blocks
+ */
+/**
+ * Align wide and full
+ */
+.entry-content .alignwide {
+    margin-left  : calc( -80vw / 2 + 100% / 2 );
+    margin-right : calc( -80vw / 2 + 100% / 2 );
+    max-width    : 100vw;
+}
+
+.entry-content .alignfull {
+    margin-left  : calc( -100vw / 2 + 100% / 2 );
+    margin-right : calc( -100vw / 2 + 100% / 2 );
+    max-width    : 100vw;
+}
+
+/**
+ * Font sizes
+ *
+ * It will be automatically applied in editor but not on frontend.
+ * We need styling for the frontend.
+ */
+/* Editor and frontend */
+.has-small-font-size {
+	font-size: 10px;
+}
+
+.has-regular-font-size {
+	font-size: 18px;
+}
+
+.has-large-font-size {
+	font-size: 48px;
+}
+
+.has-huge-font-size {
+	font-size: 72px;
+}
+
+/**
+ * Color palettes
+ *
+ * It will be automatically applied in editor but not on frontend.
+ * We need styling for the frontend.
+ */
+.has-whitish-color {
+	color: #f2f2f2;
+}
+
+.has-redish-color {
+	color: #db5353;
+}
+
+.has-grayish-color {
+	color: #b7aeae;
+}
+
+.has-blckish-color {
+	color: #252525;
+}
+
+.has-whitish-background-color {
+	background-color: #f2f2f2;
+}
+
+.has-redish-background-color {
+	background-color: #db5353;
+}
+
+.has-grayish-background-color {
+	background-color: #b7aeae;
+}
+
+.has-blckish-background-color {
+	background-color: #252525;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+	color: red; /* need extra .wp-block-heading for the editor styles, works on frontend */
+	font-family: sans-serif; /* works on both, editor and frontend */
 }

@@ -139,6 +139,160 @@ function radionica_setup() {
 		'chat'
 	) );
 
+	/**
+	 * Theme support for wide and full width blocks.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#wide-alignment
+	 */
+	add_theme_support( 'align-wide' );
+
+	/**
+	 * Theme support for default block styles.
+	 * The frontend blocks will be styled the same as editor blocks.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#default-block-styles
+	 */
+	add_theme_support( 'wp-block-styles' );
+
+	/**
+	 * Theme support for blocks font size.
+	 *
+	 * Predefined size slugs are:
+	 *     'small',
+	 *     'regular',
+	 *     'medium',
+	 *     'large',
+	 *     'huge',
+	 *     'larger'
+	 *
+	 * Each generates the classname by following pattern:
+	 * <code>
+	 * .has-{SIZE}-font-size
+	 * </code>
+	 *
+	 * There use to be 'normal' as well but this class doesn't exists any more.
+	 * These are default styles:
+	 *
+	 * <code>
+	 * .has-small-font-size {
+	 *     font-size: 13px
+	 * }
+	 *
+	 * .has-normal-font-size,.has-regular-font-size {
+	 *     font-size: 16px
+	 * }
+	 *
+	 * .has-medium-font-size {
+	 *     font-size: 20px
+	 * }
+	 *
+	 * .has-large-font-size {
+	 *     font-size: 36px
+	 * }
+	 *
+	 * .has-huge-font-size,.has-larger-font-size {
+	 *     font-size: 42px
+	 * }
+	 * </code>
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-font-sizes
+	 */
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name' => esc_html__( 'Small', 'radionica' ),
+			'size' => 10,
+			'slug' => 'small'
+		),
+		array(
+			'name' => esc_html__( 'Regular', 'radionica' ),
+			'size' => 18,
+			'slug' => 'regular'
+		),
+		array(
+			'name' => esc_html__( 'Large', 'radionica' ),
+			'size' => 48,
+			'slug' => 'large'
+		),
+		array(
+			'name' => esc_html__( 'Huge', 'radionica' ),
+			'size' => 72,
+			'slug' => 'huge'
+		)
+	) );
+
+	/**
+	 * Disable custom font sizes for blocks.
+	 *
+	 * Force usage of default font sizes or the
+	 * custom ones defined with 'editor-font-sizes'.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-font-sizes
+	 */
+	add_theme_support( 'disable-custom-font-sizes' );
+
+	/**
+	 * Theme support for embed blocks aspect ratio.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
+	 */
+	add_theme_support( 'responsive-embeds' );
+
+	/**
+	 * Disable custom colors (background and font) for blocks.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes
+	 */
+	add_theme_support( 'disable-custom-colors' );
+
+	/**
+	 * Theme support for blocks color palettes.
+	 *
+	 * Predefined color slugs are:
+	 *     'pale-pink'             => '#f78da7',
+	 *     'vivid-red'             => '#cf2e2e',
+	 *     'luminous-vivid-orange' => '#ff6900',
+	 *     'luminous-vivid-amber'  => '#fcb900',
+	 *     'light-green-cyan'      => '#7bdcb5',
+	 *     'vivid-green-cyan'      => '#00d084',
+	 *     'pale-cyan-blue'        => '#8ed1fc',
+	 *     'vivid-cyan-blue'       => '#0693e3',
+	 *     'very-light-gray'       => '#eee',
+	 *     'cyan-bluish-gray'      => '#abb8c3',
+	 *     'very-dark-gray'        => '#313131'
+	 *
+	 * Each generates the classname by following pattern:
+	 * <code>
+	 * .has-{COLOR-SLUG}-color
+	 * .has-{COLOR-SLUG}-background-color
+	 * </code>
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-color-palettes
+	 */
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'Whitish', 'radionica' ),
+			'slug'  => 'whitish',
+			'color' => '#f2f2f2',
+		),
+		array(
+			'name'  => esc_html__( 'Redish', 'radionica' ),
+			'slug'  => 'redish',
+			'color' => '#db5353',
+		),
+		array(
+			'name'  => esc_html__( 'Grayish', 'radionica' ),
+			'slug'  => 'grayish',
+			'color' => '#b7aeae',
+		),
+		array(
+			'name'  => esc_html__( 'Blackish', 'radionica' ),
+			'slug'  => 'blckish',
+			'color' => '#252525',
+		),
+	) );
+
+	// To simply disable color palette add 'empty' support
+	// add_theme_support( 'editor-color-palette' );
 }
 add_action( 'after_setup_theme', 'radionica_setup' );
 
@@ -236,3 +390,8 @@ require_once get_parent_theme_file_path( '/inc/class-custom-walker-nav-menu.php'
  * Template functions
  */
 require_once get_parent_theme_file_path( '/inc/template-functions.php' );
+
+/**
+ * Enqueue scripts and styles for block editor
+ */
+require_once get_parent_theme_file_path( '/blocks/enqueue-scripts-styles.php' );
