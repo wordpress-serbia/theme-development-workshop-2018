@@ -34,3 +34,12 @@
 	color: green;
 	font-style: italic;
 }
+
+/**
+ * Block Style Variations
+ */
+
+/* Lead paragraph */
+.editor-styles-wrapper .is-style-lead-paragraph {
+	font-size: 26px;
+}
