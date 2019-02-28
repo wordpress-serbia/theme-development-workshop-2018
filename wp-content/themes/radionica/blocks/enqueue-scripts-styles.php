@@ -44,7 +44,7 @@ function enqueue_block_editor_assets() {
 	wp_enqueue_script(
 		'radionica-editor-js',
 		get_theme_file_uri( '/blocks/js/editor.js' ),
-		['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
+		['wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-i18n'],
 		time()
 	);
 }

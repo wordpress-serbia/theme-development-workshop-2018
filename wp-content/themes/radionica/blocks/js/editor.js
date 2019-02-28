@@ -3,6 +3,7 @@
  *
  * Used inside editor.
  */
+const { __ } = wp.i18n;
 
 /**
  * Add paragraph style variant.
@@ -13,5 +14,5 @@
  */
 wp.blocks.registerBlockStyle( 'core/paragraph', {
     name: 'lead-paragraph',
-    label: 'Lead Paragraph'
+    label: __( 'Lead Paragraph', 'radionica' )
 } );
