@@ -24,13 +24,31 @@ function register_post_type_args( $args, $post_type ) {
 
 	if ( 'post' == $post_type ) :
 
+		$args['template_lock'] = 'all'; // insert, all
+
 		$args['template'] = [
+			[
+				'core/paragraph', [
+					'dropCap'         => true,
+					'align'           => 'left', // left, center, right
+					'placeholder'     => esc_html__( 'Lead Paragraph', 'radionica' ),
+					'textColor'       => 'whitish', // Registered color slug
+					'backgroundColor' => 'blckish', // Registered color slug
+					'fontSize'        => 'regular', // Registered font size slug
+					'content'         => esc_html__( 'Chopin was born Fryderyk Franciszek Chopin in the Duchy of Warsaw and grew up in Warsaw, which in 1815 became part of Congress Poland. A child prodigy, he completed his musical education and composed his earlier works in Warsaw before leaving Poland at the age of 20, less than a month before the outbreak of the November 1830 Uprising. At 21, he settled in Paris. Thereafter—in the last 18 years of his life—he gave only 30 public performances, preferring the more intimate atmosphere of the salon.', 'radionica' )
+				]
+			],
 			[
 				'core/heading', [
 					'placeholder' => esc_html__( 'Post Subtitle', 'radionica' ),
 					'level'       => 3,       // 1-6
 					'align'       => 'right', // left, center, right
 					'content'     => esc_html__( 'Default Subtitle', 'radionica' )
+				]
+			],
+			[
+				'core/image', [
+					'align' => 'wide'
 				]
 			]
 		];
