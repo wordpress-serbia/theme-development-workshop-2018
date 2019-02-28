@@ -47,5 +47,12 @@ function enqueue_block_editor_assets() {
 		['wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-i18n'],
 		time()
 	);
+
+	/**
+	 * Sets translated strings for a script.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/wp_set_script_translations/
+	 */
+	wp_set_script_translations( 'radionica-editor-js', 'radionica' );
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_editor_assets' );
