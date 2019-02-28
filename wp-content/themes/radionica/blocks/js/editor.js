@@ -49,3 +49,25 @@ wp.hooks.addFilter(
 	'radionica/core-class-names',
 	addBlockClassNames
 );
+
+/**
+ * Add custom classname to core block.
+ *
+ * This will add .radionica-heading classname to heading blocks.
+ *
+ * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#blocks-getblockdefaultclassname
+ *
+ * @param {string} className Classname.
+ * @param {string} blockName Block name.
+ */
+function setBlockCustomClassName( className, blockName ) {
+    return blockName === 'core/heading' ?
+        'radionica-heading' :
+        className;
+}
+
+wp.hooks.addFilter(
+    'blocks.getBlockDefaultClassName',
+    'radionica/custom-class-names',
+    setBlockCustomClassName
+);
