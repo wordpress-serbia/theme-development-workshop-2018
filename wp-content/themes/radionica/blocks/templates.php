@@ -27,7 +27,10 @@ function register_post_type_args( $args, $post_type ) {
 		$args['template'] = [
 			[
 				'core/heading', [
-					'placeholder' => esc_html__( 'Post Subtitle', 'radionica' )
+					'placeholder' => esc_html__( 'Post Subtitle', 'radionica' ),
+					'level'       => 3,       // 1-6
+					'align'       => 'right', // left, center, right
+					'content'     => esc_html__( 'Default Subtitle', 'radionica' )
 				]
 			]
 		];
@@ -37,7 +40,8 @@ function register_post_type_args( $args, $post_type ) {
 		$args['template'] = [
 			[
 				'core/heading', [
-					'placeholder' => esc_html__( 'Page Subtitle', 'radionica' )
+					'placeholder' => esc_html__( 'Page Subtitle', 'radionica' ),
+					'level'       => 4
 				]
 			]
 		];
