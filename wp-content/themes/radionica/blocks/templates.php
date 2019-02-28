@@ -22,13 +22,27 @@ namespace Radionica\Templates;
  */
 function register_post_type_args( $args, $post_type ) {
 
-	$args['template'] = [
-		[
-			'core/heading', [
-				'placeholder' => esc_html__( 'Subheading', 'radionica' )
+	if ( 'post' == $post_type ) :
+
+		$args['template'] = [
+			[
+				'core/heading', [
+					'placeholder' => esc_html__( 'Post Subtitle', 'radionica' )
+				]
 			]
-		]
-	];
+		];
+
+	elseif ( 'page' == $post_type ) :
+
+		$args['template'] = [
+			[
+				'core/heading', [
+					'placeholder' => esc_html__( 'Page Subtitle', 'radionica' )
+				]
+			]
+		];
+
+	endif; // $post_type check
 
 	return $args;
 }
