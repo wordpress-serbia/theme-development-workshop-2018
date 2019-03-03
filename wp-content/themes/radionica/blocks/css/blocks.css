@@ -8,3 +8,13 @@ blockquote {
 	background-color: red;
 	margin: 0;
 }
+
+/**
+ * Block Style Variations
+ */
+
+/* Lead paragraph */
+.is-style-lead-paragraph {
+	font-style: italic;
+	font-size: 26px;
+}

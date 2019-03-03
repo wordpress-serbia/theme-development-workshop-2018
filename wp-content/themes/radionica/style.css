@@ -30,13 +30,13 @@ Tags:
 /* Base */
 html {
 	font-size: 1rem;
-    line-height: 1.875;
-    background-color: #fff;
-    color: #000;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+	line-height: 1.875;
+	background-color: #fff;
+	color: #000;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -374,15 +374,19 @@ div.alignleft {
  * Align wide and full
  */
 .entry-content .alignwide {
-    margin-left  : calc( -80vw / 2 + 100% / 2 );
-    margin-right : calc( -80vw / 2 + 100% / 2 );
-    max-width    : 100vw;
+	margin-left: calc( -80vw / 2 + 100% / 2 );
+	margin-right: calc( -80vw / 2 + 100% / 2 );
+	max-width: 100vw;
+	width: auto;
+	clear: both;
 }
 
 .entry-content .alignfull {
-    margin-left  : calc( -100vw / 2 + 100% / 2 );
-    margin-right : calc( -100vw / 2 + 100% / 2 );
-    max-width    : 100vw;
+	margin-left: calc( -100vw / 2 + 100% / 2 );
+	margin-right: calc( -100vw / 2 + 100% / 2 );
+	max-width: 100vw;
+	width: auto;
+	clear: both;
 }
 
 /**
