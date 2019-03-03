@@ -3,7 +3,8 @@
  *
  * Used inside editor.
  */
-const { __ } = wp.i18n;
+// Load dependencies.
+const { __, _n } = wp.i18n;
 
 /**
  * Add paragraph style variant.

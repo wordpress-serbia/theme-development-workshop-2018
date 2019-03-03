@@ -47,6 +47,7 @@ function register_post_type_args( $args, $post_type ) {
 			[
 				'core/cover', [
 					'align' => 'wide',
+					'dimRatio' => 0
 				]
 			],
 			[
@@ -63,8 +64,19 @@ function register_post_type_args( $args, $post_type ) {
 				'core/list'
 			],
 			[
-				'core/text-columns', [
-					'columns' => '2'
+				'core/columns', [
+					'columns' => '2',
+					'width'   => 'wide', // wide, full
+					[
+						'core/text-columns', [
+							'core/paragraph'
+						]
+					],
+					[
+						'core/columns', [
+							'core/image'
+						]
+					]
 				]
 			],
 			[
@@ -73,7 +85,7 @@ function register_post_type_args( $args, $post_type ) {
 			[
 				'core/heading', [
 					'content' => esc_html__( 'Latest Posts', 'radionica' ),
-					'level'       => 4
+					'level'   => 4
 				]
 			],
 			[
