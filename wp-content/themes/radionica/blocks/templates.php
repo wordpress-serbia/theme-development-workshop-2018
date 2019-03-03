@@ -65,18 +65,25 @@ function register_post_type_args( $args, $post_type ) {
 			],
 			[
 				'core/columns', [
-					'columns' => '2',
-					'width'   => 'wide', // wide, full
+					'align'   => 'wide', // wide, full
+				],
+				[
 					[
-						'core/text-columns', [
-							'core/paragraph'
+						'core/column', [], [
+							[
+								'core/image', []
+							],
 						]
 					],
 					[
-						'core/columns', [
-							'core/image'
+						'core/column', [], [
+							[
+								'core/paragraph', [
+									'placeholder' => esc_html__( 'Add a inner paragraph', 'radionica' )
+								]
+							],
 						]
-					]
+					],
 				]
 			],
 			[
