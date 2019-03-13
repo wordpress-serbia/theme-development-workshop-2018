@@ -88,6 +88,7 @@ function radionica_customize_register_options( $wp_customize ) {
 	$wp_customize->add_setting( 'radionica_options_panel_welcome', array(
 		'type'      => 'theme_mod',
 		'transport' => 'postMessage',
+		'default'   => esc_html__( 'This is the place for your custom welcome message.', 'radionica' ),
 	) );
 
 	/**
@@ -126,3 +127,19 @@ add_action( 'customize_register', 'radionica_customize_register_options' );
 function radionica_customize_partial_welcome() {
 	return get_theme_mod( 'radionica_options_panel_welcome' );
 }
+
+/**
+ * Enqueue scripts and styles for customizer preview.
+ *
+ * This function is attached to 'customize_preview_init' action hook.
+ */
+function radionica_customize_preview() {
+	wp_enqueue_script(
+		'radionica-customize-preview',
+		get_theme_file_uri( '/customizer/js/customize-preview.js' ),
+		array( 'customize-preview' ),
+		'1.0',
+		true
+	);
+}
+add_action( 'customize_preview_init', 'radionica_customize_preview' );

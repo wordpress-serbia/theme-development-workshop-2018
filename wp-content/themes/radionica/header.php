@@ -30,9 +30,9 @@
 				/**
 				 * Get custom theme option from customizer.
 				 */
-				if ( get_option( 'radionica_theme_options_welcome' ) ) :
-					echo get_option( 'radionica_theme_options_welcome' );
-				endif; // get_option( 'radionica_theme_options_welcome' )
+				// if ( get_option( 'radionica_theme_options_welcome' ) ) :
+				// 	echo get_option( 'radionica_theme_options_welcome' );
+				// endif; // get_option( 'radionica_theme_options_welcome' )
 
 				/**
 				 * Get custom theme_mod from customizer.
