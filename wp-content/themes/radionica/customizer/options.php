@@ -57,5 +57,52 @@ function radionica_customize_register_options( $wp_customize ) {
 		)
 	) );
 
+	/**
+	 * Top Level Panel
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_panel( 'radionica_options_panel', array(
+		'priority'    => 9,
+		'title'       => esc_html__( 'Radionica Options Panel', 'radionica' ),
+		'description' => esc_html__( 'Custom panel for Radionica theme.', 'radionica' ),
+	) );
+
+	/**
+	 * Section
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_section( 'radionica_options_panel_section', array(
+		'priority'    => 10,
+		'panel'       => 'radionica_options_panel',
+		'title'       => esc_html__( 'Radionica Panel Section 1', 'radionica' ),
+		'description' => esc_html__( 'Custom section for panel.', 'radionica' ),
+	) );
+
+	/**
+	 * Setting
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+	 */
+	$wp_customize->add_setting( 'radionica_options_panel_welcome', array(
+		'type' => 'theme_mod',
+	) );
+
+	/**
+	 * Control
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/
+	 */
+	$wp_customize->add_control( 'radionica_options_panel_welcome', array(
+		'type'        => 'text',
+		'section'     => 'radionica_options_panel_section',
+		'label'       => esc_html__( 'Welcome Message 2', 'radionica' ),
+		'description' => esc_html__( 'Set another custom welcome message for the header of your website.', 'radionica' ),
+		'input_attrs' => array(
+			'class' => 'my-custom-class'
+		)
+	) );
+
 }
 add_action( 'customize_register', 'radionica_customize_register_options' );

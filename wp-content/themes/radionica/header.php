@@ -34,6 +34,13 @@
 					echo get_option( 'radionica_theme_options_welcome' );
 				endif; // get_option( 'radionica_theme_options_welcome' )
 
+				/**
+				 * Get custom theme_mod from customizer.
+				 */
+				if ( get_theme_mod( 'radionica_options_panel_welcome' ) ) :
+					echo get_theme_mod( 'radionica_options_panel_welcome' );
+				endif; // get_theme_mod( 'radionica_options_panel_welcome' )
+
 				if ( has_custom_logo() ) :
 					the_custom_logo();
 				else :
