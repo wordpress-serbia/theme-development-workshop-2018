@@ -27,6 +27,13 @@
 					</aside>
 				<?php endif;
 
+				/**
+				 * Get custom theme option from customizer.
+				 */
+				if ( get_option( 'radionica_theme_options_welcome' ) ) :
+					echo get_option( 'radionica_theme_options_welcome' );
+				endif; // get_option( 'radionica_theme_options_welcome' )
+
 				if ( has_custom_logo() ) :
 					the_custom_logo();
 				else :
