@@ -84,11 +84,18 @@ function radionica_customize_register_options( $wp_customize ) {
 	 * Setting
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+	 *
+	 * Sanitizing functions
+	 * @link https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/
+	 *
+	 * Custom sanitize_callbacks
+	 * @link https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
 	 */
 	$wp_customize->add_setting( 'radionica_options_panel_welcome', array(
-		'type'      => 'theme_mod',
-		'transport' => 'postMessage',
-		'default'   => esc_html__( 'This is the place for your custom welcome message.', 'radionica' ),
+		'type'              => 'theme_mod',
+		'transport'         => 'postMessage',
+		'default'           => esc_html__( 'This is the place for your custom welcome message.', 'radionica' ),
+		'sanitize_callback' => 'sanitize_text_field'
 	) );
 
 	/**

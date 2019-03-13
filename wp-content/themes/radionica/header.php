@@ -39,7 +39,7 @@
 				 */
 				if ( get_theme_mod( 'radionica_options_panel_welcome' ) ) : ?>
 					<div class="radionica-welcome-message">
-						<p><?php echo get_theme_mod( 'radionica_options_panel_welcome' ); ?></p>
+						<p><?php echo esc_html( get_theme_mod( 'radionica_options_panel_welcome' ) ); ?></p>
 					</div>
 				<?php endif; // get_theme_mod( 'radionica_options_panel_welcome' )
 

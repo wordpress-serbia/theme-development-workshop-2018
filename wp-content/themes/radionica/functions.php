@@ -401,3 +401,4 @@ require_once get_parent_theme_file_path( '/blocks/templates.php' );
  * Customizer
  */
 require_once get_parent_theme_file_path( '/customizer/options.php' );
+require_once get_parent_theme_file_path( '/customizer/sanitize.php' );
