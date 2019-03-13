@@ -86,7 +86,8 @@ function radionica_customize_register_options( $wp_customize ) {
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
 	 */
 	$wp_customize->add_setting( 'radionica_options_panel_welcome', array(
-		'type' => 'theme_mod',
+		'type'      => 'theme_mod',
+		'transport' => 'postMessage',
 	) );
 
 	/**
@@ -104,5 +105,24 @@ function radionica_customize_register_options( $wp_customize ) {
 		)
 	) );
 
+	/**
+	 * Add partial to selective refresh.
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_selective_refresh/add_partial/
+	 */
+	$wp_customize->selective_refresh->add_partial( 'radionica_options_panel_welcome', array(
+		'selector'        => '.radionica-welcome-message p',
+		'render_callback' => 'radionica_customize_partial_welcome',
+	) );
+
 }
 add_action( 'customize_register', 'radionica_customize_register_options' );
+
+/**
+ * Selective refresh callback for welcome message.
+ *
+ * @return string Returns custom welcome message.
+ */
+function radionica_customize_partial_welcome() {
+	return get_theme_mod( 'radionica_options_panel_welcome' );
+}

@@ -37,9 +37,11 @@
 				/**
 				 * Get custom theme_mod from customizer.
 				 */
-				if ( get_theme_mod( 'radionica_options_panel_welcome' ) ) :
-					echo get_theme_mod( 'radionica_options_panel_welcome' );
-				endif; // get_theme_mod( 'radionica_options_panel_welcome' )
+				if ( get_theme_mod( 'radionica_options_panel_welcome' ) ) : ?>
+					<div class="radionica-welcome-message">
+						<p><?php echo get_theme_mod( 'radionica_options_panel_welcome' ); ?></p>
+					</div>
+				<?php endif; // get_theme_mod( 'radionica_options_panel_welcome' )
 
 				if ( has_custom_logo() ) :
 					the_custom_logo();
