@@ -113,8 +113,11 @@ function radionica_customize_register_options( $wp_customize ) {
 		)
 	) );
 
+	/**
+	 * Change order and title for default sections.
+	 */
 	$wp_customize->get_section( 'static_front_page' )->priority = 15;
-	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Header Image and Video', 'radionica' );
+	$wp_customize->get_section( 'header_image' )->title         = esc_html__( 'Header Image and Video', 'radionica' );
 
 	/**
 	 * Set site title and tagline to 'postMessage'.
@@ -187,3 +190,13 @@ function radionica_customize_preview() {
 	);
 }
 add_action( 'customize_preview_init', 'radionica_customize_preview' );
+
+/**
+ * Enqueue scripts and styles for customizer controls.
+ *
+ * This function is attached to 'customize_controls_enqueue_scripts' action hook
+ */
+function radionica_customize_controls() {
+	wp_enqueue_style( 'radionica-customize-controls', get_parent_theme_file_uri( '/customizer/css/style.css' ) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'radionica_customize_controls' );

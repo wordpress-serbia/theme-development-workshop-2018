@@ -1,0 +1,14 @@
+/**
+ * Custom styles for customizer controls
+ */
+
+#accordion-section-radionica_theme_options_section .accordion-section-title,
+#accordion-panel-radionica_options_panel .accordion-section-title {
+	background-color: #0085ba;
+	color: #fff;
+}
+
+#accordion-section-radionica_theme_options_section .accordion-section-title:after,
+#accordion-panel-radionica_options_panel .accordion-section-title:after {
+	color: #fff;
+}
