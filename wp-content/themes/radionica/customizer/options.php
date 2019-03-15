@@ -2,6 +2,8 @@
 /**
  * Custom Theme Options
  *
+ * @link https://developer.wordpress.org/themes/customize-api/customizer-objects/
+ *
  * @package WordPress
  */
 
@@ -115,12 +117,17 @@ function radionica_customize_register_options( $wp_customize ) {
 
 	/**
 	 * Change order and title for default sections.
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/get_section/
 	 */
 	$wp_customize->get_section( 'static_front_page' )->priority = 15;
 	$wp_customize->get_section( 'header_image' )->title         = esc_html__( 'Header Image and Video', 'radionica' );
 
 	/**
 	 * Set site title and tagline to 'postMessage'.
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/get_setting/
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/register_controls/
 	 */
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
