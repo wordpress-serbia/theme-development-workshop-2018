@@ -114,6 +114,12 @@ function radionica_customize_register_options( $wp_customize ) {
 	) );
 
 	/**
+	 * Set site title and tagline to 'postMessage'.
+	 */
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+	/**
 	 * Add partial to selective refresh.
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_selective_refresh/add_partial/
@@ -121,6 +127,16 @@ function radionica_customize_register_options( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'radionica_options_panel_welcome', array(
 		'selector'        => '.radionica-welcome-message p',
 		'render_callback' => 'radionica_customize_partial_welcome',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector'        => '.site-title a',
+		'render_callback' => 'radionica_customize_partial_blogname',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector'        => '.site-description',
+		'render_callback' => 'radionica_customize_partial_blogdescription',
 	) );
 
 }
@@ -133,6 +149,24 @@ add_action( 'customize_register', 'radionica_customize_register_options' );
  */
 function radionica_customize_partial_welcome() {
 	return get_theme_mod( 'radionica_options_panel_welcome' );
+}
+
+/**
+ * Selective refresh callback for site title.
+ *
+ * @return string Returns custom site title.
+ */
+function radionica_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+/**
+ * Selective refresh callback for site description.
+ *
+ * @return string Returns custom site description.
+ */
+function radionica_customize_partial_blogdescription() {
+	bloginfo( 'description' );
 }
 
 /**
