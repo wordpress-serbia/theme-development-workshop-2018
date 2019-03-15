@@ -98,7 +98,8 @@ function radionica_setup() {
 	 */
 	add_theme_support( 'custom-header', array(
 		'width'  => 1200,
-		'height' => 400
+		'height' => 400,
+		'video'  => true
 	) );
 
 	/**

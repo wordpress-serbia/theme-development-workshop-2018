@@ -113,6 +113,9 @@ function radionica_customize_register_options( $wp_customize ) {
 		)
 	) );
 
+	$wp_customize->get_section( 'static_front_page' )->priority = 15;
+	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Header Image and Video', 'radionica' );
+
 	/**
 	 * Set site title and tagline to 'postMessage'.
 	 */
