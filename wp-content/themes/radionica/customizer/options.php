@@ -2,8 +2,6 @@
 /**
  * Custom Theme Options
  *
- * @link https://developer.wordpress.org/themes/customize-api/customizer-objects/
- *
  * @package WordPress
  */
 
@@ -28,9 +26,10 @@ function radionica_customize_register_options( $wp_customize ) {
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
 	 */
 	$wp_customize->add_section( 'radionica_theme_options_section', array(
-		'priority'    => 10,
-		'title'       => esc_html__( 'Radionica Options Section', 'radionica' ),
-		'description' => esc_html__( 'Custom section for Radionica theme.', 'radionica' ),
+		'priority'           => 10,
+		'title'              => esc_html__( 'Radionica Options Section', 'radionica' ),
+		'description'        => esc_html__( 'Custom section for Radionica theme.', 'radionica' ),
+		'description_hidden' => true
 	) );
 
 	/**
@@ -62,7 +61,7 @@ function radionica_customize_register_options( $wp_customize ) {
 	/**
 	 * Top Level Panel
 	 *
-	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_panel/
 	 */
 	$wp_customize->add_panel( 'radionica_options_panel', array(
 		'priority'    => 9,
@@ -86,12 +85,6 @@ function radionica_customize_register_options( $wp_customize ) {
 	 * Setting
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
-	 *
-	 * Sanitizing functions
-	 * @link https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/
-	 *
-	 * Custom sanitize_callbacks
-	 * @link https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
 	 */
 	$wp_customize->add_setting( 'radionica_options_panel_welcome', array(
 		'type'              => 'theme_mod',
@@ -151,7 +144,6 @@ function radionica_customize_register_options( $wp_customize ) {
 		'selector'        => '.site-description',
 		'render_callback' => 'radionica_customize_partial_blogdescription',
 	) );
-
 }
 add_action( 'customize_register', 'radionica_customize_register_options' );
 
@@ -204,6 +196,9 @@ add_action( 'customize_preview_init', 'radionica_customize_preview' );
  * This function is attached to 'customize_controls_enqueue_scripts' action hook
  */
 function radionica_customize_controls() {
-	wp_enqueue_style( 'radionica-customize-controls', get_parent_theme_file_uri( '/customizer/css/style.css' ) );
+	wp_enqueue_style(
+		'radionica-customize-controls',
+		get_parent_theme_file_uri( '/customizer/css/style.css' )
+	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'radionica_customize_controls' );

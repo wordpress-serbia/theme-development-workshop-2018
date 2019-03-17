@@ -62,6 +62,11 @@
 				<?php endif; // has_custom_logo()
 
 				/**
+				 * Get header media - video, from customizer.
+				 */
+				the_custom_header_markup();
+
+				/**
 				 * Menu
 				 *
 				 * @link https://developer.wordpress.org/reference/functions/wp_nav_menu/

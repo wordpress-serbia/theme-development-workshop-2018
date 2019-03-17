@@ -115,4 +115,4 @@ function register_post_type_args( $args, $post_type ) {
 
 	return $args;
 }
-add_action( 'register_post_type_args', __NAMESPACE__ . '\register_post_type_args', 10, 2 );
+add_filter( 'register_post_type_args', __NAMESPACE__ . '\register_post_type_args', 10, 2 );
