@@ -27,6 +27,22 @@
 					</aside>
 				<?php endif;
 
+				/**
+				 * Get custom theme option from customizer.
+				 */
+				// if ( get_option( 'radionica_theme_options_welcome' ) ) :
+				// 	echo get_option( 'radionica_theme_options_welcome' );
+				// endif; // get_option( 'radionica_theme_options_welcome' )
+
+				/**
+				 * Get custom theme_mod from customizer.
+				 */
+				if ( get_theme_mod( 'radionica_options_panel_welcome' ) ) : ?>
+					<div class="radionica-welcome-message">
+						<p><?php echo esc_html( get_theme_mod( 'radionica_options_panel_welcome' ) ); ?></p>
+					</div>
+				<?php endif; // get_theme_mod( 'radionica_options_panel_welcome' )
+
 				if ( has_custom_logo() ) :
 					the_custom_logo();
 				else :
@@ -44,6 +60,11 @@
 						<?php bloginfo( 'description' ); ?>
 					</p>
 				<?php endif; // has_custom_logo()
+
+				/**
+				 * Get header media - video, from customizer.
+				 */
+				the_custom_header_markup();
 
 				/**
 				 * Menu

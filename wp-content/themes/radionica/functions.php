@@ -98,7 +98,8 @@ function radionica_setup() {
 	 */
 	add_theme_support( 'custom-header', array(
 		'width'  => 1200,
-		'height' => 400
+		'height' => 400,
+		'video'  => true
 	) );
 
 	/**
@@ -396,3 +397,9 @@ require_once get_parent_theme_file_path( '/inc/template-functions.php' );
  */
 require_once get_parent_theme_file_path( '/blocks/enqueue-scripts-styles.php' );
 require_once get_parent_theme_file_path( '/blocks/templates.php' );
+
+/**
+ * Customizer
+ */
+require_once get_parent_theme_file_path( '/customizer/options.php' );
+require_once get_parent_theme_file_path( '/customizer/sanitize.php' );
