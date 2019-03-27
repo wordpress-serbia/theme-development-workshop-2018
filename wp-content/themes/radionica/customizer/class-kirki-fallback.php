@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * ensuring that all CSS & fonts still work.
  * It does not handle the customizer options, simply the frontend CSS.
  */
-class My_Theme_Kirki {
+class Radionica_Kirki {
 
 	/**
 	 * The config ID.
@@ -419,4 +419,4 @@ class My_Theme_Kirki {
 		}
 	}
 }
-new My_Theme_Kirki();
+new Radionica_Kirki();
