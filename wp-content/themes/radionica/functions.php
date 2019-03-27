@@ -406,3 +406,4 @@ require_once get_parent_theme_file_path( '/customizer/sanitize.php' );
 
 include_once get_theme_file_path( 'customizer/class-kirki-installer-section.php' );
 include_once get_theme_file_path( 'customizer/class-kirki-fallback.php' );
+include_once get_theme_file_path( 'customizer/kirki-customizer.php' );
