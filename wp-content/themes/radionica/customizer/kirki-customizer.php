@@ -17,15 +17,38 @@
 function radionica_customizer_fields( $fields ) {
 
 	/**
+	 * Switch
+	 *
+	 * Warning: Choices are strings, 'on' and 'off', but it returns bool (!).
+	 * See 'active_callback' in 'typography_h1' control.
+	 *
+	 * @link http://aristath.github.io/kirki/docs/controls/switch.html
+	 */
+	$fields[] = [
+		'type'        => 'switch',
+		'settings'    => 'typography_enable',
+		'label'       => esc_html__( 'Enable custom typography', 'radionica' ),
+		'section'     => 'radionica_options_panel_typography',
+		'priority'    => 9,
+		'default'     => 'off',
+		'choices'     => [
+			'on'  => esc_attr__( 'ON', 'radionica' ),
+			'off' => esc_attr__( 'OFF', 'radionica' )
+		],
+	];
+
+	/**
 	 * Typography
+	 *
+	 * @link http://aristath.github.io/kirki/docs/controls/typography.html
 	 */
 	// H1
 	$fields[] = [
 		'type'        => 'typography',
 		'settings'    => 'typography_h1',
 		'section'     => 'radionica_options_panel_typography',
-		'label'       => esc_html__( 'H1', 'kirki' ),
-		'description' => esc_html__( 'Heading Level 1', 'kirki' ),
+		'label'       => esc_html__( 'H1', 'radionica' ),
+		'description' => esc_html__( 'Heading Level 1', 'radionica' ),
 		'default'     => [
 			'font-family'    => 'Roboto',
 			'variant'        => 'regular',
@@ -38,6 +61,18 @@ function radionica_customizer_fields( $fields ) {
 			[
 				'element' => 'h1',
 			],
+		],
+		/**
+		 * Active callback
+		 *
+		 * @link http://aristath.github.io/kirki/docs/arguments/active_callback.html
+		 */
+		'active_callback'  => [
+			[
+				'setting'  => 'typography_enable',
+				'operator' => '==',
+				'value'    => 1
+			]
 		],
 	];
 
