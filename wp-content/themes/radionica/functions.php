@@ -403,3 +403,6 @@ require_once get_parent_theme_file_path( '/blocks/templates.php' );
  */
 require_once get_parent_theme_file_path( '/customizer/options.php' );
 require_once get_parent_theme_file_path( '/customizer/sanitize.php' );
+
+include_once get_theme_file_path( 'customizer/class-kirki-installer-section.php' );
+include_once get_theme_file_path( 'customizer/class-my-theme-kirki.php' );
