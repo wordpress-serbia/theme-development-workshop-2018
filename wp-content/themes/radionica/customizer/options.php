@@ -70,6 +70,18 @@ function radionica_customize_register_options( $wp_customize ) {
 	) );
 
 	/**
+	 * Typography Section
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_section( 'radionica_options_panel_typography', array(
+		'priority'    => 9,
+		'panel'       => 'radionica_options_panel',
+		'title'       => esc_html__( 'Typography', 'radionica' ),
+		'description' => esc_html__( 'Custom typography settings.', 'radionica' ),
+	) );
+
+	/**
 	 * Section
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
