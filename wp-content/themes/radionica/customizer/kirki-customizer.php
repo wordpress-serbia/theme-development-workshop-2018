@@ -76,6 +76,58 @@ function radionica_customizer_fields( $fields ) {
 		],
 	];
 
+	/**
+	 * Radio Buttonset
+	 *
+	 * @link http://aristath.github.io/kirki/docs/controls/radio-buttonset.html
+	 */
+	$fields[] = [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'colors_enable',
+		'label'       => esc_html__( 'Enable custom colors', 'radionica' ),
+		'section'     => 'radionica_options_panel_colors',
+		'default'     => 'disable',
+		'choices'     => [
+			'enable'  => esc_html__( 'Turn ON', 'radionica' ),
+			'disable' => esc_html__( 'Turn OFF', 'radionica' ),
+		],
+	];
+
+	/**
+	 * Color Palette
+	 *
+	 * @link http://aristath.github.io/kirki/docs/controls/color-palette.html
+	 */
+	$fields[] = [
+		'type'        => 'color-palette',
+		'settings'    => 'color_headings',
+		'label'       => esc_html__( 'Headings', 'radionica' ),
+		'description' => esc_html__( 'Select color for H1 and Widget Title.', 'radionica' ),
+		'section'     => 'radionica_options_panel_colors',
+		'default'     => '#888888',
+		'choices'     => [
+			'colors' => [
+				'#666666',
+				'#888888',
+				'#aaaaaa',
+				'#cccccc',
+				'#eeeeee'
+			],
+		],
+		/**
+		 * Active callback
+		 *
+		 * @link http://aristath.github.io/kirki/docs/arguments/active_callback.html
+		 */
+		'active_callback'  => [
+			[
+				'setting'  => 'colors_enable',
+				'operator' => '==',
+				'value'    => 'enable'
+			]
+		],
+	];
+
 	return $fields;
 }
 add_filter( 'kirki/fields', 'radionica_customizer_fields' );

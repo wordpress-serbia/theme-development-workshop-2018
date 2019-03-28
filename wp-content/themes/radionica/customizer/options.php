@@ -82,12 +82,24 @@ function radionica_customize_register_options( $wp_customize ) {
 	) );
 
 	/**
+	 * Colors Section
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_section( 'radionica_options_panel_colors', array(
+		'priority'    => 10,
+		'panel'       => 'radionica_options_panel',
+		'title'       => esc_html__( 'Colors', 'radionica' ),
+		'description' => esc_html__( 'Custom color settings.', 'radionica' ),
+	) );
+
+	/**
 	 * Section
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
 	 */
 	$wp_customize->add_section( 'radionica_options_panel_section', array(
-		'priority'    => 10,
+		'priority'    => 100,
 		'panel'       => 'radionica_options_panel',
 		'title'       => esc_html__( 'Radionica Panel Section 1', 'radionica' ),
 		'description' => esc_html__( 'Custom section for panel.', 'radionica' ),
