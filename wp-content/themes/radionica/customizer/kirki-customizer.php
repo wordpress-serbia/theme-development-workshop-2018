@@ -109,6 +109,7 @@ function radionica_customizer_fields( $fields ) {
 			'colors' => [
 				'#666666',
 				'#888888',
+				'violet',
 				'#aaaaaa',
 				'#cccccc',
 				'#eeeeee'
@@ -131,3 +132,28 @@ function radionica_customizer_fields( $fields ) {
 	return $fields;
 }
 add_filter( 'kirki/fields', 'radionica_customizer_fields' );
+
+/**
+ * Custom colors
+ *
+ * Get custom colors from customizer and prepare
+ * CSS for inline style.
+ */
+function radionica_custom_colors() {
+	$color_headings = get_theme_mod( 'color_headings', '#888888' );
+
+	/**
+	 * Heredoc for passing CSS
+	 *
+	 * @link https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc
+	 */
+	$custom_css = <<<CSS
+
+	h1, .widget-title {
+		color: $color_headings;
+	}
+
+CSS;
+
+	return $custom_css;
+}

@@ -336,6 +336,15 @@ function radionica_enqueue_scripts() {
 	// Main stylesheet.
 	wp_enqueue_style( 'radionica-style', get_stylesheet_uri() );
 
+	/**
+	 * Check if we have custom colors enabled and add inline style if true.
+	 *
+	 * @see wp_add_inline_style()
+	 */
+	if ( 'enable' == get_theme_mod( 'colors_enable' ) ) :
+		wp_add_inline_style( 'radionica-style', radionica_custom_colors() );
+	endif;
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
