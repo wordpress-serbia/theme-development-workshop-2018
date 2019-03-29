@@ -129,6 +129,30 @@ function radionica_customizer_fields( $fields ) {
 		],
 	];
 
+	/**
+	 * Sortable
+	 *
+	 * @link http://aristath.github.io/kirki/docs/controls/sortable.html
+	 */
+	$fields[] = [
+		'type'        => 'sortable',
+		'settings'    => 'sortable_sections',
+		'label'       => esc_html__( 'Reorder sections', 'radionica' ),
+		'section'     => 'radionica_options_panel_template',
+		'default'     => [
+			'section-3',
+			'section-1',
+			'section-4',
+			'section-2'
+		],
+		'choices'     => [
+			'section-1' => esc_html__( 'Section 1', 'radionica' ),
+			'section-2' => esc_html__( 'Section 2', 'radionica' ),
+			'section-3' => esc_html__( 'Section 3', 'radionica' ),
+			'section-4' => esc_html__( 'Section 4', 'radionica' ),
+		],
+	];
+
 	return $fields;
 }
 add_filter( 'kirki/fields', 'radionica_customizer_fields' );
