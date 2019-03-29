@@ -106,6 +106,18 @@ function radionica_customize_register_options( $wp_customize ) {
 	) );
 
 	/**
+	 * Slider Section
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_section( 'radionica_options_panel_slider', array(
+		'priority'    => 11,
+		'panel'       => 'radionica_options_panel',
+		'title'       => esc_html__( 'Slider', 'radionica' ),
+		'description' => esc_html__( 'Slider settings.', 'radionica' ),
+	) );
+
+	/**
 	 * Section
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/

@@ -172,6 +172,38 @@ function radionica_customizer_fields( $fields ) {
 		],
 	];
 
+	/**
+	 * Repeater
+	 *
+	 * @link http://aristath.github.io/kirki/docs/controls/repeater.html
+	 */
+	$fields[] = [
+		'type'        => 'repeater',
+		'settings'    => 'posts_slider',
+		'label'       => esc_html__( 'Posts Slider', 'radionica' ),
+		'section'     => 'radionica_options_panel_slider',
+		'row_label' => [
+			'type'  => 'text',
+			'value' => esc_html__( 'Post', 'radionica' ),
+		],
+		'button_label' => esc_html__( 'Add Slide', 'radionica' ),
+		'fields' => [
+			'post' => [
+				'type'        => 'select',
+				'label'       => esc_html__( 'Post', 'radionica' ),
+				'description' => esc_html__( 'Select post.', 'radionica' ),
+				/**
+				 * Kirki_Helper::get_posts()
+				 *
+				 * @link http://aristath.github.io/kirki/docs/advanced/kirki-helper-class.html
+				 */
+				'choices'     => Kirki_Helper::get_posts( [
+					'numberposts' => -1
+				] ),
+			],
+		]
+	];
+
 	return $fields;
 }
 add_filter( 'kirki/fields', 'radionica_customizer_fields' );

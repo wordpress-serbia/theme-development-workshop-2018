@@ -310,28 +310,35 @@ function radionica_enqueue_scripts() {
 		// For the sake of working with some js settings.
 		wp_enqueue_style( 'roundslider', 'https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css' );
 		wp_enqueue_script( 'roundslider', 'https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js', array( 'jquery' ), '1.3.2', true );
-		wp_enqueue_script( 'radionica-js', get_theme_file_uri( '/js/radionica.js' ), array(), time(), true );
-
-		/**
-		 * Register a global variable to be used in js files.
-		 *
-		 * @link https://developer.wordpress.org/reference/functions/wp_localize_script/
-		 */
-		// Returns all values as strings.
-		wp_localize_script( 'radionica-js', 'radionica', array(
-			'showTooltip'  => true,
-			'tooltipValue' => 70,
-			'circleShape'  => 'half-top'
-		));
-		// Keep the type of the value.
-		wp_localize_script( 'radionica-js', 'radionica2', array(
-			'roundslider' => array(
-				'showTooltip'  => true,
-				'tooltipValue' => 20,
-				'circleShape'  => 'half-top'
-			)
-		));
 	endif;
+
+	/**
+	 * Slick slider
+	 */
+	wp_enqueue_style( 'slickslider', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
+	wp_enqueue_script( 'slickslider', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true );
+
+	wp_enqueue_script( 'radionica-js', get_theme_file_uri( '/js/radionica.js' ), array(), time(), true );
+
+	/**
+	 * Register a global variable to be used in js files.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/wp_localize_script/
+	 */
+	// Returns all values as strings.
+	wp_localize_script( 'radionica-js', 'radionica', array(
+		'showTooltip'  => true,
+		'tooltipValue' => 70,
+		'circleShape'  => 'half-top'
+	));
+	// Keep the type of the value.
+	wp_localize_script( 'radionica-js', 'radionica2', array(
+		'roundslider' => array(
+			'showTooltip'  => true,
+			'tooltipValue' => 20,
+			'circleShape'  => 'half-top'
+		)
+	));
 
 	// Main stylesheet.
 	wp_enqueue_style( 'radionica-style', get_stylesheet_uri() );
