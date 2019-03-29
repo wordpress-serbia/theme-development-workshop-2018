@@ -25,8 +25,17 @@ get_header();
 				'section-2'
 			] );
 
+			/**
+			 * Get selected sections
+			 * @var array
+			 */
+			$selected = get_theme_mod( 'selected_sections' );
+
 			foreach ( $sections as $section ) :
-				get_template_part( 'template-parts/sortable/' . $section );
+				// Show section only if it's selected.
+				if ( in_array( $section, $selected ) ) :
+					get_template_part( 'template-parts/sortable/' . $section );
+				endif;
 			endforeach;
 
 			get_template_part( '/template-parts/entry' );

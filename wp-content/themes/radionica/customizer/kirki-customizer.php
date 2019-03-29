@@ -130,6 +130,25 @@ function radionica_customizer_fields( $fields ) {
 	];
 
 	/**
+	 * Multicheck
+	 *
+	 * @link http://aristath.github.io/kirki/docs/controls/multicheck.html
+	 */
+	$fields[] = [
+		'type'        => 'multicheck',
+		'settings'    => 'selected_sections',
+		'label'       => esc_html__( 'Select sections', 'radionica' ),
+		'section'     => 'radionica_options_panel_template',
+		'default'     => ['section-1', 'section-2', 'section-3', 'section-4'],
+		'choices'     => [
+			'section-1' => esc_html__( 'Section 1', 'radionica' ),
+			'section-2' => esc_html__( 'Section 2', 'radionica' ),
+			'section-3' => esc_html__( 'Section 3', 'radionica' ),
+			'section-4' => esc_html__( 'Section 4', 'radionica' ),
+		],
+	];
+
+	/**
 	 * Sortable
 	 *
 	 * @link http://aristath.github.io/kirki/docs/controls/sortable.html
