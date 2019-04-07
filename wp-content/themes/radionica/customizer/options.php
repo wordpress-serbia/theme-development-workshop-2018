@@ -70,12 +70,60 @@ function radionica_customize_register_options( $wp_customize ) {
 	) );
 
 	/**
+	 * Typography Section
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_section( 'radionica_options_panel_typography', array(
+		'priority'    => 9,
+		'panel'       => 'radionica_options_panel',
+		'title'       => esc_html__( 'Typography', 'radionica' ),
+		'description' => esc_html__( 'Custom typography settings.', 'radionica' ),
+	) );
+
+	/**
+	 * Colors Section
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_section( 'radionica_options_panel_colors', array(
+		'priority'    => 10,
+		'panel'       => 'radionica_options_panel',
+		'title'       => esc_html__( 'Colors', 'radionica' ),
+		'description' => esc_html__( 'Custom color settings.', 'radionica' ),
+	) );
+
+	/**
+	 * Sortable Template Section
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_section( 'radionica_options_panel_template', array(
+		'priority'    => 11,
+		'panel'       => 'radionica_options_panel',
+		'title'       => esc_html__( 'Sortable Template', 'radionica' ),
+		'description' => esc_html__( 'Custom sortable template settings.', 'radionica' ),
+	) );
+
+	/**
+	 * Slider Section
+	 *
+	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+	 */
+	$wp_customize->add_section( 'radionica_options_panel_slider', array(
+		'priority'    => 12,
+		'panel'       => 'radionica_options_panel',
+		'title'       => esc_html__( 'Slider', 'radionica' ),
+		'description' => esc_html__( 'Slider settings.', 'radionica' ),
+	) );
+
+	/**
 	 * Section
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
 	 */
 	$wp_customize->add_section( 'radionica_options_panel_section', array(
-		'priority'    => 10,
+		'priority'    => 100,
 		'panel'       => 'radionica_options_panel',
 		'title'       => esc_html__( 'Radionica Panel Section 1', 'radionica' ),
 		'description' => esc_html__( 'Custom section for panel.', 'radionica' ),

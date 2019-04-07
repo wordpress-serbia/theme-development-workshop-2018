@@ -25,6 +25,7 @@ Tags:
  * Accessibility
  * Core defaults
  * Blocks
+ * Slick Slide
  */
 
 /* Base */
@@ -458,4 +459,10 @@ div.alignleft {
 .entry-content h6 {
 	color: red; /* need extra .wp-block-heading for the editor styles, works on frontend */
 	font-family: sans-serif; /* works on both, editor and frontend */
+}
+
+/* Slick Slide */
+.slick-slide img {
+	max-width: 100%;
+	height: auto;
 }

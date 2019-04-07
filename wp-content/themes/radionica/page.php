@@ -14,6 +14,37 @@ get_header();
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
 
+			get_template_part( 'template-parts/slider/posts' );
+
+			/**
+			 * Get the order of sortable sections
+			 * @var array
+			 */
+			$sections = get_theme_mod( 'sortable_sections', [
+				'section-3',
+				'section-1',
+				'section-4',
+				'section-2'
+			] );
+
+			/**
+			 * Get selected sections
+			 * @var array
+			 */
+			$selected = get_theme_mod( 'selected_sections' );
+
+			foreach ( $sections as $section ) :
+				/**
+				 * Show section only if it's selected.
+				 *
+				 * This is not really needed with sortable sections
+				 * as there is 'eye' icon which toggles section visibility.
+				 */
+				if ( in_array( $section, $selected ) ) :
+					get_template_part( 'template-parts/sortable/' . $section );
+				endif;
+			endforeach;
+
 			get_template_part( '/template-parts/entry' );
 
 		endwhile; // have_posts()
