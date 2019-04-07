@@ -20,6 +20,13 @@ if ( get_theme_mod( 'posts_slider' ) ) :
 					endif;
 				?>
 				<h2><?php echo esc_html( $entry->post_title ); ?></h2>
+				<?php
+					if ( has_excerpt( $slide['post'] ) ) :
+						echo apply_filters( 'the_excerpt', $entry->post_excerpt );
+					elseif ( $slide['summary'] ) :
+						echo apply_filters( 'the_excerpt', $slide['summary'] );
+					endif;
+				?>
 			</div>
 		<?php endforeach; ?>
 	</div>

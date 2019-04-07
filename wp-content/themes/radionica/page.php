@@ -34,7 +34,12 @@ get_header();
 			$selected = get_theme_mod( 'selected_sections' );
 
 			foreach ( $sections as $section ) :
-				// Show section only if it's selected.
+				/**
+				 * Show section only if it's selected.
+				 *
+				 * This is not really needed with sortable sections
+				 * as there is 'eye' icon which toggles section visibility.
+				 */
 				if ( in_array( $section, $selected ) ) :
 					get_template_part( 'template-parts/sortable/' . $section );
 				endif;

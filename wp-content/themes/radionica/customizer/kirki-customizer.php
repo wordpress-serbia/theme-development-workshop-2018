@@ -187,6 +187,10 @@ function radionica_customizer_fields( $fields ) {
 			'value' => esc_html__( 'Post', 'radionica' ),
 		],
 		'button_label' => esc_html__( 'Add Slide', 'radionica' ),
+		// Limit number of repeated rows.
+		// 'choices' => array(
+		// 	'limit' => 3
+		// ),
 		'fields' => [
 			'post' => [
 				'type'        => 'select',
@@ -201,6 +205,10 @@ function radionica_customizer_fields( $fields ) {
 					'numberposts' => -1
 				] ),
 			],
+			'summary' => [
+				'type'  => 'textarea',
+				'label' => esc_html__( 'Excerpt', 'radionica' ),
+			]
 		]
 	];
 

@@ -111,7 +111,7 @@ function radionica_customize_register_options( $wp_customize ) {
 	 * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
 	 */
 	$wp_customize->add_section( 'radionica_options_panel_slider', array(
-		'priority'    => 11,
+		'priority'    => 12,
 		'panel'       => 'radionica_options_panel',
 		'title'       => esc_html__( 'Slider', 'radionica' ),
 		'description' => esc_html__( 'Slider settings.', 'radionica' ),
