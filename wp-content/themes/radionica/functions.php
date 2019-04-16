@@ -423,3 +423,37 @@ require_once get_parent_theme_file_path( '/customizer/sanitize.php' );
 include_once get_theme_file_path( 'customizer/class-kirki-installer-section.php' );
 include_once get_theme_file_path( 'customizer/class-kirki-fallback.php' );
 include_once get_theme_file_path( 'customizer/kirki-customizer.php' );
+
+/**
+ * TGM Plugin Activation
+ *
+ * Recommend plugins supported by the theme.
+ */
+include_once get_theme_file_path( 'TGM/class-tgm-plugin-activation.php' );
+
+add_action( 'tgmpa_register', 'radionica_register_required_plugins' );
+
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register five plugins:
+ * - one included with the TGMPA library
+ * - two from an external source, one from an arbitrary source, one from a GitHub repository
+ * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
+ *
+ * The variables passed to the `tgmpa()` function should be:
+ * - an array of plugin arrays;
+ * - optionally a configuration array.
+ * If you are not changing anything in the configuration array, you can remove the array and remove the
+ * variable from the function call: `tgmpa( $plugins );`.
+ * In that case, the TGMPA default settings will be used.
+ *
+ * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+ */
+function radionica_register_required_plugins() {
+	$plugins = [];
+	$config  = [];
+
+ 	tgmpa( $plugins, $config );
+}
+
