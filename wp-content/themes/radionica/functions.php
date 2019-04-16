@@ -464,6 +464,20 @@ function radionica_register_required_plugins() {
 			'source'   => get_theme_file_path( 'TGM/plugins/tgm-example-plugin.zip' ), // The plugin source.
 			'required' => true, // If false, the plugin is only 'recommended' instead of required.
 		],
+
+		/**
+		 * TGM Example Plugin
+		 *
+		 * A latest release from Github repository.
+		 */
+		[
+			'name'         => 'TGM Example Plugin from Github',
+			'slug'         => 'github-tgm-example-plugin',
+			'external_url' => 'https://github.com/TGMPA/tgm-example-plugin/releases/latest',
+			'source'       => 'https://github.com/TGMPA/tgm-example-plugin/archive/master.zip',
+			'required'     => false,
+			'version'      => '1.0.2', // Latest version at this point is 1.0.2
+		],
 	];
 
 	$config  = [];
