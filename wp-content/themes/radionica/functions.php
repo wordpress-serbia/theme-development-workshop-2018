@@ -451,7 +451,21 @@ add_action( 'tgmpa_register', 'radionica_register_required_plugins' );
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
 function radionica_register_required_plugins() {
-	$plugins = [];
+	$plugins = [
+
+		/**
+		 * TGM Example Plugin
+		 *
+		 * A plugin bundled with a theme.
+		 */
+		[
+			'name'     => 'TGM Example Plugin', // The plugin name.
+			'slug'     => 'tgm-example-plugin', // The plugin slug (typically the folder name).
+			'source'   => get_theme_file_path( 'TGM/plugins/tgm-example-plugin.zip' ), // The plugin source.
+			'required' => true, // If false, the plugin is only 'recommended' instead of required.
+		],
+	];
+
 	$config  = [];
 
  	tgmpa( $plugins, $config );
