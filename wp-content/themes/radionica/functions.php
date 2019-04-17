@@ -496,3 +496,7 @@ function radionica_register_required_plugins() {
  	tgmpa( $plugins, $config );
 }
 
+/**
+ * Custom meta
+ */
+include_once get_theme_file_path( 'meta/metabox.php' );
