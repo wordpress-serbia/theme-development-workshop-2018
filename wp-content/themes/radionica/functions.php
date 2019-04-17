@@ -478,6 +478,17 @@ function radionica_register_required_plugins() {
 			'required'     => false,
 			'version'      => '1.0.2', // Latest version at this point is 1.0.2
 		],
+
+		/**
+		 * WordPress SEO by Yoast
+		 *
+		 * A plugin from WordPress.org repository.
+		 */
+		[
+			'name'               => 'WordPress SEO by Yoast',
+			'slug'               => 'wordpress-seo',
+			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		],
 	];
 
 	$config  = [];
