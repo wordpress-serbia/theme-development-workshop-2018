@@ -14,6 +14,12 @@ get_header();
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
 
+			$custom_meta = get_post_meta( $post->ID, 'radionica_meta_field', true );
+
+			if ( $custom_meta ) :
+				echo esc_html( $custom_meta['radionica_meta_field'] );
+			endif;
+
 			if ( has_post_format() ) :
 				get_template_part( '/template-parts/format', get_post_format() );
 			else :
