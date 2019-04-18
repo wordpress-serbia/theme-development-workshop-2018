@@ -412,7 +412,7 @@ require_once get_parent_theme_file_path( '/inc/template-functions.php' );
  * Enqueue scripts and styles for block editor
  */
 require_once get_parent_theme_file_path( '/blocks/enqueue-scripts-styles.php' );
-require_once get_parent_theme_file_path( '/blocks/templates.php' );
+// require_once get_parent_theme_file_path( '/blocks/templates.php' );
 
 /**
  * Customizer
@@ -488,6 +488,17 @@ function radionica_register_required_plugins() {
 			'name'               => 'WordPress SEO by Yoast',
 			'slug'               => 'wordpress-seo',
 			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		],
+
+		/**
+		 * Advanced Custom Fields
+		 *
+		 * A plugin from WordPress.org repository.
+		 */
+		[
+			'name'    => 'Advanced Custom Fields',
+			'slug'    => 'advanced-custom-fields',
+			'version' => '5.8', // Minimum version for usage with Gutenberg
 		],
 	];
 

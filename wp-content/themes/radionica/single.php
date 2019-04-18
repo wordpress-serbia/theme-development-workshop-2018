@@ -20,6 +20,46 @@ get_header();
 				echo esc_html( $custom_meta['radionica_meta_field'] );
 			endif;
 
+			/**
+			 * Advanced Custom Fields plugin
+			 *
+			 * Text field
+			 *
+			 * @link https://www.advancedcustomfields.com/resources/get_field/
+			 * @link https://www.advancedcustomfields.com/resources/the_field/
+			 */
+			if ( get_field( 'acf_custom_field' ) ) :
+				the_field( 'acf_custom_field' );
+			endif;
+
+			/**
+			 * Relationship field
+			 *
+			 * @link https://www.advancedcustomfields.com/resources/relationship/
+			 */
+			if ( is_array( get_field( 'related_posts' ) ) ) :
+				$related_posts = get_field( 'related_posts' );
+
+				$output = '<ul>';
+
+				foreach ( $related_posts as $related_post ) :
+					$output .= '<li>';
+					$output .= '<h4>';
+					$output .= '<a href="' . esc_url( get_permalink( $related_post ) ) . '">';
+					$output .= esc_html( get_the_title( $related_post ) );
+					$output .= '</a>';
+					$output .= ' &vert; ';
+					$output .= '<small>' . get_the_date( get_option( 'date_format' ), $related_post ) . '</small>';
+					$output .= '</h4>';
+					$output .= '</li>';
+				endforeach;
+
+				$output .= '</ul>';
+
+				echo $output; // WPCS: XSS ok.
+
+			endif; // is_array( get_field( 'related_posts' ) )
+
 			if ( has_post_format() ) :
 				get_template_part( '/template-parts/format', get_post_format() );
 			else :
