@@ -20,6 +20,19 @@ get_header();
 					if ( have_rows( 'flexible_content' ) ) :
 						while ( have_rows( 'flexible_content' ) ) : the_row();
 
+							if ( get_row_layout() == 'heading_h2' ) :
+
+							elseif ( get_row_layout() == 'heading_h3' ) :
+
+							elseif ( get_row_layout() == 'heading_h4' ) :
+
+							elseif ( get_row_layout() == 'lead_paragraph' ) :
+
+							elseif ( get_row_layout() == 'image' ) :
+
+							elseif ( get_row_layout() == 'wysiwyg' ) :
+
+							endif; // get_row_layout()
 
 						endwhile; // have_rows( 'flexible_content' )
 					else :
