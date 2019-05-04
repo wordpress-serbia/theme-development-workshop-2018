@@ -14,6 +14,28 @@ get_header();
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
 
+			/**
+			 * List repeater
+			 */
+			if ( have_rows( 'list' ) ) :
+				echo '<ul>';
+
+				while ( have_rows( 'list' ) ) : the_row();
+					echo '<li>';
+
+ 					if ( get_sub_field( 'list_item' ) ) :
+						echo esc_html( get_sub_field( 'list_item' ) );
+					endif; // get_sub_field( 'list_item' )
+
+					echo '</li>';
+				endwhile; // have_rows( 'list' )
+
+				echo '</ul>';
+			endif; // have_rows( 'list' )
+
+			/**
+			 * Custom post meta
+			 */
 			$custom_meta = get_post_meta( $post->ID, 'radionica_meta_field', true );
 
 			if ( $custom_meta ) :
@@ -31,6 +53,8 @@ get_header();
 			if ( get_field( 'acf_custom_field' ) ) :
 				the_field( 'acf_custom_field' );
 			endif;
+
+			acf_field( 'acf_custom_field', true, '<h2>', '</h2>' );
 
 			/**
 			 * Relationship field

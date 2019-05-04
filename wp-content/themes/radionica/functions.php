@@ -463,6 +463,7 @@ function radionica_register_required_plugins() {
 			'slug'     => 'tgm-example-plugin', // The plugin slug (typically the folder name).
 			'source'   => get_theme_file_path( 'TGM/plugins/tgm-example-plugin.zip' ), // The plugin source.
 			'required' => true, // If false, the plugin is only 'recommended' instead of required.
+			// 'version'  => '2.0'
 		],
 
 		/**
@@ -498,7 +499,7 @@ function radionica_register_required_plugins() {
 		[
 			'name'    => 'Advanced Custom Fields',
 			'slug'    => 'advanced-custom-fields',
-			'version' => '5.8', // Minimum version for usage with Gutenberg
+			// 'version' => '5.8', // Minimum version for usage with Gutenberg
 		],
 	];
 
