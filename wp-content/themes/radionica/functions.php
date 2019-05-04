@@ -412,7 +412,7 @@ require_once get_parent_theme_file_path( '/inc/template-functions.php' );
  * Enqueue scripts and styles for block editor
  */
 require_once get_parent_theme_file_path( '/blocks/enqueue-scripts-styles.php' );
-require_once get_parent_theme_file_path( '/blocks/templates.php' );
+// require_once get_parent_theme_file_path( '/blocks/templates.php' );
 
 /**
  * Customizer
@@ -423,3 +423,92 @@ require_once get_parent_theme_file_path( '/customizer/sanitize.php' );
 include_once get_theme_file_path( 'customizer/class-kirki-installer-section.php' );
 include_once get_theme_file_path( 'customizer/class-kirki-fallback.php' );
 include_once get_theme_file_path( 'customizer/kirki-customizer.php' );
+
+/**
+ * TGM Plugin Activation
+ *
+ * Recommend plugins supported by the theme.
+ */
+include_once get_theme_file_path( 'TGM/class-tgm-plugin-activation.php' );
+
+add_action( 'tgmpa_register', 'radionica_register_required_plugins' );
+
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register five plugins:
+ * - one included with the TGMPA library
+ * - two from an external source, one from an arbitrary source, one from a GitHub repository
+ * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
+ *
+ * The variables passed to the `tgmpa()` function should be:
+ * - an array of plugin arrays;
+ * - optionally a configuration array.
+ * If you are not changing anything in the configuration array, you can remove the array and remove the
+ * variable from the function call: `tgmpa( $plugins );`.
+ * In that case, the TGMPA default settings will be used.
+ *
+ * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+ */
+function radionica_register_required_plugins() {
+	$plugins = [
+
+		/**
+		 * TGM Example Plugin
+		 *
+		 * A plugin bundled with a theme.
+		 */
+		[
+			'name'     => 'TGM Example Plugin', // The plugin name.
+			'slug'     => 'tgm-example-plugin', // The plugin slug (typically the folder name).
+			'source'   => get_theme_file_path( 'TGM/plugins/tgm-example-plugin.zip' ), // The plugin source.
+			'required' => true, // If false, the plugin is only 'recommended' instead of required.
+			// 'version'  => '2.0'
+		],
+
+		/**
+		 * TGM Example Plugin
+		 *
+		 * A latest release from Github repository.
+		 */
+		[
+			'name'         => 'TGM Example Plugin from Github',
+			'slug'         => 'github-tgm-example-plugin',
+			'external_url' => 'https://github.com/TGMPA/tgm-example-plugin/releases/latest',
+			'source'       => 'https://github.com/TGMPA/tgm-example-plugin/archive/master.zip',
+			'required'     => false,
+			'version'      => '1.0.2', // Latest version at this point is 1.0.2
+		],
+
+		/**
+		 * WordPress SEO by Yoast
+		 *
+		 * A plugin from WordPress.org repository.
+		 */
+		[
+			'name'               => 'WordPress SEO by Yoast',
+			'slug'               => 'wordpress-seo',
+			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		],
+
+		/**
+		 * Advanced Custom Fields
+		 *
+		 * A plugin from WordPress.org repository.
+		 */
+		[
+			'name'    => 'Advanced Custom Fields',
+			'slug'    => 'advanced-custom-fields',
+			// 'version' => '5.8', // Minimum version for usage with Gutenberg
+		],
+	];
+
+	$config  = [];
+
+ 	tgmpa( $plugins, $config );
+}
+
+/**
+ * Custom meta
+ */
+include_once get_theme_file_path( 'meta/metabox.php' );

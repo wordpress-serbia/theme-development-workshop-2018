@@ -272,3 +272,79 @@ function radionica_get_the_archive_description( $description ) {
 	return $description;
 }
 add_filter( 'get_the_archive_description', 'radionica_get_the_archive_description' );
+
+/**
+ * ACF field
+ *
+ * Perform the 'if empty' field check and echo it value with
+ * optional content before and after it.
+ *
+ * @param  string $field    Field id
+ * @param  boolean $echo    Whether to echo or return the value, default is true
+ * @param  string $before   Custom markup before field value
+ * @param  string $after    Custom markup after field value
+ * @param  string $escaping Escaping function
+ *
+ * @return string         Returns or echoes field value
+ */
+function acf_field( $field = '', $echo = true, $before = '', $after = '', $escaping = 'esc_html' ) {
+	/**
+	 * Declare empty value to avoid notices
+	 * @var string
+	 */
+	$value = '';
+	/**
+	 * Get the field value
+	 */
+	if ( get_field( $field ) ) :
+		$value = get_field( $field );
+	endif; // get_field( $field )
+	/**
+	 * Echo or return the value
+	 */
+	if ( ! empty( $value ) ) {
+		if ( $echo ) {
+			echo $before . $escaping( $value ) . $after;
+		} else {
+			return $escaping( $value );
+		}
+	}
+}
+
+/**
+ * ACF sub field
+ *
+ * Perform the 'if empty' sub field check and echo it value with
+ * optional content before and after it.
+ *
+ * @param  string $field    Field id
+ * @param  boolean $echo    Whether to echo or return the value, default is true
+ * @param  string $before   Custom markup before field value
+ * @param  string $after    Custom markup after field value
+ * @param  string $escaping Escaping function
+ *
+ * @return string         Returns sub field value with or without custom markup
+ */
+function acf_sub_field( $field = '', $echo = true, $before = '', $after = '', $escaping = 'esc_html' ) {
+	/**
+	 * Declare empty value to avoid notices
+	 * @var string
+	 */
+	$value = '';
+	/**
+	 * Get the field value
+	 */
+	if ( get_sub_field( $field ) ) :
+		$value = get_sub_field( $field );
+	endif; // get_sub_field( $field )
+	/**
+	 * Echo or return the value
+	 */
+	if ( ! empty( $value ) ) {
+		if ( $echo ) {
+			echo $before . $escaping( $value ) . $after;
+		} else {
+			return $escaping( $value );
+		}
+	}
+}
