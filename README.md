@@ -54,6 +54,8 @@ Sadržaj:
   - [Lokalizacija](#lokalizacija)
   - [Transliteracija](#transliteracija)
 - [R-10 - Podrška za novi uređivač - Gutenberg](#r-10)
+  - [Učitavanje stilova i skripti](#učitavanje-stilova-i-skripti)
+  - [Podrška teme](#podrška-teme)
 - [R-11 - Šabloni i varijacije stilova blokova](#r-11)
 - [R-12 - Prilagođavač - Customizer](#r-12)
 - [R-13 - Kirki, dodatak za prilagođavač](#r-13)
@@ -405,6 +407,21 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 # R-10
 
 [Članak](https://sr.wordpress.org/2019/02/27/)
+
+## Učitavanje stilova i skripti
+
+- [еnqueue_block_assets](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
+- [enqueue_block_editor_assets](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
+
+## Podrška teme
+
+- [add_theme_support( 'align-wide' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#wide-alignment)
+- [add_theme_support( 'wp-block-styles' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#default-block-styles)
+- [add_theme_support( 'editor-font-sizes’' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-font-sizes)
+- [add_theme_support( 'disable-custom-font-sizes' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-font-sizes)
+- [add_theme_support( 'responsive-embeds' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content)
+- [add_theme_support( 'editor-color-palette' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-color-palettes)
+- [add_theme_support( 'disable-custom-colors' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes)
 
 # R-11
 
