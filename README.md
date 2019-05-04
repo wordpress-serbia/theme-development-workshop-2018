@@ -50,6 +50,9 @@ Sadržaj:
   - [URL](#url)
   - [Javascript](#javascript)
 - [R-09 - Internacionalizacija i lokalizacija](#r-09)
+  - [Internacionalizacija](#internacionalizacija)
+  - [Lokalizacija](#lokalizacija)
+  - [Transliteracija](#transliteracija)
 - [R-10 - Podrška za novi uređivač - Gutenberg](#r-10)
 - [R-11 - Šabloni i varijacije stilova blokova](#r-11)
 - [R-12 - Prilagođavač - Customizer](#r-12)
@@ -378,6 +381,26 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 # R-09
 
 [Članak](https://sr.wordpress.org/2019/02/11/)
+
+## Internacionalizacija
+
+- Jednostavni tekst - [__()](https://developer.wordpress.org/reference/functions/__/), [_e()](https://developer.wordpress.org/reference/functions/_e/), [esc_html__()](https://developer.wordpress.org/reference/functions/esc_html__/), [esc_html_e()](https://developer.wordpress.org/reference/functions/esc_html_e/), [esc_attr__()](https://developer.wordpress.org/reference/functions/esc_attr__/), [esc_attr_e()](https://developer.wordpress.org/reference/functions/esc_attr_e/)
+- Kontekst - [_x()](https://developer.wordpress.org/reference/functions/_x/), [_ex()](https://developer.wordpress.org/reference/functions/_ex/), [esc_html_x()](https://developer.wordpress.org/reference/functions/esc_html_x/), [esc_attr_x()](https://developer.wordpress.org/reference/functions/esc_attr_x/)
+- Jednina i množina - [_n()](https://developer.wordpress.org/reference/functions/_n/), [_nx()](https://developer.wordpress.org/reference/functions/_nx/)
+- Format broja - [number_format_i18n()](https://developer.wordpress.org/reference/functions/number_format_i18n/)
+- Format datuma i vremena - [date_i18n()](https://developer.wordpress.org/reference/functions/date_i18n/)
+- Jezička celina - [sprintf()](http://php.net/manual/en/function.sprintf.php), [printf()](http://php.net/manual/en/function.printf.php)
+
+## Lokalizacija
+
+- [Poedit](https://poedit.net/)
+- [Loco](https://wordpress.org/plugins/loco-translate/)
+- [WP-CLI](https://developer.wordpress.org/cli/commands/i18n/)
+- [grunt-wp-i18n](https://www.npmjs.com/package/grunt-wp-i18n/v/0.4.5)
+
+## Transliteracija
+
+- [SrbTransLatin](https://wordpress.org/plugins/srbtranslatin/)
 
 # R-10
 
