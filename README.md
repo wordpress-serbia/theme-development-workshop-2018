@@ -49,6 +49,12 @@ Sadržaj:
   - [Atributi](#atributi)
   - [URL](#url)
   - [Javascript](#javascript)
+- [R-09 - Internacionalizacija i lokalizacija](#r-09)
+- [R-10 - Podrška za novi uređivač - Gutenberg](#r-10)
+- [R-11 - Šabloni i varijacije stilova blokova](#r-11)
+- [R-12 - Prilagođavač - Customizer](#r-12)
+- [R-13 - Kirki, dodatak za prilagođavač](#r-13)
+- [R-14 - Prilagođena meta polja i ACF](#r-14)
 
 # R-01
 
@@ -347,6 +353,8 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 # R-08
 
+[Članak](https://sr.wordpress.org/2019/01/28/)
+
 ## HTML
 
 - [esc_html()](https://developer.wordpress.org/reference/functions/esc_html/), [esc_textarea()](https://developer.wordpress.org/reference/functions/esc_textarea/) - ne "izvrši" HTML već ga konvertuje u "običan" tekst i proverava važeće i nevažeće UTF8 karaktere. Pogledati [htmlspecialchars()](http://php.net/manual/en/function.htmlspecialchars.php)
@@ -366,3 +374,27 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 - [esc_js()](https://developer.wordpress.org/reference/functions/esc_js/) - Preporučuje se izbegavanje inline Javascript-a ali ako je baš neophodno, preporučuje se upotreba [wp_json_encode()](https://developer.wordpress.org/reference/functions/wp_json_encode/) u kombinaciji sa [esc_attr()](https://developer.wordpress.org/reference/functions/esc_attr/) umesto `esc_js()`.
 - [wp_localize_script()](https://developer.wordpress.org/reference/functions/wp_localize_script/) - inicijalna upotreba je lokalizacija teksta u Javascript datotekama, međutim mnogo češće se upotrebljava za prosleđivanje različitih vrednosti iz PHP-a u Javascript.
+
+# R-09
+
+[Članak](https://sr.wordpress.org/2019/02/11/)
+
+# R-10
+
+[Članak](https://sr.wordpress.org/2019/02/27/)
+
+# R-11
+
+[Članak](https://sr.wordpress.org/2019/03/03/)
+
+# R-12
+
+[Članak](https://sr.wordpress.org/2019/03/17/)
+
+# R-13
+
+[Članak](https://sr.wordpress.org/2019/04/07/)
+
+# R-14
+
+[Članak](https://sr.wordpress.org/2019/05/04/)
