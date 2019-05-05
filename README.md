@@ -63,6 +63,8 @@ Sadržaj:
   - [Sanitizacija](#sanitizacija)
 - [R-13 - Kirki, dodatak za prilagođavač](#r-13)
 - [R-14 - Prilagođena meta polja i ACF](#r-14)
+  - [Prilagođena meta polja](#prilagođena-meta-polja)
+  - [Advanced Custom Fields](#advanced-custom-fields)
 
 # R-01
 
@@ -485,3 +487,26 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 # R-14
 
 [Članak](https://sr.wordpress.org/2019/05/04/)
+
+- [TGM Plugin Activation](http://tgmpluginactivation.com/download/)
+
+## Prilagođena meta polja
+
+- [Struktura](https://developer.wordpress.org/reference/functions/add_meta_box/#comment-60)
+- [add_meta_box()](https://developer.wordpress.org/reference/functions/add_meta_box/)
+- [add_meta_boxes](https://developer.wordpress.org/reference/hooks/add_meta_boxes/)
+- [wp_nonce_field()](https://developer.wordpress.org/reference/functions/wp_nonce_field/)
+- [wp_verify_nonce()](https://developer.wordpress.org/reference/functions/wp_verify_nonce/)
+- [sanitize_meta()](https://developer.wordpress.org/reference/functions/sanitize_meta/)
+- [update_post_meta()](https://developer.wordpress.org/reference/functions/update_post_meta/)
+- [save_post](https://developer.wordpress.org/reference/hooks/save_post/)
+
+## Advanced Custom Fields
+
+- [Advanced Custom Fields](https://www.advancedcustomfields.com/)
+- [Tipovi polja](https://www.advancedcustomfields.com/resources/#field-types)
+- [Pomoćni dodaci](https://wordpress.org/plugins/search/Advanced+Custom+Fields/)
+- [Funkcije](https://www.advancedcustomfields.com/resources/#functions)
+- [Kako početi](https://www.advancedcustomfields.com/resources/#getting-started)
+- [Uputstva](https://www.advancedcustomfields.com/resources/#guides)
+- [acf-json](https://www.advancedcustomfields.com/resources/local-json/#syncing-changes)
