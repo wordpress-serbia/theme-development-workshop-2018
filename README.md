@@ -49,6 +49,22 @@ Sadržaj:
   - [Atributi](#atributi)
   - [URL](#url)
   - [Javascript](#javascript)
+- [R-09 - Internacionalizacija i lokalizacija](#r-09)
+  - [Internacionalizacija](#internacionalizacija)
+  - [Lokalizacija](#lokalizacija)
+  - [Transliteracija](#transliteracija)
+- [R-10 - Podrška za novi uređivač - Gutenberg](#r-10)
+  - [Učitavanje stilova i skripti](#učitavanje-stilova-i-skripti)
+  - [Podrška teme](#podrška-teme)
+- [R-11 - Šabloni i varijacije stilova blokova](#r-11)
+- [R-12 - Prilagođavač - Customizer](#r-12)
+  - [Objekti prilagođavača](#objekti-prilagođavača)
+  - [Selektivno osvežavanje](#selektivno-osvežavanje)
+  - [Sanitizacija](#sanitizacija)
+- [R-13 - Kirki, dodatak za prilagođavač](#r-13)
+- [R-14 - Prilagođena meta polja i ACF](#r-14)
+  - [Prilagođena meta polja](#prilagođena-meta-polja)
+  - [Advanced Custom Fields](#advanced-custom-fields)
 
 # R-01
 
@@ -347,6 +363,8 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 # R-08
 
+[Članak](https://sr.wordpress.org/2019/01/28/)
+
 ## HTML
 
 - [esc_html()](https://developer.wordpress.org/reference/functions/esc_html/), [esc_textarea()](https://developer.wordpress.org/reference/functions/esc_textarea/) - ne "izvrši" HTML već ga konvertuje u "običan" tekst i proverava važeće i nevažeće UTF8 karaktere. Pogledati [htmlspecialchars()](http://php.net/manual/en/function.htmlspecialchars.php)
@@ -366,3 +384,129 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 - [esc_js()](https://developer.wordpress.org/reference/functions/esc_js/) - Preporučuje se izbegavanje inline Javascript-a ali ako je baš neophodno, preporučuje se upotreba [wp_json_encode()](https://developer.wordpress.org/reference/functions/wp_json_encode/) u kombinaciji sa [esc_attr()](https://developer.wordpress.org/reference/functions/esc_attr/) umesto `esc_js()`.
 - [wp_localize_script()](https://developer.wordpress.org/reference/functions/wp_localize_script/) - inicijalna upotreba je lokalizacija teksta u Javascript datotekama, međutim mnogo češće se upotrebljava za prosleđivanje različitih vrednosti iz PHP-a u Javascript.
+
+# R-09
+
+[Članak](https://sr.wordpress.org/2019/02/11/)
+
+## Internacionalizacija
+
+- Jednostavni tekst - [__()](https://developer.wordpress.org/reference/functions/__/), [_e()](https://developer.wordpress.org/reference/functions/_e/), [esc_html__()](https://developer.wordpress.org/reference/functions/esc_html__/), [esc_html_e()](https://developer.wordpress.org/reference/functions/esc_html_e/), [esc_attr__()](https://developer.wordpress.org/reference/functions/esc_attr__/), [esc_attr_e()](https://developer.wordpress.org/reference/functions/esc_attr_e/)
+- Kontekst - [_x()](https://developer.wordpress.org/reference/functions/_x/), [_ex()](https://developer.wordpress.org/reference/functions/_ex/), [esc_html_x()](https://developer.wordpress.org/reference/functions/esc_html_x/), [esc_attr_x()](https://developer.wordpress.org/reference/functions/esc_attr_x/)
+- Jednina i množina - [_n()](https://developer.wordpress.org/reference/functions/_n/), [_nx()](https://developer.wordpress.org/reference/functions/_nx/)
+- Format broja - [number_format_i18n()](https://developer.wordpress.org/reference/functions/number_format_i18n/)
+- Format datuma i vremena - [date_i18n()](https://developer.wordpress.org/reference/functions/date_i18n/)
+- Jezička celina - [sprintf()](http://php.net/manual/en/function.sprintf.php), [printf()](http://php.net/manual/en/function.printf.php)
+
+## Lokalizacija
+
+- [Poedit](https://poedit.net/)
+- [Loco](https://wordpress.org/plugins/loco-translate/)
+- [WP-CLI](https://developer.wordpress.org/cli/commands/i18n/)
+- [grunt-wp-i18n](https://www.npmjs.com/package/grunt-wp-i18n/v/0.4.5)
+
+## Transliteracija
+
+- [SrbTransLatin](https://wordpress.org/plugins/srbtranslatin/)
+
+# R-10
+
+[Članak](https://sr.wordpress.org/2019/02/27/)
+
+## Učitavanje stilova i skripti
+
+- [еnqueue_block_assets](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
+- [enqueue_block_editor_assets](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
+
+## Podrška teme
+
+- [add_theme_support( 'align-wide' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#wide-alignment)
+- [add_theme_support( 'wp-block-styles' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#default-block-styles)
+- [add_theme_support( 'editor-font-sizes’' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-font-sizes)
+- [add_theme_support( 'disable-custom-font-sizes' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-font-sizes)
+- [add_theme_support( 'responsive-embeds' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content)
+- [add_theme_support( 'editor-color-palette' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-color-palettes)
+- [add_theme_support( 'disable-custom-colors' )](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes)
+
+# R-11
+
+[Članak](https://sr.wordpress.org/2019/03/03/)
+
+- [Šabloni blokova](https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-templates/#api)
+- [Svi blokovi](https://github.com/WordPress/gutenberg/tree/master/packages/block-library/src)
+- Varijacije blokova - [registerBlockStyle](https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#block-style-variations)
+- Filteri - [blocks.registerBlockType](https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#blocks-registerblocktype), [blocks.getBlockDefaultClassName](https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#blocks-getblockdefaultclassname)
+- [wp.i18n](https://wordpress.org/gutenberg/handbook/designers-developers/developers/packages/packages-i18n/), [i18n podrška](https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/)
+
+# R-12
+
+[Članak](https://sr.wordpress.org/2019/03/17/)
+
+- [wp_customize_manager](https://developer.wordpress.org/reference/classes/wp_customize_manager/)
+- [Objekti prilagođavača](https://developer.wordpress.org/themes/customize-api/customizer-objects/)
+- [customize_register](https://developer.wordpress.org/reference/hooks/customize_register/)
+
+## Objekti prilagođavača
+
+- [Panel](https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels)
+  - [add_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_panel/)
+  - [get_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_panel/)
+  - [remove_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_panel/)
+- [Sekcija](https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections)
+  - [add_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/)
+  - [get_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_section/)
+  - [remove_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_section/)
+- [Podešavanje](https://developer.wordpress.org/themes/customize-api/customizer-objects/#settings)
+  - [add_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/)
+  - [get_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_setting/)
+  - [remove_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_setting/)
+- [Kontrola](https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls)
+  - [add_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/)
+  - [get_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/)
+  - [remove_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_control/)
+
+## Selektivno osvežavanje
+
+- [PostMessage](https://developer.wordpress.org/themes/customize-api/tools-for-improved-user-experience/#using-postmessage-for-improved-setting-previewing)
+- [add_partial](https://developer.wordpress.org/reference/classes/wp_customize_selective_refresh/add_partial/)
+
+## Sanitizacija
+
+- [Funkcije sanitizacije](https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/#sanitization-securing-input)
+- [Primeri za prilagođavač](https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php)
+
+# R-13
+
+[Članak](https://sr.wordpress.org/2019/04/07/)
+
+- [Kirki](https://aristath.github.io/kirki/)
+- [Instaler skripta](https://aristath.github.io/kirki/docs/integration#use-a-custom-script-to-recommend-the-installation-of-kirki)
+- [Kontrole](http://aristath.github.io/kirki/docs/controls/)
+- [kirki/fields](https://aristath.github.io/blog/build-wordpress-theme-using-kirki)
+
+# R-14
+
+[Članak](https://sr.wordpress.org/2019/05/04/)
+
+- [TGM Plugin Activation](http://tgmpluginactivation.com/download/)
+
+## Prilagođena meta polja
+
+- [Struktura](https://developer.wordpress.org/reference/functions/add_meta_box/#comment-60)
+- [add_meta_box()](https://developer.wordpress.org/reference/functions/add_meta_box/)
+- [add_meta_boxes](https://developer.wordpress.org/reference/hooks/add_meta_boxes/)
+- [wp_nonce_field()](https://developer.wordpress.org/reference/functions/wp_nonce_field/)
+- [wp_verify_nonce()](https://developer.wordpress.org/reference/functions/wp_verify_nonce/)
+- [sanitize_meta()](https://developer.wordpress.org/reference/functions/sanitize_meta/)
+- [update_post_meta()](https://developer.wordpress.org/reference/functions/update_post_meta/)
+- [save_post](https://developer.wordpress.org/reference/hooks/save_post/)
+
+## Advanced Custom Fields
+
+- [Advanced Custom Fields](https://www.advancedcustomfields.com/)
+- [Tipovi polja](https://www.advancedcustomfields.com/resources/#field-types)
+- [Pomoćni dodaci](https://wordpress.org/plugins/search/Advanced+Custom+Fields/)
+- [Funkcije](https://www.advancedcustomfields.com/resources/#functions)
+- [Kako početi](https://www.advancedcustomfields.com/resources/#getting-started)
+- [Uputstva](https://www.advancedcustomfields.com/resources/#guides)
+- [acf-json](https://www.advancedcustomfields.com/resources/local-json/#syncing-changes)
