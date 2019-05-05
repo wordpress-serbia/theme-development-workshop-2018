@@ -446,27 +446,27 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 ## Objekti prilagođavača
 
--[Panel](https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels)
-  -[add_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_panel/)
-  -[get_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_panel/)
-  -[remove_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_panel/)
--[Sekcija](https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections)
-  -[add_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/)
-  -[get_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_section/)
-  -[remove_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_section/)
--[Podešavanje](https://developer.wordpress.org/themes/customize-api/customizer-objects/#settings)
-  -[add_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/)
-  -[get_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_setting/)
-  -[remove_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_setting/)
--[Kontrola](https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls)
-  -[add_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/)
-  -[get_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/)
-  -[remove_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_control/)
+- [Panel](https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels)
+  - [add_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_panel/)
+  - [get_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_panel/)
+  - [remove_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_panel/)
+- [Sekcija](https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections)
+  - [add_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/)
+  - [get_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_section/)
+  - [remove_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_section/)
+- [Podešavanje](https://developer.wordpress.org/themes/customize-api/customizer-objects/#settings)
+  - [add_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/)
+  - [get_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_setting/)
+  - [remove_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_setting/)
+- [Kontrola](https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls)
+  - [add_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/)
+  - [get_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/)
+  - [remove_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_control/)
 
 ## Selektivno osvežavanje
 
--[PostMessage](https://developer.wordpress.org/themes/customize-api/tools-for-improved-user-experience/#using-postmessage-for-improved-setting-previewing)
--[add_partial](https://developer.wordpress.org/reference/classes/wp_customize_selective_refresh/add_partial/)
+- [PostMessage](https://developer.wordpress.org/themes/customize-api/tools-for-improved-user-experience/#using-postmessage-for-improved-setting-previewing)
+- [add_partial](https://developer.wordpress.org/reference/classes/wp_customize_selective_refresh/add_partial/)
 
 ## Sanitizacija
 
