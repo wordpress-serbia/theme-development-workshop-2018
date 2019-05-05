@@ -58,6 +58,9 @@ Sadržaj:
   - [Podrška teme](#podrška-teme)
 - [R-11 - Šabloni i varijacije stilova blokova](#r-11)
 - [R-12 - Prilagođavač - Customizer](#r-12)
+  - [Objekti prilagođavača](#objekti-prilagođavača)
+  - [Selektivno osvežavanje](#selektivno-osvežavanje)
+  - [Sanitizacija](#sanitizacija)
 - [R-13 - Kirki, dodatak za prilagođavač](#r-13)
 - [R-14 - Prilagođena meta polja i ACF](#r-14)
 
@@ -436,6 +439,39 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 # R-12
 
 [Članak](https://sr.wordpress.org/2019/03/17/)
+
+- [wp_customize_manager](https://developer.wordpress.org/reference/classes/wp_customize_manager/)
+- [Objekti prilagođavača](https://developer.wordpress.org/themes/customize-api/customizer-objects/)
+- [customize_register](https://developer.wordpress.org/reference/hooks/customize_register/)
+
+## Objekti prilagođavača
+
+-[Panel](https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels)
+  -[add_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_panel/)
+  -[get_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_panel/)
+  -[remove_panel](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_panel/)
+-[Sekcija](https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections)
+  -[add_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/)
+  -[get_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_section/)
+  -[remove_section](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_section/)
+-[Podešavanje](https://developer.wordpress.org/themes/customize-api/customizer-objects/#settings)
+  -[add_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/)
+  -[get_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_setting/)
+  -[remove_setting](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_setting/)
+-[Kontrola](https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls)
+  -[add_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/)
+  -[get_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/)
+  -[remove_control](https://developer.wordpress.org/reference/classes/wp_customize_manager/remove_control/)
+
+## Selektivno osvežavanje
+
+-[PostMessage](https://developer.wordpress.org/themes/customize-api/tools-for-improved-user-experience/#using-postmessage-for-improved-setting-previewing)
+-[add_partial](https://developer.wordpress.org/reference/classes/wp_customize_selective_refresh/add_partial/)
+
+## Sanitizacija
+
+- [Funkcije sanitizacije](https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/#sanitization-securing-input)
+- [Primeri za prilagođavač](https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php)
 
 # R-13
 
