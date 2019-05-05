@@ -427,6 +427,12 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 [Članak](https://sr.wordpress.org/2019/03/03/)
 
+- [Šabloni blokova](https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-templates/#api)
+- [Svi blokovi](https://github.com/WordPress/gutenberg/tree/master/packages/block-library/src)
+- Varijacije blokova - [registerBlockStyle](https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#block-style-variations)
+- Filteri - [blocks.registerBlockType](https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#blocks-registerblocktype), [blocks.getBlockDefaultClassName](https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#blocks-getblockdefaultclassname)
+- [wp.i18n](https://wordpress.org/gutenberg/handbook/designers-developers/developers/packages/packages-i18n/), [i18n podrška](https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/)
+
 # R-12
 
 [Članak](https://sr.wordpress.org/2019/03/17/)
