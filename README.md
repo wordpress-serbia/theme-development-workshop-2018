@@ -477,6 +477,11 @@ Smernice za pisanje kvalitetnog CSS koda koji je moguće održavati na duge staz
 
 [Članak](https://sr.wordpress.org/2019/04/07/)
 
+- [Kirki](https://aristath.github.io/kirki/)
+- [Instaler skripta](https://aristath.github.io/kirki/docs/integration#use-a-custom-script-to-recommend-the-installation-of-kirki)
+- [Kontrole](http://aristath.github.io/kirki/docs/controls/)
+- [kirki/fields](https://aristath.github.io/blog/build-wordpress-theme-using-kirki)
+
 # R-14
 
 [Članak](https://sr.wordpress.org/2019/05/04/)
